@@ -1,0 +1,513 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lumif.ai — AI systems for complex operational work</title>
+    <meta
+      name="description"
+      content="Lumif.ai gathers context across documents, emails, spreadsheets, and systems, applies your operating rules, and completes the workflow."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" href="./assets/lumifai-icon.png" />
+    <link rel="stylesheet" href="./dist/output.css" />
+    <style>
+      @keyframes workflowReveal {
+        0% {
+          opacity: 0;
+          transform: translateY(-8px);
+        }
+        6% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+        90% {
+          opacity: 1;
+          transform: translateY(0);
+        }
+        100% {
+          opacity: 0;
+          transform: translateY(-8px);
+        }
+      }
+      .workflow-step {
+        border-radius: 8px;
+        animation: workflowReveal 8s ease-in-out infinite;
+        animation-fill-mode: backwards;
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .workflow-step {
+          animation: none;
+        }
+      }
+    </style>
+  </head>
+  <body class="bg-canvas text-ink font-body antialiased">
+    <!-- Nav -->
+    <header class="w-full border-b border-rule bg-canvas">
+      <div class="mx-auto flex max-w-[1440px] items-center justify-between px-6 py-3.5 md:px-12">
+        <a href="/" class="shrink-0">
+          <img src="./assets/lumifai-logo.png" alt="Lumif.ai" class="h-[34px] w-auto" />
+        </a>
+        <nav class="hidden items-center gap-9 md:flex">
+          <a href="#how-it-works" class="text-sm font-medium text-ink-soft hover:text-ink">How it works</a>
+          <a href="#" class="text-sm font-medium text-ink-soft hover:text-ink">Technology</a>
+          <a href="#security" class="text-sm font-medium text-ink-soft hover:text-ink">Security</a>
+          <a href="#" class="text-sm font-medium text-ink-soft hover:text-ink">Company</a>
+        </nav>
+        <a
+          href="https://calendar.app.google/yCkohjq1SaCbX9Rr8"
+          target="_blank"
+          rel="noopener"
+          class="shrink-0 rounded-xl bg-coral px-5 py-2.5 text-sm font-medium text-white hover:bg-coral/90"
+        >
+          Discuss a workflow
+        </a>
+      </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="w-full bg-canvas-tint">
+      <div
+        class="mx-auto flex max-w-[1440px] flex-col items-center gap-8 px-6 py-10 md:flex-row md:justify-center md:gap-16 md:px-12 md:py-14 lg:gap-24"
+      >
+        <div class="flex w-full max-w-[560px] flex-col items-start gap-5">
+          <p class="text-[13px] font-semibold tracking-[0.01px] text-coral">
+            Built for complex operational work
+          </p>
+          <h1 class="font-display text-[32px] font-semibold leading-[38px] text-ink md:text-[42px] md:leading-[48px]">
+            AI that understands the work and carries it through.
+          </h1>
+          <p class="text-[15.5px] leading-[25px] text-ink-soft">
+            Lumif.ai gathers context across documents, emails, spreadsheets, and systems, applies
+            your operating rules, and completes the workflow. When judgment is needed, the
+            exception reaches your experts with the evidence and reasoning attached.
+          </p>
+          <div class="flex flex-wrap items-center gap-3">
+            <a
+              href="https://calendar.app.google/yCkohjq1SaCbX9Rr8"
+              target="_blank"
+              rel="noopener"
+              class="rounded-xl bg-coral px-5 py-[11px] text-sm font-medium text-white hover:bg-coral/90"
+            >
+              Discuss a workflow
+            </a>
+            <a
+              href="#how-it-works"
+              class="rounded-xl border border-rule px-5 py-[11px] text-sm font-medium text-ink hover:bg-canvas"
+            >
+              See how it works
+            </a>
+          </div>
+        </div>
+
+        <div class="w-full max-w-[460px] rounded-xl border border-rule bg-canvas p-6">
+          <p class="text-[10.5px] font-medium tracking-[0.06px] text-ink-faint">
+            HOW WORK MOVES THROUGH THE SYSTEM
+          </p>
+          <div class="mt-5 flex flex-col">
+            <div class="workflow-step flex gap-3.5 border-b border-rule pb-3" style="animation-delay: 0s">
+              <span class="workflow-icon flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-canvas-tint">
+                <svg viewBox="0 0 24 24" fill="none" class="h-4 w-4">
+                  <path d="M6 2h9l5 5v13a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2Z" stroke="#E94D35" stroke-width="1.6"/>
+                  <path d="M15 2v5h5" stroke="#E94D35" stroke-width="1.6"/>
+                </svg>
+              </span>
+              <div class="flex flex-col gap-0.5">
+                <p class="text-[13.5px] font-medium text-ink">Data arrives</p>
+                <p class="text-[12.5px] leading-[18px] text-ink-soft">
+                  in whatever format it shows up in — no fixed schema required
+                </p>
+              </div>
+            </div>
+            <div class="workflow-step flex gap-3.5 border-b border-rule py-3" style="animation-delay: 1.5s">
+              <span class="workflow-icon flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-canvas-tint">
+                <svg viewBox="0 0 24 24" fill="none" class="h-4 w-4">
+                  <path d="m9 11 3 3L22 4" stroke="#E94D35" stroke-width="1.6"/>
+                  <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" stroke="#E94D35" stroke-width="1.6"/>
+                </svg>
+              </span>
+              <div class="flex flex-col gap-0.5">
+                <p class="text-[13.5px] font-medium text-ink">Checked against your rules</p>
+                <p class="text-[12.5px] leading-[18px] text-ink-soft">
+                  the ones specific to how your operation actually works
+                </p>
+              </div>
+            </div>
+            <div class="workflow-step flex gap-3.5 border-b border-rule py-3" style="animation-delay: 3s">
+              <span class="workflow-icon flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-canvas-tint">
+                <svg viewBox="0 0 24 24" fill="none" class="h-4 w-4">
+                  <circle cx="12" cy="12" r="10" stroke="#E94D35" stroke-width="1.6"/>
+                  <path d="M12 8v5M12 16h.01" stroke="#E94D35" stroke-width="1.6" stroke-linecap="round"/>
+                </svg>
+              </span>
+              <div class="flex flex-col gap-0.5">
+                <p class="text-[13.5px] font-medium text-ink">Exceptions flagged for review</p>
+                <p class="text-[12.5px] leading-[18px] text-ink-soft">
+                  only the parts that genuinely need a person
+                </p>
+              </div>
+            </div>
+            <div class="workflow-step flex gap-3.5 pt-3" style="animation-delay: 4.5s">
+              <span class="workflow-icon flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-canvas-tint">
+                <svg viewBox="0 0 24 24" fill="none" class="h-4 w-4">
+                  <path d="M6 2h9l5 5v13a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2Z" stroke="#E94D35" stroke-width="1.6"/>
+                  <path d="m9 15 2 2 4-4" stroke="#E94D35" stroke-width="1.6"/>
+                </svg>
+              </span>
+              <div class="flex flex-col gap-0.5">
+                <p class="text-[13.5px] font-medium text-ink">Clean output, ready to act on</p>
+                <p class="text-[12.5px] leading-[18px] text-ink-soft">
+                  delivered straight into the systems you already use
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Built By -->
+    <section class="w-full border-y border-rule bg-canvas">
+      <div class="mx-auto flex max-w-[1440px] flex-col items-center gap-5 px-6 py-7 md:px-12">
+        <p class="text-xs font-medium tracking-[0.06px] text-ink-faint">
+          BUILT BY AI LEADERS FROM THE WORLD'S TOP INSTITUTIONS
+        </p>
+        <div class="flex flex-wrap items-center justify-center gap-x-10 gap-y-4">
+          <img src="./assets/mit.svg" alt="MIT" class="h-6 w-auto opacity-55" />
+          <img src="./assets/harvard.svg" alt="Harvard" class="h-6 w-auto opacity-55" />
+          <img src="./assets/bits.svg" alt="BITS Pilani" class="h-6 w-auto opacity-55" />
+          <img src="./assets/amazon.svg" alt="Amazon" class="h-6 w-auto opacity-55" />
+          <img src="./assets/mckinsey.svg" alt="McKinsey" class="h-6 w-auto opacity-55" />
+        </div>
+        <div class="flex flex-wrap items-center justify-center gap-x-10 gap-y-4">
+          <img src="./assets/abbott-C8Xh1rh_.png" alt="Abbott" class="h-6 w-auto opacity-55" />
+          <img src="./assets/informatica.svg" alt="Informatica" class="h-6 w-auto opacity-55" />
+          <img src="./assets/whatfix-new-C8InDLFl.png" alt="Whatfix" class="h-6 w-auto opacity-55" />
+          <img src="./assets/rippling-new-D2ZtiiD3.png" alt="Rippling" class="h-6 w-auto opacity-55" />
+          <img src="./assets/visit-health-DT5w6sZr.png" alt="Visit Health" class="h-6 w-auto opacity-55" />
+        </div>
+      </div>
+    </section>
+
+    <!-- Manifesto -->
+    <section class="w-full bg-canvas">
+      <div class="mx-auto flex max-w-[1440px] flex-col gap-8 px-6 py-12 md:px-12 md:py-16">
+        <div class="flex max-w-[760px] flex-col gap-3">
+          <p class="text-[13px] font-semibold tracking-[0.06px] text-coral">
+            THE PROBLEM BENEATH THE WORKFLOW
+          </p>
+          <h2 class="font-display text-2xl font-semibold leading-tight tracking-[-0.01px] text-ink md:text-[28px]">
+            Complex operational work starts with scattered context.
+          </h2>
+          <p class="text-[15px] leading-[24px] text-ink-soft">
+            Documents, emails, spreadsheets, forms, internal systems, and external data rarely
+            arrive cleanly. Your highest-value people end up finding information, reconciling
+            inconsistencies, and preparing work for a decision.
+          </p>
+        </div>
+        <div class="grid grid-cols-1 gap-6 md:grid-cols-3 md:gap-0">
+          <div class="flex flex-col gap-2.5 border-rule pr-8 md:border-r">
+            <span class="text-[13px] font-semibold text-coral">01</span>
+            <h3 class="font-display text-base font-semibold text-ink">Gather the full picture</h3>
+            <p class="text-sm leading-[22px] text-ink-soft">
+              Lumif.ai works across the formats and systems your operation already uses—without
+              forcing everything into one rigid schema first.
+            </p>
+          </div>
+          <div class="flex flex-col gap-2.5 border-rule px-0 md:border-r md:px-8">
+            <span class="text-[13px] font-semibold text-coral">02</span>
+            <h3 class="font-display text-base font-semibold text-ink">Understand what it means</h3>
+            <p class="text-sm leading-[22px] text-ink-soft">
+              The system connects evidence, requirements, operating rules, and prior decisions to
+              understand the work in context.
+            </p>
+          </div>
+          <div class="flex flex-col gap-2.5 md:px-8">
+            <span class="text-[13px] font-semibold text-coral">03</span>
+            <h3 class="font-display text-base font-semibold text-ink">Move the work forward</h3>
+            <p class="text-sm leading-[22px] text-ink-soft">
+              Routine cases are completed. Ambiguous cases reach the right expert with the exact
+              evidence needed to decide.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Proof -->
+    <section class="w-full bg-canvas-deep">
+      <div class="mx-auto flex max-w-[1440px] flex-col gap-8 px-6 py-12 md:px-12 md:py-16">
+        <div class="flex max-w-[640px] flex-col gap-3">
+          <h2 class="font-display text-2xl font-semibold leading-tight tracking-[-0.02px] text-ink md:text-[28px] md:leading-[34px]">
+            Accurate isn't enough. It has to explain itself.
+          </h2>
+          <p class="text-[14.5px] leading-[23px] text-ink-soft">
+            Every output carries its reasoning and its source. Your team can understand what
+            happened, resolve edge cases, and stand behind the result.
+          </p>
+        </div>
+        <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-4 md:gap-0">
+          <div class="flex flex-col gap-2.5 border-rule pr-8 md:border-r">
+            <h3 class="font-display text-base font-semibold tracking-[-0.01px] text-ink">Source-linked</h3>
+            <p class="text-[13px] leading-5 text-ink-soft">
+              Every conclusion traces back to the evidence, requirement, and rule behind it.
+            </p>
+          </div>
+          <div class="flex flex-col gap-2.5 border-rule px-0 md:border-r md:px-8">
+            <h3 class="font-display text-base font-semibold tracking-[-0.01px] text-ink">Exception-aware</h3>
+            <p class="text-[13px] leading-5 text-ink-soft">
+              When the system does not know, it does not guess. It brings the right case to a person.
+            </p>
+          </div>
+          <div class="flex flex-col gap-2.5 border-rule px-0 md:border-r md:px-8">
+            <h3 class="font-display text-base font-semibold tracking-[-0.01px] text-ink">Fits your stack</h3>
+            <p class="text-[13px] leading-5 text-ink-soft">
+              Runs inside your existing infrastructure, controls, and systems of record.
+            </p>
+          </div>
+          <div class="flex flex-col gap-2.5 md:px-8">
+            <h3 class="font-display text-base font-semibold tracking-[-0.01px] text-ink">Improves with use</h3>
+            <p class="text-[13px] leading-5 text-ink-soft">
+              Expert corrections sharpen how the system handles the next case—without hiding what changed.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Capabilities -->
+    <section id="how-it-works" class="w-full scroll-mt-16 bg-canvas">
+      <div class="mx-auto flex max-w-[1440px] flex-col gap-10 px-6 py-12 md:flex-row md:justify-between md:px-12 md:py-16">
+        <div class="flex w-full max-w-[420px] shrink-0 flex-col gap-4">
+          <p class="text-[13px] font-semibold tracking-[0.06px] text-coral">HOW WE WORK</p>
+          <h2 class="font-display text-2xl font-semibold leading-tight tracking-[-0.01px] text-ink md:text-[28px]">
+            We own the workflow, not just one AI step.
+          </h2>
+          <p class="text-[15px] leading-[24px] text-ink-soft">
+            We start with a high-value workflow, learn how it actually operates, and build the
+            full path from incoming information to completed work and expert review.
+          </p>
+        </div>
+        <div class="flex w-full max-w-[700px] flex-col">
+          <div class="flex gap-6 border-b border-rule py-4 first:pt-0 last:border-0">
+            <span class="text-[13px] font-semibold text-coral">01</span>
+            <div class="flex flex-col gap-1.5">
+              <h3 class="font-display text-base font-semibold text-ink">Understand the real operation</h3>
+              <p class="text-sm leading-[22px] text-ink-soft">
+                We learn the rules people follow, the exceptions nobody documented, and where
+                judgment genuinely matters.
+              </p>
+            </div>
+          </div>
+          <div class="flex gap-6 border-b border-rule py-4">
+            <span class="text-[13px] font-semibold text-coral">02</span>
+            <div class="flex flex-col gap-1.5">
+              <h3 class="font-display text-base font-semibold text-ink">Build the full working loop</h3>
+              <p class="text-sm leading-[22px] text-ink-soft">
+                Lumif.ai gathers the inputs, completes routine work, handles follow-up, and routes
+                edge cases for sign-off.
+              </p>
+            </div>
+          </div>
+          <div class="flex gap-6 border-b border-rule py-4">
+            <span class="text-[13px] font-semibold text-coral">03</span>
+            <div class="flex flex-col gap-1.5">
+              <h3 class="font-display text-base font-semibold text-ink">Deploy alongside your team</h3>
+              <p class="text-sm leading-[22px] text-ink-soft">
+                Our engineers build, validate, and refine the system with the people who know the
+                operation best.
+              </p>
+            </div>
+          </div>
+          <div class="flex gap-6 border-b border-rule py-4">
+            <span class="text-[13px] font-semibold text-coral">04</span>
+            <div class="flex flex-col gap-1.5">
+              <h3 class="font-display text-base font-semibold text-ink">Run where you already work</h3>
+              <p class="text-sm leading-[22px] text-ink-soft">
+                The system fits your infrastructure and controls, with a record of every action,
+                source, and decision.
+              </p>
+            </div>
+          </div>
+          <div class="flex gap-6 pt-4">
+            <span class="text-[13px] font-semibold text-coral">05</span>
+            <div class="flex flex-col gap-1.5">
+              <h3 class="font-display text-base font-semibold text-ink">Stay through production</h3>
+              <p class="text-sm leading-[22px] text-ink-soft">
+                We remain accountable as real volume, unusual cases, and changing operating rules
+                test the system.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Operating Model -->
+    <section class="w-full bg-canvas-deep">
+      <div class="mx-auto flex max-w-[1440px] flex-col gap-8 px-6 py-12 md:px-12 md:py-16">
+        <div class="flex max-w-[640px] flex-col gap-3">
+          <p class="text-[13px] font-semibold tracking-[0.06px] text-coral">WHAT THIS LOOKS LIKE</p>
+          <h2 class="font-display text-2xl font-semibold leading-tight tracking-[-0.01px] text-ink md:text-[28px]">
+            One operating model, across different kinds of work.
+          </h2>
+        </div>
+        <div class="grid grid-cols-1 gap-5 md:grid-cols-3">
+          <div class="flex flex-col gap-3 rounded-xl border border-rule bg-canvas p-6">
+            <p class="text-[11px] font-semibold tracking-[0.06px] text-ink-faint">REVIEW WORKFLOWS</p>
+            <h3 class="font-display text-base font-semibold text-ink">
+              From scattered evidence to a defensible determination
+            </h3>
+            <p class="text-sm leading-[22px] text-ink-soft">
+              Lumif.ai gathers the relevant material, checks it against requirements, and
+              escalates only the ambiguous cases.
+            </p>
+          </div>
+          <div class="flex flex-col gap-3 rounded-xl border border-rule bg-canvas p-6">
+            <p class="text-[11px] font-semibold tracking-[0.06px] text-ink-faint">RECONCILIATION</p>
+            <h3 class="font-display text-base font-semibold text-ink">
+              From inconsistent records to resolved differences
+            </h3>
+            <p class="text-sm leading-[22px] text-ink-soft">
+              Lumif.ai connects related records, identifies gaps and mismatches, and prepares the
+              resolution with its sources attached.
+            </p>
+          </div>
+          <div class="flex flex-col gap-3 rounded-xl border border-rule bg-canvas p-6">
+            <p class="text-[11px] font-semibold tracking-[0.06px] text-ink-faint">WORK PREPARATION</p>
+            <h3 class="font-display text-base font-semibold text-ink">
+              From raw inputs to a complete work product
+            </h3>
+            <p class="text-sm leading-[22px] text-ink-soft">
+              Lumif.ai assembles the information, applies the operating logic, and delivers work
+              that is ready to approve or act on.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Security -->
+    <section id="security" class="w-full scroll-mt-16 bg-canvas-deep">
+      <div class="mx-auto flex max-w-[1440px] flex-col gap-8 px-6 py-12 md:px-12 md:py-16">
+        <div class="flex flex-col items-start gap-6 md:flex-row md:items-center">
+          <div class="flex w-36 shrink-0 flex-col items-center gap-2 rounded-xl border border-rule bg-canvas px-4 py-5">
+            <span class="flex h-10 w-10 items-center justify-center rounded-full bg-canvas-tint">
+              <svg viewBox="0 0 24 24" fill="none" class="h-5 w-5">
+                <path d="M12 2 4 5v6c0 5 3.4 8.7 8 10 4.6-1.3 8-5 8-10V5l-8-3Z" stroke="#E94D35" stroke-width="1.6"/>
+                <path d="m9 12 2 2 4-4" stroke="#E94D35" stroke-width="1.6"/>
+              </svg>
+            </span>
+            <p class="font-display text-base font-semibold text-ink">SOC 2</p>
+            <p class="text-[10.5px] font-medium tracking-[0.08px] text-ink-faint">TYPE II</p>
+          </div>
+          <div class="flex flex-col gap-2.5">
+            <p class="text-[13px] font-semibold tracking-[0.06px] text-coral">SECURITY</p>
+            <h2 class="font-display text-2xl font-semibold leading-tight tracking-[-0.01px] text-ink md:text-[28px]">
+              Enterprise-grade security, from day one.
+            </h2>
+            <p class="text-[14.5px] leading-[23px] text-ink-soft">
+              Every system is designed to satisfy the people whose job is to say no—not bolted on
+              after the fact.
+            </p>
+          </div>
+        </div>
+        <div class="grid grid-cols-1 gap-5 sm:grid-cols-2 md:grid-cols-4 md:gap-0">
+          <div class="flex gap-3 border-rule pr-7 md:border-r">
+            <svg viewBox="0 0 24 24" fill="none" class="mt-0.5 h-[18px] w-[18px] shrink-0">
+              <rect x="4" y="10" width="16" height="10" rx="2" stroke="#E94D35" stroke-width="1.6"/>
+              <path d="M8 10V7a4 4 0 0 1 8 0v3" stroke="#E94D35" stroke-width="1.6"/>
+            </svg>
+            <div class="flex flex-col gap-1">
+              <p class="text-sm font-medium text-ink">Encrypted everywhere</p>
+              <p class="text-[13px] leading-[19px] text-ink-soft">In transit and at rest, by default.</p>
+            </div>
+          </div>
+          <div class="flex gap-3 border-rule px-0 md:border-r md:px-7">
+            <svg viewBox="0 0 24 24" fill="none" class="mt-0.5 h-[18px] w-[18px] shrink-0">
+              <circle cx="8.5" cy="8.5" r="4.5" stroke="#E94D35" stroke-width="1.6"/>
+              <path d="m11.8 11.8 8.7 8.7" stroke="#E94D35" stroke-width="1.6" stroke-linecap="round"/>
+              <path d="m15.5 15.5 2-2M18 18l2-2" stroke="#E94D35" stroke-width="1.6" stroke-linecap="round"/>
+            </svg>
+            <div class="flex flex-col gap-1">
+              <p class="text-sm font-medium text-ink">Role-based access</p>
+              <p class="text-[13px] leading-[19px] text-ink-soft">Your team controls who sees what.</p>
+            </div>
+          </div>
+          <div class="flex gap-3 border-rule px-0 md:border-r md:px-7">
+            <svg viewBox="0 0 24 24" fill="none" class="mt-0.5 h-[18px] w-[18px] shrink-0">
+              <path d="M4 21V7l8-4 8 4v14" stroke="#E94D35" stroke-width="1.6"/>
+              <path d="M9 21v-6h6v6M4 21h16" stroke="#E94D35" stroke-width="1.6"/>
+            </svg>
+            <div class="flex flex-col gap-1">
+              <p class="text-sm font-medium text-ink">Runs in your environment</p>
+              <p class="text-[13px] leading-[19px] text-ink-soft">Deploy inside your infrastructure.</p>
+            </div>
+          </div>
+          <div class="flex gap-3 md:pl-7">
+            <svg viewBox="0 0 24 24" fill="none" class="mt-0.5 h-[18px] w-[18px] shrink-0">
+              <path d="M7 3h10a2 2 0 0 1 2 2v14l-3-2-2 2-2-2-2 2-2-2-3 2V5a2 2 0 0 1 2-2Z" stroke="#E94D35" stroke-width="1.6"/>
+              <path d="M9 8h6M9 12h6" stroke="#E94D35" stroke-width="1.6" stroke-linecap="round"/>
+            </svg>
+            <div class="flex flex-col gap-1">
+              <p class="text-sm font-medium text-ink">Full audit trail</p>
+              <p class="text-[13px] leading-[19px] text-ink-soft">Every action is logged and reviewable.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="w-full bg-ink">
+      <div class="mx-auto flex max-w-[1440px] flex-col items-center gap-6 px-6 py-14 text-center md:py-20">
+        <h2 class="font-display max-w-[700px] text-2xl font-semibold leading-tight tracking-[-0.02px] text-white md:text-[32px] md:leading-[38px]">
+          Show us the work your team should not be doing manually.
+        </h2>
+        <p class="max-w-[560px] text-[15px] leading-[24px] text-white/80">
+          We'll help you identify where an AI system can own the workflow while your experts keep
+          the judgment.
+        </p>
+        <div class="flex flex-wrap items-center justify-center gap-3.5">
+          <a
+            href="https://calendar.app.google/yCkohjq1SaCbX9Rr8"
+            target="_blank"
+            rel="noopener"
+            class="rounded-xl bg-coral px-6 py-3 text-sm font-medium text-white hover:bg-coral/90"
+          >
+            Discuss a workflow
+          </a>
+          <a
+            href="#how-it-works"
+            class="rounded-xl border border-white/25 px-6 py-3 text-sm font-medium text-white hover:bg-white/10"
+          >
+            See how it works
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="w-full bg-ink">
+      <div class="mx-auto max-w-[1440px] px-6 pb-10 md:px-12">
+        <div class="h-px w-full bg-white/15"></div>
+        <div class="flex max-w-[320px] flex-col items-start gap-3 pt-8">
+          <img src="./assets/lumifai-logo.png" alt="Lumif.ai" class="h-6 w-auto self-start" />
+          <p class="text-[13px] leading-[21px] text-white/60">
+            AI systems for complex operational work.
+          </p>
+        </div>
+        <p class="mt-8 text-xs text-white/40">
+          © 2026 Lumif.ai — All rights reserved ·
+          <a href="https://lumif.ai/privacy-policy" class="hover:text-white/70">Privacy Policy</a>
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>
