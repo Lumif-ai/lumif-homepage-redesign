@@ -1,513 +1,509 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Lumif.ai — AI systems for complex operational work</title>
-    <meta
-      name="description"
-      content="Lumif.ai gathers context across documents, emails, spreadsheets, and systems, applies your operating rules, and completes the workflow."
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@600&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="icon" href="./assets/lumifai-icon.png" />
-    <link rel="stylesheet" href="./dist/output.css" />
-    <style>
-      @keyframes workflowReveal {
-        0% {
-          opacity: 0;
-          transform: translateY(-8px);
-        }
-        6% {
-          opacity: 1;
-          transform: translateY(0);
-        }
-        90% {
-          opacity: 1;
-          transform: translateY(0);
-        }
-        100% {
-          opacity: 0;
-          transform: translateY(-8px);
-        }
-      }
-      .workflow-step {
-        border-radius: 8px;
-        animation: workflowReveal 8s ease-in-out infinite;
-        animation-fill-mode: backwards;
-      }
-      @media (prefers-reduced-motion: reduce) {
-        .workflow-step {
-          animation: none;
-        }
-      }
-    </style>
-  </head>
-  <body class="bg-canvas text-ink font-body antialiased">
-    <!-- Nav -->
-    <header class="w-full border-b border-rule bg-canvas">
-      <div class="mx-auto flex max-w-[1440px] items-center justify-between px-6 py-3.5 md:px-12">
-        <a href="/" class="shrink-0">
-          <img src="./assets/lumifai-logo.png" alt="Lumif.ai" class="h-[34px] w-auto" />
-        </a>
-        <nav class="hidden items-center gap-9 md:flex">
-          <a href="#how-it-works" class="text-sm font-medium text-ink-soft hover:text-ink">How it works</a>
-          <a href="#" class="text-sm font-medium text-ink-soft hover:text-ink">Technology</a>
-          <a href="#security" class="text-sm font-medium text-ink-soft hover:text-ink">Security</a>
-          <a href="#" class="text-sm font-medium text-ink-soft hover:text-ink">Company</a>
-        </nav>
-        <a
-          href="https://calendar.app.google/yCkohjq1SaCbX9Rr8"
-          target="_blank"
-          rel="noopener"
-          class="shrink-0 rounded-xl bg-coral px-5 py-2.5 text-sm font-medium text-white hover:bg-coral/90"
-        >
-          Discuss a workflow
-        </a>
-      </div>
-    </header>
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Lumif.ai | Complex work, carried through.</title>
+<meta name="description" content="AI that learns how your operation works, does the work, and hands it to your experts to approve." />
+<link rel="icon" href="./favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="32x32" href="./assets/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="192x192" href="./assets/favicon-192.png" />
+<link rel="apple-touch-icon" href="./assets/apple-touch-icon.png" />
+<meta name="theme-color" content="#0F1117" />
+<link rel="canonical" href="https://lumif-ai.github.io/lumif-homepage-redesign/" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Lumif.ai" />
+<meta property="og:url" content="https://lumif-ai.github.io/lumif-homepage-redesign/" />
+<meta property="og:title" content="Complex work, carried through." />
+<meta property="og:description" content="AI that learns how your operation works, does the work, and hands it to your experts to approve." />
+<meta property="og:image" content="https://lumif-ai.github.io/lumif-homepage-redesign/assets/og-image.png" />
+<meta property="og:image:width" content="1200" />
+<meta property="og:image:height" content="630" />
+<meta property="og:image:alt" content="Lumif.ai: Complex work, carried through." />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Complex work, carried through." />
+<meta name="twitter:description" content="AI that learns how your operation works, does the work, and hands it to your experts to approve." />
+<meta name="twitter:image" content="https://lumif-ai.github.io/lumif-homepage-redesign/assets/og-image.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+:root {
+  --coral: #E94D35; --coral-hover: #D4412E; --coral-soft: #F9A08F; --coral-light: rgba(233,77,53,0.09);
+  --ink: #121212; --ink-2: #3F4451; --ink-3: #6B7280; --ink-4: #9CA3AF;
+  --paper: #F6F3EE; --panel: #FFFFFF; --panel-warm: #FBF8F4; --line: #E6E1D8;
+  --night: #0F1117; --night-2: #171A23; --night-3: #232836; --night-line: #2D3348;
+  --sans: Inter, system-ui, sans-serif; --mono: "JetBrains Mono", ui-monospace, monospace;
+  --display: var(--sans); --display-w: 400; --display-ls: -0.045em;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; background: var(--paper); color: var(--ink); font: 400 16px/1.6 var(--sans); -webkit-font-smoothing: antialiased; }
+a { color: inherit; text-decoration: none; }
+img { display: block; max-width: 100%; }
+h1, h2, h3 { margin: 0; font-family: var(--display); font-weight: var(--display-w); letter-spacing: var(--display-ls); }
+.accent { color: var(--coral); }
+.mono { font-family: var(--mono); font-size: 11.5px; letter-spacing: 0.08em; text-transform: uppercase; }
+.wrap { max-width: 1240px; margin: 0 auto; padding: 0 32px; }
+.panel { margin: 0 16px; border-radius: 28px; }
+.btn { display: inline-flex; align-items: center; gap: 10px; height: 46px; padding: 0 22px; border-radius: 999px; font-size: 15px; font-weight: 500; transition: background .2s, border-color .2s, transform .2s; }
+.btn:hover { transform: translateY(-1px); }
+.btn-coral { background: var(--coral); color: #fff; }
+.btn-coral:hover { background: var(--coral-hover); }
+.btn-line { border: 1px solid rgba(255,255,255,0.22); color: #fff; }
+.btn-line:hover { border-color: rgba(255,255,255,0.5); }
+.btn-dark { background: var(--ink); color: #fff; }
+.label { display: flex; align-items: center; gap: 10px; color: var(--ink-3); margin-bottom: 22px; }
+.label::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--coral); }
 
-    <!-- Hero -->
-    <section class="w-full bg-canvas-tint">
-      <div
-        class="mx-auto flex max-w-[1440px] flex-col items-center gap-8 px-6 py-10 md:flex-row md:justify-center md:gap-16 md:px-12 md:py-14 lg:gap-24"
-      >
-        <div class="flex w-full max-w-[560px] flex-col items-start gap-5">
-          <p class="text-[13px] font-semibold tracking-[0.01px] text-coral">
-            Built for complex operational work
-          </p>
-          <h1 class="font-display text-[32px] font-semibold leading-[38px] text-ink md:text-[42px] md:leading-[48px]">
-            AI that understands the work and carries it through.
-          </h1>
-          <p class="text-[15.5px] leading-[25px] text-ink-soft">
-            Lumif.ai gathers context across documents, emails, spreadsheets, and systems, applies
-            your operating rules, and completes the workflow. When judgment is needed, the
-            exception reaches your experts with the evidence and reasoning attached.
-          </p>
-          <div class="flex flex-wrap items-center gap-3">
-            <a
-              href="https://calendar.app.google/yCkohjq1SaCbX9Rr8"
-              target="_blank"
-              rel="noopener"
-              class="rounded-xl bg-coral px-5 py-[11px] text-sm font-medium text-white hover:bg-coral/90"
-            >
-              Discuss a workflow
-            </a>
-            <a
-              href="#how-it-works"
-              class="rounded-xl border border-rule px-5 py-[11px] text-sm font-medium text-ink hover:bg-canvas"
-            >
-              See how it works
-            </a>
-          </div>
-        </div>
+/* nav */
+.nav { position: fixed; top: 28px; left: 50%; transform: translateX(-50%); z-index: 40; width: min(1100px, calc(100% - 64px)); height: 58px; display: flex; align-items: center; justify-content: space-between; padding: 0 10px 0 22px; border-radius: 999px; background: rgba(255,255,255,0.86); backdrop-filter: blur(14px); border: 1px solid rgba(18,18,18,0.06); box-shadow: 0 6px 24px -10px rgba(0,0,0,0.25); }
+.nav .links { display: flex; gap: 30px; font-size: 14px; color: var(--ink-2); }
+.nav .links a:hover { color: var(--ink); }
+.nav .btn { height: 40px; font-size: 14px; padding: 0 18px; }
 
-        <div class="w-full max-w-[460px] rounded-xl border border-rule bg-canvas p-6">
-          <p class="text-[10.5px] font-medium tracking-[0.06px] text-ink-faint">
-            HOW WORK MOVES THROUGH THE SYSTEM
-          </p>
-          <div class="mt-5 flex flex-col">
-            <div class="workflow-step flex gap-3.5 border-b border-rule pb-3" style="animation-delay: 0s">
-              <span class="workflow-icon flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-canvas-tint">
-                <svg viewBox="0 0 24 24" fill="none" class="h-4 w-4">
-                  <path d="M6 2h9l5 5v13a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2Z" stroke="#E94D35" stroke-width="1.6"/>
-                  <path d="M15 2v5h5" stroke="#E94D35" stroke-width="1.6"/>
-                </svg>
-              </span>
-              <div class="flex flex-col gap-0.5">
-                <p class="text-[13.5px] font-medium text-ink">Data arrives</p>
-                <p class="text-[12.5px] leading-[18px] text-ink-soft">
-                  in whatever format it shows up in — no fixed schema required
-                </p>
-              </div>
-            </div>
-            <div class="workflow-step flex gap-3.5 border-b border-rule py-3" style="animation-delay: 1.5s">
-              <span class="workflow-icon flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-canvas-tint">
-                <svg viewBox="0 0 24 24" fill="none" class="h-4 w-4">
-                  <path d="m9 11 3 3L22 4" stroke="#E94D35" stroke-width="1.6"/>
-                  <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11" stroke="#E94D35" stroke-width="1.6"/>
-                </svg>
-              </span>
-              <div class="flex flex-col gap-0.5">
-                <p class="text-[13.5px] font-medium text-ink">Checked against your rules</p>
-                <p class="text-[12.5px] leading-[18px] text-ink-soft">
-                  the ones specific to how your operation actually works
-                </p>
-              </div>
-            </div>
-            <div class="workflow-step flex gap-3.5 border-b border-rule py-3" style="animation-delay: 3s">
-              <span class="workflow-icon flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-canvas-tint">
-                <svg viewBox="0 0 24 24" fill="none" class="h-4 w-4">
-                  <circle cx="12" cy="12" r="10" stroke="#E94D35" stroke-width="1.6"/>
-                  <path d="M12 8v5M12 16h.01" stroke="#E94D35" stroke-width="1.6" stroke-linecap="round"/>
-                </svg>
-              </span>
-              <div class="flex flex-col gap-0.5">
-                <p class="text-[13.5px] font-medium text-ink">Exceptions flagged for review</p>
-                <p class="text-[12.5px] leading-[18px] text-ink-soft">
-                  only the parts that genuinely need a person
-                </p>
-              </div>
-            </div>
-            <div class="workflow-step flex gap-3.5 pt-3" style="animation-delay: 4.5s">
-              <span class="workflow-icon flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-canvas-tint">
-                <svg viewBox="0 0 24 24" fill="none" class="h-4 w-4">
-                  <path d="M6 2h9l5 5v13a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2Z" stroke="#E94D35" stroke-width="1.6"/>
-                  <path d="m9 15 2 2 4-4" stroke="#E94D35" stroke-width="1.6"/>
-                </svg>
-              </span>
-              <div class="flex flex-col gap-0.5">
-                <p class="text-[13.5px] font-medium text-ink">Clean output, ready to act on</p>
-                <p class="text-[12.5px] leading-[18px] text-ink-soft">
-                  delivered straight into the systems you already use
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+/* hero */
+.hero { background: var(--night); color: #F4F1EC; margin-top: 16px; overflow: hidden; position: relative; height: calc(100vh - 32px); height: calc(100svh - 32px); min-height: 600px; max-height: 1000px; }
+.hero > .wrap { height: 100%; display: flex; flex-direction: column; }
+.hero::before { content: ""; position: absolute; inset: 0; background: radial-gradient(900px 500px at 78% 40%, rgba(233,77,53,0.16), transparent 60%); pointer-events: none; }
+.hero .grid { position: relative; flex: 1; min-height: 0; display: grid; grid-template-columns: 1fr 1fr; gap: 56px; align-items: center; padding: 100px 0 32px; }
+.hero h1 { font-size: clamp(46px, 5vw, 76px); line-height: 1.0; text-wrap: balance; }
+.hero p.sub { font-size: 19px; line-height: 1.6; color: #B6BAC4; max-width: 470px; margin: 30px 0 38px; }
+.hero .ctas { display: flex; gap: 12px; flex-wrap: wrap; }
+.hero-foot { position: relative; display: flex; justify-content: space-between; align-items: center; gap: 24px; flex-wrap: wrap; border-top: 1px solid var(--night-line); padding: 26px 0 30px; }
+.hero-foot .mono { color: #7C8190; }
+.hero-foot .logos { display: flex; gap: 34px; align-items: center; flex-wrap: wrap; }
+.hero-foot img { height: 20px; width: auto; filter: brightness(0) invert(1); opacity: .5; }
+.hero-foot img.harvard { height: 34px; margin: -7px 0; filter: none; opacity: .62; }
 
-    <!-- Built By -->
-    <section class="w-full border-y border-rule bg-canvas">
-      <div class="mx-auto flex max-w-[1440px] flex-col items-center gap-5 px-6 py-7 md:px-12">
-        <p class="text-xs font-medium tracking-[0.06px] text-ink-faint">
-          BUILT BY AI LEADERS FROM THE WORLD'S TOP INSTITUTIONS
-        </p>
-        <div class="flex flex-wrap items-center justify-center gap-x-10 gap-y-4">
-          <img src="./assets/mit.svg" alt="MIT" class="h-6 w-auto opacity-55" />
-          <img src="./assets/harvard.svg" alt="Harvard" class="h-6 w-auto opacity-55" />
-          <img src="./assets/bits.svg" alt="BITS Pilani" class="h-6 w-auto opacity-55" />
-          <img src="./assets/amazon.svg" alt="Amazon" class="h-6 w-auto opacity-55" />
-          <img src="./assets/mckinsey.svg" alt="McKinsey" class="h-6 w-auto opacity-55" />
-        </div>
-        <div class="flex flex-wrap items-center justify-center gap-x-10 gap-y-4">
-          <img src="./assets/abbott-C8Xh1rh_.png" alt="Abbott" class="h-6 w-auto opacity-55" />
-          <img src="./assets/informatica-logo.png" alt="Informatica" class="h-6 w-auto opacity-55" />
-          <img src="./assets/whatfix-new-C8InDLFl.png" alt="Whatfix" class="h-6 w-auto opacity-55" />
-          <img src="./assets/rippling-new-D2ZtiiD3.png" alt="Rippling" class="h-6 w-auto opacity-55" />
-          <img src="./assets/visit-health-DT5w6sZr.png" alt="Visit Health" class="h-6 w-auto opacity-55" />
-        </div>
-      </div>
-    </section>
+/* hero diagram */
+.dia { position: relative; width: min(100%, 540px, calc(100svh - 300px)); justify-self: end; aspect-ratio: 1 / 1; }
+.ring { position: absolute; border-radius: 50%; border: 1px solid var(--night-line); }
+.r1 { inset: 0; } .r2 { inset: 15%; border-style: dashed; } .r3 { inset: 30%; }
+.orbit { position: absolute; inset: 0; animation: rot 60s linear infinite; }
+.orbit.rev { inset: 15%; animation-duration: 45s; animation-direction: reverse; }
+@keyframes rot { to { transform: rotate(360deg); } }
+.chip { position: absolute; transform: translate(-50%, -50%); display: flex; align-items: center; gap: 8px; padding: 8px 14px 8px 8px; border-radius: 999px; background: var(--night-2); border: 1px solid var(--night-line); font-size: 13px; color: #D9DCE3; white-space: nowrap; }
+.chip i { width: 22px; height: 22px; border-radius: 50%; background: var(--night-3); display: grid; place-items: center; }
+.chip i svg { width: 12px; height: 12px; }
+.orbit .chip { animation: counter 60s linear infinite; }
+.orbit.rev .chip { animation: counter-rev 45s linear infinite; }
+@keyframes counter { to { transform: translate(-50%, -50%) rotate(-360deg); } }
+@keyframes counter-rev { to { transform: translate(-50%, -50%) rotate(360deg); } }
+.chip.hot { border-color: rgba(233,77,53,0.6); background: rgba(233,77,53,0.14); color: #fff; }
+.chip.hot i { background: var(--coral); color: #fff; }
+.core { position: absolute; inset: 36%; border-radius: 50%; background: #fff; display: grid; place-items: center; box-shadow: 0 0 0 10px rgba(255,255,255,0.03), 0 0 80px rgba(233,77,53,0.35); }
+.core img { width: 46%; }
+.core::after { content: ""; position: absolute; inset: -14px; border-radius: 50%; border: 1px solid rgba(233,77,53,0.5); animation: ping 3s ease-out infinite; }
+@keyframes ping { 0% { transform: scale(.9); opacity: 1; } 100% { transform: scale(1.35); opacity: 0; } }
 
-    <!-- Manifesto -->
-    <section class="w-full bg-canvas">
-      <div class="mx-auto flex max-w-[1440px] flex-col gap-8 px-6 py-12 md:px-12 md:py-16">
-        <div class="flex max-w-[760px] flex-col gap-3">
-          <p class="text-[13px] font-semibold tracking-[0.06px] text-coral">
-            THE PROBLEM BENEATH THE WORKFLOW
-          </p>
-          <h2 class="font-display text-2xl font-semibold leading-tight tracking-[-0.01px] text-ink md:text-[28px]">
-            Complex operational work starts with scattered context.
-          </h2>
-          <p class="text-[15px] leading-[24px] text-ink-soft">
-            Documents, emails, spreadsheets, forms, internal systems, and external data rarely
-            arrive cleanly. Your highest-value people end up finding information, reconciling
-            inconsistencies, and preparing work for a decision.
-          </p>
-        </div>
-        <div class="grid grid-cols-1 gap-6 md:grid-cols-3 md:gap-0">
-          <div class="flex flex-col gap-2.5 border-rule pr-8 md:border-r">
-            <span class="text-[13px] font-semibold text-coral">01</span>
-            <h3 class="font-display text-base font-semibold text-ink">Gather the full picture</h3>
-            <p class="text-sm leading-[22px] text-ink-soft">
-              Lumif.ai works across the formats and systems your operation already uses—without
-              forcing everything into one rigid schema first.
-            </p>
-          </div>
-          <div class="flex flex-col gap-2.5 border-rule px-0 md:border-r md:px-8">
-            <span class="text-[13px] font-semibold text-coral">02</span>
-            <h3 class="font-display text-base font-semibold text-ink">Understand what it means</h3>
-            <p class="text-sm leading-[22px] text-ink-soft">
-              The system connects evidence, requirements, operating rules, and prior decisions to
-              understand the work in context.
-            </p>
-          </div>
-          <div class="flex flex-col gap-2.5 md:px-8">
-            <span class="text-[13px] font-semibold text-coral">03</span>
-            <h3 class="font-display text-base font-semibold text-ink">Move the work forward</h3>
-            <p class="text-sm leading-[22px] text-ink-soft">
-              Routine cases are completed. Ambiguous cases reach the right expert with the exact
-              evidence needed to decide.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
+/* sections */
+.sec { padding: 140px 0; }
+.sec-head { display: grid; grid-template-columns: 1.2fr 1fr; gap: 60px; align-items: end; margin-bottom: 64px; }
+.sec-head h2 { font-size: clamp(36px, 4.4vw, 60px); line-height: 1.04; }
+.sec-head p { font-size: 17px; color: var(--ink-3); margin: 0; max-width: 420px; }
 
-    <!-- Proof -->
-    <section class="w-full bg-canvas-deep">
-      <div class="mx-auto flex max-w-[1440px] flex-col gap-8 px-6 py-12 md:px-12 md:py-16">
-        <div class="flex max-w-[640px] flex-col gap-3">
-          <h2 class="font-display text-2xl font-semibold leading-tight tracking-[-0.02px] text-ink md:text-[28px] md:leading-[34px]">
-            Accurate isn't enough. It has to explain itself.
-          </h2>
-          <p class="text-[14.5px] leading-[23px] text-ink-soft">
-            Every output carries its reasoning and its source. Your team can understand what
-            happened, resolve edge cases, and stand behind the result.
-          </p>
-        </div>
-        <div class="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-4 md:gap-0">
-          <div class="flex flex-col gap-2.5 border-rule pr-8 md:border-r">
-            <h3 class="font-display text-base font-semibold tracking-[-0.01px] text-ink">Source-linked</h3>
-            <p class="text-[13px] leading-5 text-ink-soft">
-              Every conclusion traces back to the evidence, requirement, and rule behind it.
-            </p>
-          </div>
-          <div class="flex flex-col gap-2.5 border-rule px-0 md:border-r md:px-8">
-            <h3 class="font-display text-base font-semibold tracking-[-0.01px] text-ink">Exception-aware</h3>
-            <p class="text-[13px] leading-5 text-ink-soft">
-              When the system does not know, it does not guess. It brings the right case to a person.
-            </p>
-          </div>
-          <div class="flex flex-col gap-2.5 border-rule px-0 md:border-r md:px-8">
-            <h3 class="font-display text-base font-semibold tracking-[-0.01px] text-ink">Fits your stack</h3>
-            <p class="text-[13px] leading-5 text-ink-soft">
-              Runs inside your existing infrastructure, controls, and systems of record.
-            </p>
-          </div>
-          <div class="flex flex-col gap-2.5 md:px-8">
-            <h3 class="font-display text-base font-semibold tracking-[-0.01px] text-ink">Improves with use</h3>
-            <p class="text-[13px] leading-5 text-ink-soft">
-              Expert corrections sharpen how the system handles the next case—without hiding what changed.
-            </p>
-          </div>
+/* statement */
+.statement { padding: 150px 32px 40px; }
+.statement p { font-family: var(--display); font-weight: var(--display-w); letter-spacing: -0.03em; font-size: clamp(30px, 3.4vw, 48px); line-height: 1.18; max-width: 980px; margin: 0; color: var(--ink-4); }
+.statement p b { font-weight: inherit; color: var(--ink); }
+
+/* workflow */
+.wf { background: var(--panel-warm); border: 1px solid var(--line); border-radius: 28px; padding: 50px 40px; }
+.wf-stage { position: relative; display: grid; grid-template-columns: 220px 1fr 380px 1fr 220px; align-items: center; min-height: 440px; }
+.wf-stage #wires { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; overflow: visible; }
+.ln { fill: none; stroke: #D8D1C5; stroke-width: 1.3; transition: stroke .4s; }
+.ln.live { stroke: var(--coral); stroke-dasharray: 5 6; animation: flow .8s linear infinite; }
+@keyframes flow { to { stroke-dashoffset: -22; } }
+.col { display: grid; gap: 22px; position: relative; z-index: 1; }
+.col.ins { grid-column: 1; } .col.outs { grid-column: 5; }
+.it { display: flex; align-items: center; gap: 14px; }
+.it .ico { flex: none; width: 46px; height: 46px; border-radius: 50%; border: 1px solid var(--line); background: #fff; display: grid; place-items: center; color: var(--ink-3); transition: all .35s; }
+.it .ico svg { width: 19px; height: 19px; }
+.it b { font-size: 15px; font-weight: 500; letter-spacing: -0.01em; }
+.it.on .ico { border-color: var(--coral); background: var(--coral-light); color: var(--coral); box-shadow: 0 0 0 5px rgba(233,77,53,0.07); }
+.it.expert .ico { border-style: dashed; }
+.it.expert.on .ico { background: var(--coral); color: #fff; border-style: solid; }
+.card { grid-column: 3; position: relative; z-index: 1; background: #fff; border: 1px solid var(--line); border-radius: 22px; padding: 26px 24px 20px; box-shadow: 0 30px 70px -30px rgba(18,18,18,0.28); }
+.card .top { display: flex; align-items: center; gap: 8px; font-weight: 600; font-size: 14px; margin-bottom: 18px; }
+.card .top img { height: 20px; }
+.wsteps { display: grid; gap: 4px; }
+.ws { display: flex; align-items: center; gap: 12px; padding: 11px 12px; border-radius: 10px; transition: background .35s; }
+.ws .dot { flex: none; width: 18px; height: 18px; border-radius: 50%; border: 1.5px solid #D6D0C6; display: grid; place-items: center; font: 600 10px var(--sans); color: #fff; transition: all .3s; }
+.ws b { font-size: 15px; font-weight: 500; color: var(--ink-4); transition: color .3s; }
+.ws.active { background: var(--coral-light); }
+.ws.active .dot { border-color: var(--coral); border-top-color: transparent; animation: spin .8s linear infinite; }
+@keyframes spin { to { transform: rotate(360deg); } }
+.ws.active b, .ws.done b, .ws.flag b { color: var(--ink); }
+.ws.done .dot { background: #16A34A; border-color: #16A34A; }
+.ws.done .dot::after { content: "\2713"; }
+.ws.flag .dot { background: var(--coral); border-color: var(--coral); }
+.ws.flag .dot::after { content: "!"; }
+.card .prog { position: absolute; left: 24px; right: 24px; bottom: 0; height: 2px; overflow: hidden; }
+.card .prog span { display: block; height: 100%; width: 0; background: var(--coral); transition: width .5s; }
+
+/* setup / rulebook */
+.su-stage { position: relative; display: grid; grid-template-columns: 230px 1fr 460px 1fr 190px; align-items: center; min-height: 460px; }
+.su-stage .wires { position: absolute; inset: 0; width: 100%; height: 100%; pointer-events: none; overflow: visible; }
+.rb { grid-column: 3; position: relative; z-index: 1; background: #fff; border: 1px solid var(--line); border-radius: 22px; padding: 24px 22px 18px; box-shadow: 0 30px 70px -30px rgba(18,18,18,0.28); }
+.rb .top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px; }
+.rb .top b { font-size: 15px; font-weight: 600; }
+.rb .top .mono { color: var(--ink-4); font-size: 10px; }
+.rule { display: grid; grid-template-columns: 1fr auto; gap: 2px 12px; align-items: center; padding: 11px 12px; border-radius: 10px; border: 1px solid transparent; opacity: .28; transition: opacity .5s, background .4s, border-color .4s; }
+.rule p { margin: 0; font-size: 14px; font-weight: 500; letter-spacing: -0.01em; }
+#rules { height: 318px; overflow: hidden; position: relative; -webkit-mask-image: linear-gradient(180deg, transparent 0, #000 22px, #000 calc(100% - 22px), transparent 100%); mask-image: linear-gradient(180deg, transparent 0, #000 22px, #000 calc(100% - 22px), transparent 100%); }
+#rulesIn { transition: transform .6s cubic-bezier(.5,.1,.2,1); padding: 10px 0; }
+.expr { display: flex; align-items: center; gap: 7px; height: 22px; }
+.tk { height: 9px; border-radius: 5px; background: #E9E3DA; transition: background .4s; }
+.op { font: 500 13px var(--mono); color: var(--ink-4); transition: color .4s; }
+.op.kw { font-size: 10.5px; letter-spacing: .06em; }
+.rule.sug .tk { background: rgba(233,77,53,0.3); }
+.rule.sug .op { color: var(--coral); }
+.rule.ok .tk { background: #DCD5CA; }
+.rule.ok .op { color: var(--ink-2); }
+.rule small { grid-column: 1; font: 400 10px var(--mono); letter-spacing: .05em; text-transform: uppercase; color: var(--ink-4); }
+.rule .st { grid-row: 1 / span 2; grid-column: 2; font: 500 10px var(--mono); letter-spacing: .06em; text-transform: uppercase; padding: 4px 9px; border-radius: 999px; background: #F3EFE9; color: var(--ink-4); white-space: nowrap; }
+.rule.sug { opacity: 1; background: var(--coral-light); border-color: rgba(233,77,53,0.25); }
+.rule.sug .st { background: #fff; color: var(--coral); }
+.rule.ok { opacity: 1; }
+.rule.ok .st { background: rgba(22,163,74,0.1); color: #15803D; }
+.rb .foot { margin-top: 12px; padding-top: 14px; border-top: 1px solid var(--line); font-size: 13px; color: var(--ink-3); display: flex; align-items: center; gap: 10px; }
+.rb .foot .pill { font: 500 10px var(--mono); letter-spacing: .06em; text-transform: uppercase; padding: 4px 9px; border-radius: 999px; background: #F3EFE9; color: var(--ink-3); }
+.rb .foot.ok .pill { background: rgba(22,163,74,0.1); color: #15803D; }
+.su-out { grid-column: 5; position: relative; z-index: 1; }
+.it.go.on .ico { background: #16A34A; border-color: #16A34A; color: #fff; box-shadow: 0 0 0 5px rgba(22,163,74,0.1); }
+.ws .dot.person { border-radius: 50%; }
+.ws.human.active { background: rgba(233,77,53,0.12); }
+.ws.human.done .dot { background: var(--coral); border-color: var(--coral); }
+.steps2 { display: flex; gap: 10px; align-items: center; margin-bottom: 18px; }
+.steps2 span { font: 500 11px var(--mono); letter-spacing: .08em; text-transform: uppercase; color: var(--coral); }
+@media (max-width: 1180px) {
+  .su-stage { grid-template-columns: 1fr; gap: 20px; min-height: 0; }
+  .su-stage .wires { display: none; }
+  .su-stage .col.ins, .rb, .su-out { grid-column: 1; }
+}
+
+/* proof */
+.proof-head { max-width: 640px; margin-bottom: 56px; }
+.proof-head h2 { font-size: clamp(36px, 4.4vw, 60px); line-height: 1.04; margin-bottom: 22px; }
+.proof-head p { font-size: 17px; color: var(--ink-3); margin: 0; }
+.pfgrid { display: grid; grid-template-columns: repeat(3, 1fr); border: 1px solid var(--line); }
+.pfgrid > div { display: flex; flex-direction: column; min-height: 560px; padding: 40px 44px 44px; border-right: 1px solid var(--line); }
+.pfgrid > div:last-child { border-right: none; }
+.pfgrid .art { height: 270px; display: grid; place-items: center; margin-bottom: 36px; }
+.pfgrid .art svg { width: 100%; max-width: 300px; height: 100%; overflow: visible; }
+.pfgrid h3 { font-size: 30px; line-height: 1.12; letter-spacing: -0.035em; text-wrap: balance; }
+.pfgrid p { margin: auto 0 0; padding-top: 28px; font-size: 15.5px; color: var(--ink-3); max-width: 340px; }
+
+/* trust */
+.trust { background: var(--night); color: #F4F1EC; }
+.trust .inner { display: grid; grid-template-columns: auto 1fr 1fr; gap: 64px; align-items: center; padding-top: 110px; padding-bottom: 110px; }
+.seal { width: 230px; flex: none; }
+.seal img { width: 100%; height: auto; filter: drop-shadow(0 20px 40px rgba(0,0,0,0.45)); }
+.trust .kicker { color: #7C8190; margin-bottom: 18px; }
+.trust h2 { font-size: clamp(36px, 4.2vw, 58px); line-height: 1.04; }
+.trust ul { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--night-line); }
+.trust li { display: flex; justify-content: space-between; align-items: center; padding: 20px 0; border-bottom: 1px solid var(--night-line); font-size: 17px; color: #D9DCE3; }
+.trust li .mono { color: #7C8190; font-size: 10.5px; }
+.soc { display: inline-flex; align-items: center; gap: 12px; padding: 8px 16px 8px 8px; border: 1px solid var(--night-line); border-radius: 999px; font-size: 13px; color: #D9DCE3; margin-bottom: 26px; }
+.soc b { background: var(--coral); color: #fff; border-radius: 999px; padding: 3px 11px; font-weight: 600; font-size: 12px; }
+
+/* final */
+.final { background: var(--coral); color: #fff; overflow: hidden; position: relative; }
+.final::before { content: ""; position: absolute; inset: 0; background: radial-gradient(800px 400px at 50% 120%, rgba(0,0,0,0.18), transparent 70%); }
+.final .inner { padding: 130px 32px; text-align: center; position: relative; }
+.final h2 { font-size: clamp(34px, 3.9vw, 62px); line-height: 1.06; max-width: 1100px; margin: 0 auto 40px; text-wrap: balance; }
+.final h2 .accent { color: #2A0F0A; }
+.final .btn-dark:hover { background: #000; }
+footer { padding: 46px 0 40px; color: var(--ink-3); font-size: 13px; }
+footer .wrap { display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; }
+
+.rv { opacity: 0; transform: translateY(18px); transition: opacity .8s ease, transform .8s ease; }
+.rv.in { opacity: 1; transform: none; }
+
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; transition: none !important; } .rv { opacity: 1; transform: none; } }
+@media (max-width: 1180px) {
+  .wf { padding: 26px 18px; }
+  .wf-stage { grid-template-columns: 1fr; gap: 20px; min-height: 0; }
+  .wf-stage #wires { display: none; }
+  .col.ins, .col.outs, .card { grid-column: 1; }
+  .col { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+  .it .ico { width: 36px; height: 36px; } .it b { font-size: 14px; }
+}
+@media (max-width: 1080px) {
+  .trust .inner { grid-template-columns: 1fr; justify-items: start; }
+  .hero { height: auto; max-height: none; }
+  .hero .grid, .sec-head, .trust .inner { grid-template-columns: 1fr; }
+  .dia { justify-self: center; }
+  .nav .links { display: none; }
+  .pfgrid { grid-template-columns: 1fr; } .pfgrid > div { min-height: 0; border-right: none; border-bottom: 1px solid var(--line); } .pfgrid > div:last-child { border-bottom: none; } .pfgrid .art { height: 220px; }
+}
+@media (max-width: 760px) { .chip .wide { display: none; } }
+@media (max-width: 640px) {
+  .wrap { padding: 0 20px; } .panel { margin: 0 8px; border-radius: 20px; }
+  .nav { top: 16px; width: calc(100% - 32px); }
+  .hero { height: auto; max-height: none; } .hero .grid { padding: 120px 0 60px; }
+  .dia { width: 78%; margin: 20px auto; }
+  .chip { font-size: 11px; padding: 6px 10px 6px 6px; } .chip i { width: 18px; height: 18px; }
+  .pfgrid > div { padding: 32px 24px; } .pfgrid h3 { font-size: 26px; }
+  .sec { padding: 90px 0; } .statement { padding: 90px 20px 20px; }
+}
+</style>
+</head>
+<body>
+
+<div class="nav">
+  <a href="#top"><img src="./assets/lumifai-logo.png" alt="Lumif.ai" style="height:28px;width:auto" /></a>
+  <div class="links"><a href="#setup">Setup</a><a href="#how">How it works</a><a href="#trust">Security</a></div>
+  <a class="btn btn-coral" href="https://calendar.app.google/2CdKq8so5uTE4WYVA">Book a call</a>
+</div>
+
+<!-- HERO -->
+<div class="panel hero" id="top">
+  <div class="wrap">
+    <div class="grid">
+      <div>
+        <h1 id="headline">Complex work, <span class="accent">carried through.</span></h1>
+        <p class="sub">AI that learns how your operation works, does the work, and hands it to your experts to approve.</p>
+        <div class="ctas">
+          <a class="btn btn-coral" href="https://calendar.app.google/2CdKq8so5uTE4WYVA">Book a call <span>&rarr;</span></a>
+          <a class="btn btn-line" href="#how">How it works</a>
         </div>
       </div>
-    </section>
-
-    <!-- Capabilities -->
-    <section id="how-it-works" class="w-full scroll-mt-16 bg-canvas">
-      <div class="mx-auto flex max-w-[1440px] flex-col gap-10 px-6 py-12 md:flex-row md:justify-between md:px-12 md:py-16">
-        <div class="flex w-full max-w-[420px] shrink-0 flex-col gap-4">
-          <p class="text-[13px] font-semibold tracking-[0.06px] text-coral">HOW WE WORK</p>
-          <h2 class="font-display text-2xl font-semibold leading-tight tracking-[-0.01px] text-ink md:text-[28px]">
-            We own the workflow, not just one AI step.
-          </h2>
-          <p class="text-[15px] leading-[24px] text-ink-soft">
-            We start with a high-value workflow, learn how it actually operates, and build the
-            full path from incoming information to completed work and expert review.
-          </p>
+      <div class="dia" aria-hidden="true">
+        <div class="ring r1"></div><div class="ring r2"></div><div class="ring r3"></div>
+        <div class="orbit">
+          <span class="chip" style="left:50%;top:0%"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8zM14 3v5h5"/></svg></i>Documents</span>
+          <span class="chip" style="left:100%;top:50%"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m4 7 8 6 8-6"/></svg></i>Email</span>
+          <span class="chip" style="left:50%;top:100%"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M4 10h16M10 4v16"/></svg></i>Spreadsheets</span>
+          <span class="chip" style="left:0%;top:50%"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="6" rx="7" ry="3"/><path d="M5 6v12c0 1.7 3.1 3 7 3s7-1.3 7-3V6"/></svg></i><span>ERP · <span class="wide">CRM · </span>CLM</span></span>
         </div>
-        <div class="flex w-full max-w-[700px] flex-col">
-          <div class="flex gap-6 border-b border-rule py-4 first:pt-0 last:border-0">
-            <span class="text-[13px] font-semibold text-coral">01</span>
-            <div class="flex flex-col gap-1.5">
-              <h3 class="font-display text-base font-semibold text-ink">Understand the real operation</h3>
-              <p class="text-sm leading-[22px] text-ink-soft">
-                We learn the rules people follow, the exceptions nobody documented, and where
-                judgment genuinely matters.
-              </p>
-            </div>
-          </div>
-          <div class="flex gap-6 border-b border-rule py-4">
-            <span class="text-[13px] font-semibold text-coral">02</span>
-            <div class="flex flex-col gap-1.5">
-              <h3 class="font-display text-base font-semibold text-ink">Build the full working loop</h3>
-              <p class="text-sm leading-[22px] text-ink-soft">
-                Lumif.ai gathers the inputs, completes routine work, handles follow-up, and routes
-                edge cases for sign-off.
-              </p>
-            </div>
-          </div>
-          <div class="flex gap-6 border-b border-rule py-4">
-            <span class="text-[13px] font-semibold text-coral">03</span>
-            <div class="flex flex-col gap-1.5">
-              <h3 class="font-display text-base font-semibold text-ink">Deploy alongside your team</h3>
-              <p class="text-sm leading-[22px] text-ink-soft">
-                Our engineers build, validate, and refine the system with the people who know the
-                operation best.
-              </p>
-            </div>
-          </div>
-          <div class="flex gap-6 border-b border-rule py-4">
-            <span class="text-[13px] font-semibold text-coral">04</span>
-            <div class="flex flex-col gap-1.5">
-              <h3 class="font-display text-base font-semibold text-ink">Run where you already work</h3>
-              <p class="text-sm leading-[22px] text-ink-soft">
-                The system fits your infrastructure and controls, with a record of every action,
-                source, and decision.
-              </p>
-            </div>
-          </div>
-          <div class="flex gap-6 pt-4">
-            <span class="text-[13px] font-semibold text-coral">05</span>
-            <div class="flex flex-col gap-1.5">
-              <h3 class="font-display text-base font-semibold text-ink">Stay through production</h3>
-              <p class="text-sm leading-[22px] text-ink-soft">
-                We remain accountable as real volume, unusual cases, and changing operating rules
-                test the system.
-              </p>
-            </div>
-          </div>
+        <div class="orbit rev">
+          <span class="chip" style="left:85%;top:15%"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h10M4 18h7"/></svg></i>Rules</span>
+          <span class="chip hot" style="left:15%;top:85%"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6"/></svg></i>Your expert</span>
         </div>
+        <div class="core"><img src="./assets/lumifai-icon.png" alt="" /></div>
       </div>
-    </section>
-
-    <!-- Operating Model -->
-    <section class="w-full bg-canvas-deep">
-      <div class="mx-auto flex max-w-[1440px] flex-col gap-8 px-6 py-12 md:px-12 md:py-16">
-        <div class="flex max-w-[640px] flex-col gap-3">
-          <p class="text-[13px] font-semibold tracking-[0.06px] text-coral">WHAT THIS LOOKS LIKE</p>
-          <h2 class="font-display text-2xl font-semibold leading-tight tracking-[-0.01px] text-ink md:text-[28px]">
-            One operating model, across different kinds of work.
-          </h2>
-        </div>
-        <div class="grid grid-cols-1 gap-5 md:grid-cols-3">
-          <div class="flex flex-col gap-3 rounded-xl border border-rule bg-canvas p-6">
-            <p class="text-[11px] font-semibold tracking-[0.06px] text-ink-faint">REVIEW WORKFLOWS</p>
-            <h3 class="font-display text-base font-semibold text-ink">
-              From scattered evidence to a defensible determination
-            </h3>
-            <p class="text-sm leading-[22px] text-ink-soft">
-              Lumif.ai gathers the relevant material, checks it against requirements, and
-              escalates only the ambiguous cases.
-            </p>
-          </div>
-          <div class="flex flex-col gap-3 rounded-xl border border-rule bg-canvas p-6">
-            <p class="text-[11px] font-semibold tracking-[0.06px] text-ink-faint">RECONCILIATION</p>
-            <h3 class="font-display text-base font-semibold text-ink">
-              From inconsistent records to resolved differences
-            </h3>
-            <p class="text-sm leading-[22px] text-ink-soft">
-              Lumif.ai connects related records, identifies gaps and mismatches, and prepares the
-              resolution with its sources attached.
-            </p>
-          </div>
-          <div class="flex flex-col gap-3 rounded-xl border border-rule bg-canvas p-6">
-            <p class="text-[11px] font-semibold tracking-[0.06px] text-ink-faint">WORK PREPARATION</p>
-            <h3 class="font-display text-base font-semibold text-ink">
-              From raw inputs to a complete work product
-            </h3>
-            <p class="text-sm leading-[22px] text-ink-soft">
-              Lumif.ai assembles the information, applies the operating logic, and delivers work
-              that is ready to approve or act on.
-            </p>
-          </div>
-        </div>
+    </div>
+    <div class="hero-foot">
+      <span class="mono">Built by a team from</span>
+      <div class="logos">
+        <img src="./assets/mit.svg" alt="MIT" /><img class="harvard" src="./assets/harvard-mono.svg" alt="Harvard" /><img src="./assets/amazon.svg" alt="Amazon" /><img src="./assets/mckinsey.svg" alt="McKinsey" /><img src="./assets/abbott-C8Xh1rh_.png" alt="Abbott" /><img src="./assets/informatica-logo.png" alt="Informatica" />
       </div>
-    </section>
+    </div>
+  </div>
+</div>
 
-    <!-- Security -->
-    <section id="security" class="w-full scroll-mt-16 bg-canvas-deep">
-      <div class="mx-auto flex max-w-[1440px] flex-col gap-8 px-6 py-12 md:px-12 md:py-16">
-        <div class="flex flex-col items-start gap-6 md:flex-row md:items-center">
-          <div class="flex w-36 shrink-0 flex-col items-center gap-2 rounded-xl border border-rule bg-canvas px-4 py-5">
-            <span class="flex h-10 w-10 items-center justify-center rounded-full bg-canvas-tint">
-              <svg viewBox="0 0 24 24" fill="none" class="h-5 w-5">
-                <path d="M12 2 4 5v6c0 5 3.4 8.7 8 10 4.6-1.3 8-5 8-10V5l-8-3Z" stroke="#E94D35" stroke-width="1.6"/>
-                <path d="m9 12 2 2 4-4" stroke="#E94D35" stroke-width="1.6"/>
-              </svg>
-            </span>
-            <p class="font-display text-base font-semibold text-ink">SOC 2</p>
-            <p class="text-[10.5px] font-medium tracking-[0.08px] text-ink-faint">TYPE II</p>
-          </div>
-          <div class="flex flex-col gap-2.5">
-            <p class="text-[13px] font-semibold tracking-[0.06px] text-coral">SECURITY</p>
-            <h2 class="font-display text-2xl font-semibold leading-tight tracking-[-0.01px] text-ink md:text-[28px]">
-              Enterprise-grade security, from day one.
-            </h2>
-            <p class="text-[14.5px] leading-[23px] text-ink-soft">
-              Every system is designed to satisfy the people whose job is to say no—not bolted on
-              after the fact.
-            </p>
-          </div>
-        </div>
-        <div class="grid grid-cols-1 gap-5 sm:grid-cols-2 md:grid-cols-4 md:gap-0">
-          <div class="flex gap-3 border-rule pr-7 md:border-r">
-            <svg viewBox="0 0 24 24" fill="none" class="mt-0.5 h-[18px] w-[18px] shrink-0">
-              <rect x="4" y="10" width="16" height="10" rx="2" stroke="#E94D35" stroke-width="1.6"/>
-              <path d="M8 10V7a4 4 0 0 1 8 0v3" stroke="#E94D35" stroke-width="1.6"/>
-            </svg>
-            <div class="flex flex-col gap-1">
-              <p class="text-sm font-medium text-ink">Encrypted everywhere</p>
-              <p class="text-[13px] leading-[19px] text-ink-soft">In transit and at rest, by default.</p>
-            </div>
-          </div>
-          <div class="flex gap-3 border-rule px-0 md:border-r md:px-7">
-            <svg viewBox="0 0 24 24" fill="none" class="mt-0.5 h-[18px] w-[18px] shrink-0">
-              <circle cx="8.5" cy="8.5" r="4.5" stroke="#E94D35" stroke-width="1.6"/>
-              <path d="m11.8 11.8 8.7 8.7" stroke="#E94D35" stroke-width="1.6" stroke-linecap="round"/>
-              <path d="m15.5 15.5 2-2M18 18l2-2" stroke="#E94D35" stroke-width="1.6" stroke-linecap="round"/>
-            </svg>
-            <div class="flex flex-col gap-1">
-              <p class="text-sm font-medium text-ink">Role-based access</p>
-              <p class="text-[13px] leading-[19px] text-ink-soft">Your team controls who sees what.</p>
-            </div>
-          </div>
-          <div class="flex gap-3 border-rule px-0 md:border-r md:px-7">
-            <svg viewBox="0 0 24 24" fill="none" class="mt-0.5 h-[18px] w-[18px] shrink-0">
-              <path d="M4 21V7l8-4 8 4v14" stroke="#E94D35" stroke-width="1.6"/>
-              <path d="M9 21v-6h6v6M4 21h16" stroke="#E94D35" stroke-width="1.6"/>
-            </svg>
-            <div class="flex flex-col gap-1">
-              <p class="text-sm font-medium text-ink">Runs in your environment</p>
-              <p class="text-[13px] leading-[19px] text-ink-soft">Deploy inside your infrastructure.</p>
-            </div>
-          </div>
-          <div class="flex gap-3 md:pl-7">
-            <svg viewBox="0 0 24 24" fill="none" class="mt-0.5 h-[18px] w-[18px] shrink-0">
-              <path d="M7 3h10a2 2 0 0 1 2 2v14l-3-2-2 2-2-2-2 2-2-2-3 2V5a2 2 0 0 1 2-2Z" stroke="#E94D35" stroke-width="1.6"/>
-              <path d="M9 8h6M9 12h6" stroke="#E94D35" stroke-width="1.6" stroke-linecap="round"/>
-            </svg>
-            <div class="flex flex-col gap-1">
-              <p class="text-sm font-medium text-ink">Full audit trail</p>
-              <p class="text-[13px] leading-[19px] text-ink-soft">Every action is logged and reviewable.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+<!-- STATEMENT -->
+<div class="wrap statement rv">
+  <p><b>Your experts spend their day preparing work.</b> Not on the judgment calls only they can make.</p>
+</div>
 
-    <!-- CTA -->
-    <section class="w-full bg-ink">
-      <div class="mx-auto flex max-w-[1440px] flex-col items-center gap-6 px-6 py-14 text-center md:py-20">
-        <h2 class="font-display max-w-[700px] text-2xl font-semibold leading-tight tracking-[-0.02px] text-white md:text-[32px] md:leading-[38px]">
-          Show us the work your team should not be doing manually.
-        </h2>
-        <p class="max-w-[560px] text-[15px] leading-[24px] text-white/80">
-          We'll help you identify where an AI system can own the workflow while your experts keep
-          the judgment.
-        </p>
-        <div class="flex flex-wrap items-center justify-center gap-3.5">
-          <a
-            href="https://calendar.app.google/yCkohjq1SaCbX9Rr8"
-            target="_blank"
-            rel="noopener"
-            class="rounded-xl bg-coral px-6 py-3 text-sm font-medium text-white hover:bg-coral/90"
-          >
-            Discuss a workflow
-          </a>
-          <a
-            href="#how-it-works"
-            class="rounded-xl border border-white/25 px-6 py-3 text-sm font-medium text-white hover:bg-white/10"
-          >
-            See how it works
-          </a>
+<!-- SETUP -->
+<section class="sec" id="setup">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div><div class="label mono">Step 1 · Setup</div><h2>It learns your rules. <span class="accent">You don't write them.</span></h2></div>
+      <p>Lumif.ai reads how your team already works and drafts the rules for you, each one linked to where it came from. Your expert confirms them. No rule-writing, no rebuilds.</p>
+    </div>
+    <div class="wf rv">
+      <div class="su-stage" id="suStage">
+        <svg class="wires" id="suWires"></svg>
+        <div class="col ins" id="suIns"></div>
+        <div class="rb" id="rb">
+          <div class="top"><b>Your rulebook</b><span class="mono">Drafted by Lumif.ai</span></div>
+          <div id="rules"></div>
+          <div class="foot" id="suFoot"><span class="pill">Learning</span><span id="suText">Reading how your team works</span></div>
         </div>
+        <div class="su-out col" id="suOut"></div>
       </div>
-    </section>
+    </div>
+  </div>
+</section>
 
-    <!-- Footer -->
-    <footer class="w-full bg-ink">
-      <div class="mx-auto max-w-[1440px] px-6 pb-10 md:px-12">
-        <div class="h-px w-full bg-white/15"></div>
-        <div class="flex max-w-[320px] flex-col items-start gap-3 pt-8">
-          <img src="./assets/lumifai-logo.png" alt="Lumif.ai" class="h-6 w-auto self-start" />
-          <p class="text-[13px] leading-[21px] text-white/60">
-            AI systems for complex operational work.
-          </p>
+<!-- HOW IT WORKS -->
+<section class="sec" id="how">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div><div class="label mono">Step 2 · Every day</div><h2>It does the work. <span class="accent">Your expert signs off.</span></h2></div>
+      <p>Every case is prepared and checked, then handed to your expert to approve. Once approved, it is saved to your system of record.</p>
+    </div>
+    <div class="wf rv">
+      <div class="wf-stage" id="stage">
+        <svg id="wires"></svg>
+        <div class="col ins" id="ins"></div>
+        <div class="card" id="card">
+          <div class="top"><img src="./assets/lumifai-icon.png" alt="" />Lumif.ai</div>
+          <div class="wsteps" id="wsteps"></div>
+          <div class="prog"><span id="prog"></span></div>
         </div>
-        <p class="mt-8 text-xs text-white/40">
-          © 2026 Lumif.ai — All rights reserved ·
-          <a href="https://lumif.ai/privacy-policy" class="hover:text-white/70">Privacy Policy</a>
-        </p>
+        <div class="col outs" id="outs"></div>
       </div>
-    </footer>
-  </body>
+    </div>
+  </div>
+</section>
+
+<!-- PRINCIPLES -->
+<section class="sec" id="proof" style="padding-top:40px">
+  <div class="wrap">
+    <div class="proof-head rv">
+      <h2>AI outcomes, proven in the enterprise.</h2>
+      <p>Running inside global leaders that operate across 100+ countries.</p>
+    </div>
+    <div class="pfgrid rv">
+      <div><div class="art"><svg viewBox="0 0 340 260" aria-hidden="true"><polygon points="140.6,202.0 170.0,219.0 170.0,185.0 140.6,168.0" fill="#F1ECE4" stroke="#B3AB9E" stroke-width=".8" stroke-linejoin="round"/><polygon points="199.4,202.0 170.0,219.0 170.0,185.0 199.4,168.0" fill="#E7E0D4" stroke="#B3AB9E" stroke-width=".8" stroke-linejoin="round"/><polygon points="170.0,151.0 199.4,168.0 170.0,185.0 140.6,168.0" fill="#FDFBF8" stroke="#B3AB9E" stroke-width=".8" stroke-linejoin="round"/><polygon points="170.0,219.0 199.4,236.0 199.4,202.0 170.0,185.0" fill="#F1ECE4" stroke="#B3AB9E" stroke-width=".8" stroke-linejoin="round"/><polygon points="228.9,219.0 199.4,236.0 199.4,202.0 228.9,185.0" fill="#E7E0D4" stroke="#B3AB9E" stroke-width=".8" stroke-linejoin="round"/><polygon points="199.4,168.0 228.9,185.0 199.4,202.0 170.0,185.0" fill="#FDFBF8" stroke="#B3AB9E" stroke-width=".8" stroke-linejoin="round"/><polygon points="111.1,219.0 140.6,236.0 140.6,202.0 111.1,185.0" fill="#F1ECE4" stroke="#B3AB9E" stroke-width=".8" stroke-linejoin="round"/><polygon points="170.0,219.0 140.6,236.0 140.6,202.0 170.0,185.0" fill="#E7E0D4" stroke="#B3AB9E" stroke-width=".8" stroke-linejoin="round"/><polygon points="140.6,168.0 170.0,185.0 140.6,202.0 111.1,185.0" fill="#FDFBF8" stroke="#B3AB9E" stroke-width=".8" stroke-linejoin="round"/><polygon points="140.6,236.0 170.0,253.0 170.0,219.0 140.6,202.0" fill="#F1ECE4" stroke="#B3AB9E" stroke-width=".8" stroke-linejoin="round"/><polygon points="199.4,236.0 170.0,253.0 170.0,219.0 199.4,202.0" fill="#E7E0D4" stroke="#B3AB9E" stroke-width=".8" stroke-linejoin="round"/><polygon points="170.0,185.0 199.4,202.0 170.0,219.0 140.6,202.0" fill="#FDFBF8" stroke="#B3AB9E" stroke-width=".8" stroke-linejoin="round"/><polygon points="140.6,168.0 170.0,185.0 170.0,151.0 140.6,134.0" fill="#F1ECE4" stroke="#B3AB9E" stroke-width=".8" stroke-linejoin="round"/><polygon points="199.4,168.0 170.0,185.0 170.0,151.0 199.4,134.0" fill="#E7E0D4" stroke="#B3AB9E" stroke-width=".8" stroke-linejoin="round"/><polygon points="170.0,117.0 199.4,134.0 170.0,151.0 140.6,134.0" fill="#FDFBF8" stroke="#B3AB9E" stroke-width=".8" stroke-linejoin="round"/><polygon points="170.0,185.0 199.4,202.0 199.4,168.0 170.0,151.0" fill="#F1ECE4" stroke="#B3AB9E" stroke-width=".8" stroke-linejoin="round"/><polygon points="228.9,185.0 199.4,202.0 199.4,168.0 228.9,151.0" fill="#E7E0D4" stroke="#B3AB9E" stroke-width=".8" stroke-linejoin="round"/><polygon points="199.4,134.0 228.9,151.0 199.4,168.0 170.0,151.0" fill="#FDFBF8" stroke="#B3AB9E" stroke-width=".8" stroke-linejoin="round"/><polygon points="111.1,185.0 140.6,202.0 140.6,168.0 111.1,151.0" fill="#F1ECE4" stroke="#B3AB9E" stroke-width=".8" stroke-linejoin="round"/><polygon points="170.0,185.0 140.6,202.0 140.6,168.0 170.0,151.0" fill="#E7E0D4" stroke="#B3AB9E" stroke-width=".8" stroke-linejoin="round"/><polygon points="140.6,134.0 170.0,151.0 140.6,168.0 111.1,151.0" fill="#FDFBF8" stroke="#B3AB9E" stroke-width=".8" stroke-linejoin="round"/><polygon points="140.6,134.0 170.0,151.0 170.0,117.0 140.6,100.0" fill="#F1ECE4" stroke="#B3AB9E" stroke-width=".8" stroke-linejoin="round"/><polygon points="199.4,134.0 170.0,151.0 170.0,117.0 199.4,100.0" fill="#E7E0D4" stroke="#B3AB9E" stroke-width=".8" stroke-linejoin="round"/><polygon points="170.0,83.0 199.4,100.0 170.0,117.0 140.6,100.0" fill="#FDFBF8" stroke="#B3AB9E" stroke-width=".8" stroke-linejoin="round"/><polygon points="140.6,100.0 170.0,117.0 170.0,83.0 140.6,66.0" fill="#F1ECE4" stroke="#B3AB9E" stroke-width=".8" stroke-linejoin="round"/><polygon points="199.4,100.0 170.0,117.0 170.0,83.0 199.4,66.0" fill="#E7E0D4" stroke="#B3AB9E" stroke-width=".8" stroke-linejoin="round"/><polygon points="170.0,49.0 199.4,66.0 170.0,83.0 140.6,66.0" fill="#FDFBF8" stroke="#B3AB9E" stroke-width=".8" stroke-linejoin="round"/><polygon points="140.6,66.0 170.0,83.0 170.0,18.4" fill="#E94D35" stroke="#C93C26" stroke-width=".8" stroke-linejoin="round"/><polygon points="199.4,66.0 170.0,83.0 170.0,18.4" fill="#C93C26" stroke="#C93C26" stroke-width=".8" stroke-linejoin="round"/></svg></div><h3>Trusted by Fortune 500s</h3><p>Partnering with leaders across insurance, MedTech and travel.</p></div>
+      <div><div class="art"><svg viewBox="0 0 340 260" aria-hidden="true"><line x1="110.2" y1="88.5" x2="170.0" y2="135.0" stroke="#B3AB9E" stroke-width=".9" stroke-dasharray="3 4"/><line x1="229.8" y1="88.5" x2="170.0" y2="135.0" stroke="#B3AB9E" stroke-width=".9" stroke-dasharray="3 4"/><line x1="227.2" y1="171.0" x2="170.0" y2="135.0" stroke="#B3AB9E" stroke-width=".9" stroke-dasharray="3 4"/><line x1="112.8" y1="171.0" x2="170.0" y2="135.0" stroke="#B3AB9E" stroke-width=".9" stroke-dasharray="3 4"/><polygon points="89.5,88.5 110.2,100.5 110.2,76.5 89.5,64.5" fill="#F1ECE4" stroke="#B3AB9E" stroke-width=".8" stroke-linejoin="round"/><polygon points="131.0,88.5 110.2,100.5 110.2,76.5 131.0,64.5" fill="#E7E0D4" stroke="#B3AB9E" stroke-width=".8" stroke-linejoin="round"/><polygon points="110.2,52.5 131.0,64.5 110.2,76.5 89.5,64.5" fill="#FDFBF8" stroke="#B3AB9E" stroke-width=".8" stroke-linejoin="round"/><polygon points="209.0,88.5 229.8,100.5 229.8,76.5 209.0,64.5" fill="#F1ECE4" stroke="#B3AB9E" stroke-width=".8" stroke-linejoin="round"/><polygon points="250.5,88.5 229.8,100.5 229.8,76.5 250.5,64.5" fill="#E7E0D4" stroke="#B3AB9E" stroke-width=".8" stroke-linejoin="round"/><polygon points="229.8,52.5 250.5,64.5 229.8,76.5 209.0,64.5" fill="#FDFBF8" stroke="#B3AB9E" stroke-width=".8" stroke-linejoin="round"/><polygon points="144.0,135.0 170.0,150.0 170.0,111.0 144.0,96.0" fill="#E94D35" stroke="#C93C26" stroke-width=".8" stroke-linejoin="round"/><polygon points="196.0,135.0 170.0,150.0 170.0,111.0 196.0,96.0" fill="#C93C26" stroke="#C93C26" stroke-width=".8" stroke-linejoin="round"/><polygon points="170.0,81.0 196.0,96.0 170.0,111.0 144.0,96.0" fill="#F27A66" stroke="#C93C26" stroke-width=".8" stroke-linejoin="round"/><polygon points="206.4,171.0 227.2,183.0 227.2,159.0 206.4,147.0" fill="#F1ECE4" stroke="#B3AB9E" stroke-width=".8" stroke-linejoin="round"/><polygon points="247.9,171.0 227.2,183.0 227.2,159.0 247.9,147.0" fill="#E7E0D4" stroke="#B3AB9E" stroke-width=".8" stroke-linejoin="round"/><polygon points="227.2,135.0 247.9,147.0 227.2,159.0 206.4,147.0" fill="#FDFBF8" stroke="#B3AB9E" stroke-width=".8" stroke-linejoin="round"/><polygon points="92.1,171.0 112.8,183.0 112.8,159.0 92.1,147.0" fill="#F1ECE4" stroke="#B3AB9E" stroke-width=".8" stroke-linejoin="round"/><polygon points="133.6,171.0 112.8,183.0 112.8,159.0 133.6,147.0" fill="#E7E0D4" stroke="#B3AB9E" stroke-width=".8" stroke-linejoin="round"/><polygon points="112.8,135.0 133.6,147.0 112.8,159.0 92.1,147.0" fill="#FDFBF8" stroke="#B3AB9E" stroke-width=".8" stroke-linejoin="round"/></svg></div><h3>One platform, every complex operation</h3><p>From global pricing to insurance operations to contract compliance.</p></div>
+      <div><div class="art"><svg viewBox="0 0 340 260" aria-hidden="true"><line x1="28.8" y1="110.2" x2="213.1" y2="216.6" stroke="#B3AB9E" stroke-width=".9" stroke-dasharray="3 4"/><polygon points="45.8,134.0 70.0,148.0 70.0,120.0 45.8,106.0" fill="#F1ECE4" stroke="#B3AB9E" stroke-width=".8" stroke-linejoin="round"/><polygon points="94.2,134.0 70.0,148.0 70.0,120.0 94.2,106.0" fill="#E7E0D4" stroke="#B3AB9E" stroke-width=".8" stroke-linejoin="round"/><polygon points="70.0,92.0 94.2,106.0 70.0,120.0 45.8,106.0" fill="#FDFBF8" stroke="#B3AB9E" stroke-width=".8" stroke-linejoin="round"/><polygon points="84.5,156.4 108.8,170.4 108.8,142.4 84.5,128.4" fill="#F1ECE4" stroke="#B3AB9E" stroke-width=".8" stroke-linejoin="round"/><polygon points="133.0,156.4 108.8,170.4 108.8,142.4 133.0,128.4" fill="#E7E0D4" stroke="#B3AB9E" stroke-width=".8" stroke-linejoin="round"/><polygon points="108.8,114.4 133.0,128.4 108.8,142.4 84.5,128.4" fill="#FDFBF8" stroke="#B3AB9E" stroke-width=".8" stroke-linejoin="round"/><polygon points="123.3,178.8 147.6,192.8 147.6,164.8 123.3,150.8" fill="#F1ECE4" stroke="#B3AB9E" stroke-width=".8" stroke-linejoin="round"/><polygon points="171.8,178.8 147.6,192.8 147.6,164.8 171.8,150.8" fill="#E7E0D4" stroke="#B3AB9E" stroke-width=".8" stroke-linejoin="round"/><polygon points="147.6,136.8 171.8,150.8 147.6,164.8 123.3,150.8" fill="#FDFBF8" stroke="#B3AB9E" stroke-width=".8" stroke-linejoin="round"/><polygon points="162.1,201.2 186.4,215.2 186.4,156.4" fill="#E94D35" stroke="#C93C26" stroke-width=".8" stroke-linejoin="round"/><polygon points="210.6,201.2 186.4,215.2 186.4,156.4" fill="#C93C26" stroke="#C93C26" stroke-width=".8" stroke-linejoin="round"/><path d="M209.9,210.4 L217.9,219.4 L206.9,220.4" fill="none" stroke="#B3AB9E" stroke-width=".9"/></svg></div><h3>Measurable outcomes in weeks</h3><p>A first workflow running on your own documents in weeks, not quarters.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST -->
+<div class="panel trust" id="trust">
+  <div class="wrap inner">
+    <div class="seal rv"><img src="./assets/soc2-official.png" alt="AICPA SOC 2 Type 2" /></div>
+    <div class="rv"><div class="mono kicker">SOC 2 Type 2 audited</div><h2>Privacy-first <span class="accent">architecture.</span></h2></div>
+    <ul class="rv">
+      <li>Runs in your environment <span class="mono">01</span></li>
+      <li>Encrypted in transit and at rest <span class="mono">02</span></li>
+      <li>Every action on record <span class="mono">03</span></li>
+    </ul>
+  </div>
+</div>
+
+<!-- FINAL -->
+<div style="height:16px"></div>
+<div class="panel final">
+  <div class="inner">
+    <h2>Bring one workflow.<br /><span class="accent">See it run on your own documents.</span></h2>
+    <a class="btn btn-dark" href="https://calendar.app.google/2CdKq8so5uTE4WYVA">Book a call <span>&rarr;</span></a>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <img src="./assets/lumifai-logo.png" alt="Lumif.ai" style="height:24px;width:auto" />
+    <span>&copy; 2026 Lumif.ai · <a href="https://lumif.ai/privacy-policy">Privacy Policy</a></span>
+  </div>
+</footer>
+
+
+
+<script>
+// workflow loop
+(() => {
+  const I = {
+    doc: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h4"/></svg>',
+    sheet: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M4 10h16M4 15h16M10 4v16"/></svg>',
+    mail: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m4 7 8 6 8-6"/></svg>',
+    db: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><ellipse cx="12" cy="6" rx="7" ry="3"/><path d="M5 6v12c0 1.7 3.1 3 7 3s7-1.3 7-3V6M5 12c0 1.7 3.1 3 7 3s7-1.3 7-3"/></svg>',
+    check: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="m8 12 3 3 5-6"/></svg>',
+    user: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="8" r="4"/><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6"/></svg>'
+  };
+  const ins = [['doc','Documents'], ['mail','Email'], ['sheet','Spreadsheets'], ['db','Records']];
+  const outs = [['user','Your expert approves','expert'], ['db','Your system of record']];
+  // [label, inputs lit, outputs lit, flag]
+  const steps = [ ['Read', [0,1,2,3], []], ['Understand', [3], []], ['Apply your rules', [], []], ['Prepare the work', [], []], ['Your expert reviews', [], [0], 'human', 'Approved by your expert'], ['Saved to your system', [], [1]] ];
+  const $ = id => document.getElementById(id);
+  const stage = $('stage'), svg = $('wires'), insEl = $('ins'), outsEl = $('outs'), card = $('card');
+  const item = x => `<div class="it ${x[2]||''}"><div class="ico">${I[x[0]]}</div><b>${x[1]}</b></div>`;
+  insEl.innerHTML = ins.map(item).join(''); outsEl.innerHTML = outs.map(item).join('');
+  $('wsteps').innerHTML = steps.map(s => `<div class="ws"><span class="dot"></span><b>${s[0]}</b></div>`).join('');
+  let si = -1;
+  function wires() {
+    if (getComputedStyle(svg).display === 'none') return;
+    const R = stage.getBoundingClientRect(), C = card.getBoundingClientRect(); let html = '';
+    svg.setAttribute('viewBox', `0 0 ${R.width} ${R.height}`);
+    [...insEl.children].forEach((el, k, a) => { const t = el.querySelector('b').getBoundingClientRect(), r = el.querySelector('.ico').getBoundingClientRect();
+      const x1 = t.right - R.left + 16, y1 = r.top + r.height/2 - R.top, x2 = C.left - R.left, y2 = C.top - R.top + C.height*(0.3 + 0.4*k/(a.length-1)), mx = (x1+x2)/2;
+      html += `<path class="ln" id="li${k}" d="M${x1} ${y1} C ${mx} ${y1}, ${mx} ${y2}, ${x2} ${y2}"/>`; });
+    [...outsEl.children].forEach((el, k, a) => { const r = el.querySelector('.ico').getBoundingClientRect();
+      const x1 = C.right - R.left, y1 = C.top - R.top + C.height*(0.4 + 0.2*k/(a.length-1)), x2 = r.left - R.left - 12, y2 = r.top + r.height/2 - R.top, mx = (x1+x2)/2;
+      html += `<path class="ln" id="lo${k}" d="M${x1} ${y1} C ${mx} ${y1}, ${mx} ${y2}, ${x2} ${y2}"/>`; });
+    svg.innerHTML = html; light();
+  }
+  function light() {
+    const st = steps[si];
+    [...insEl.children].forEach((el, k) => { const on = !!(st && st[1].includes(k)); el.classList.toggle('on', on); $('li'+k) && $('li'+k).classList.toggle('live', on); });
+    [...outsEl.children].forEach((el, k) => { const on = !!(st && st[2].includes(k)); el.classList.toggle('on', on); $('lo'+k) && $('lo'+k).classList.toggle('live', on); });
+  }
+  function tick() {
+    const rows = [...document.querySelectorAll('#wsteps .ws')];
+    if (si >= 0) { rows[si].classList.remove('active'); rows[si].classList.add('done'); if (steps[si][4]) rows[si].querySelector('b').textContent = steps[si][4]; }
+    si++;
+    if (si < steps.length) { rows[si].classList.add('active'); if (steps[si][3] === 'human') rows[si].classList.add('human'); $('prog').style.width = ((si + 1) / steps.length * 100) + '%'; light(); setTimeout(tick, steps[si][3] ? 2600 : 1400); }
+    else { si = -1; light(); setTimeout(() => { rows.forEach((r, k) => { r.className = 'ws'; r.querySelector('b').textContent = steps[k][0]; }); $('prog').style.width = '0'; tick(); }, 2600); }
+  }
+  addEventListener('resize', wires); document.fonts && document.fonts.ready.then(wires);
+  requestAnimationFrame(wires); setTimeout(tick, 800);
+})();
+
+// setup: rules drafted from sources, confirmed by your expert
+(() => {
+  const I = {
+    book: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 5a2 2 0 0 1 2-2h13v16H6a2 2 0 0 0-2 2z"/><path d="M4 21V5M8 7h7"/></svg>',
+    doc: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h4"/></svg>',
+    hist: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 12a9 9 0 1 0 3-6.7L3 8"/><path d="M3 3v5h5M12 7v5l3 2"/></svg>',
+    app: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="4" width="18" height="12" rx="2"/><path d="M8 20h8M12 16v4"/></svg>',
+    team: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="9" cy="8" r="3.5"/><path d="M2.5 20c1-3.5 3.5-5 6.5-5s5.5 1.5 6.5 5"/><circle cx="17" cy="9" r="2.5"/><path d="M16 14.5c2.6 0 4.5 1.5 5.5 4.5"/></svg>',
+    go: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="m8 5 11 7-11 7z"/></svg>'
+  };
+  const src = [['book','Policies and manuals'], ['doc','Contracts'], ['hist','Past decisions'], ['app','Your current software'], ['team','Your team']];
+  // abstract rule shapes: numbers are slot widths, strings are operators
+  const rules = [
+    [['IF',3,'≥',2,'→',4], 0],
+    [[3,'=','Σ','(',2,'×',2,')','−',1], 1],
+    [[3,'∈','{',1,',',1,',',1,'}'], 2],
+    [['IF',2,'≠',3,'→',2], 3],
+    [[2,'=','MIN','(',2,',',3,')'], 1],
+    [['IF',3,'AND','NOT',2,'→',3], 4],
+    [[2,'≤',1,'×',3], 0],
+    [[4,'=','ROUND','(',2,'÷',2,')'], 3],
+    [['WHEN',2,'<',1,'→',3], 2],
+    [[2,'=',3,'+','Δ',2], 1]
+  ];
+  const tok = t => typeof t === 'number' ? `<span class="tk" style="width:${t*15}px"></span>` : `<span class="op${/^[A-Z]{2,}$/.test(t) ? ' kw' : ''}">${t}</span>`;
+  const $ = id => document.getElementById(id);
+  const stage = $('suStage'), svg = $('suWires'), insEl = $('suIns'), outEl = $('suOut'), rb = $('rb');
+  const item = (x, c) => `<div class="it ${c||''}"><div class="ico">${I[x[0]]}</div><b>${x[1]}</b></div>`;
+  insEl.innerHTML = src.map(x => item(x)).join('');
+  outEl.innerHTML = item(['go','Ready to run'], 'go');
+  $('rules').innerHTML = '<div id="rulesIn">' + rules.map(r => `<div class="rule"><div class="expr">${r[0].map(tok).join('')}</div><small>From ${src[r[1]][1].toLowerCase()}</small><span class="st">Waiting</span></div>`).join('') + '</div>';
+  function wires() {
+    if (getComputedStyle(svg).display === 'none') return;
+    const R = stage.getBoundingClientRect(), C = rb.getBoundingClientRect(); let html = '';
+    svg.setAttribute('viewBox', `0 0 ${R.width} ${R.height}`);
+    [...insEl.children].forEach((el, k, a) => { const t = el.querySelector('b').getBoundingClientRect(), r = el.querySelector('.ico').getBoundingClientRect();
+      const x1 = t.right - R.left + 16, y1 = r.top + r.height/2 - R.top, x2 = C.left - R.left, y2 = C.top - R.top + C.height*(0.25 + 0.5*k/(a.length-1)), mx = (x1+x2)/2;
+      html += `<path class="ln" id="sl${k}" d="M${x1} ${y1} C ${mx} ${y1}, ${mx} ${y2}, ${x2} ${y2}"/>`; });
+    const o = outEl.querySelector('.ico').getBoundingClientRect(), x1 = C.right - R.left, y1 = C.top - R.top + C.height/2, x2 = o.left - R.left - 12, y2 = o.top + o.height/2 - R.top, mx = (x1+x2)/2;
+    html += `<path class="ln" id="slo" d="M${x1} ${y1} C ${mx} ${y1}, ${mx} ${y2}, ${x2} ${y2}"/>`;
+    svg.innerHTML = html;
+  }
+  const lit = (k) => { [...insEl.children].forEach((el, j) => { el.classList.toggle('on', j === k); const l = $('sl'+j); l && l.classList.toggle('live', j === k); }); };
+  let i = 0;
+  function run() {
+    const rows = [...document.querySelectorAll('#rules .rule')];
+    if (i < rules.length) {
+      const r = rows[i]; const box = $('rules'), inner = $('rulesIn'); const shift = Math.max(0, r.offsetTop - box.clientHeight * 0.55); inner.style.transform = `translateY(${-shift}px)`; r.classList.add('sug'); r.querySelector('.st').textContent = 'Suggested'; lit(rules[i][1]);
+      $('suText').textContent = 'Drafting from ' + src[rules[i][1]][1].toLowerCase();
+      setTimeout(() => { r.classList.remove('sug'); r.classList.add('ok'); r.querySelector('.st').textContent = 'Confirmed'; i++; setTimeout(run, 200); }, 900);
+    } else {
+      lit(-1); $('suFoot').className = 'foot ok'; $('suFoot').querySelector('.pill').textContent = 'Ready'; $('suText').textContent = 'Confirmed by your expert. Ready to run.';
+      outEl.querySelector('.it').classList.add('on'); const l = $('slo'); l && l.classList.add('live');
+      setTimeout(() => { $('rulesIn').style.transform = 'translateY(0)'; rows.forEach(r => { r.className = 'rule'; r.querySelector('.st').textContent = 'Waiting'; }); outEl.querySelector('.it').classList.remove('on'); l && l.classList.remove('live');
+        $('suFoot').className = 'foot'; $('suFoot').querySelector('.pill').textContent = 'Learning'; $('suText').textContent = 'Reading how your team works'; i = 0; setTimeout(run, 600); }, 3000);
+    }
+  }
+  addEventListener('resize', wires); document.fonts && document.fonts.ready.then(wires);
+  requestAnimationFrame(wires); setTimeout(run, 900);
+})();
+
+// reveal on scroll
+(() => {
+  const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { threshold: 0.12 });
+  document.querySelectorAll('.rv').forEach(el => io.observe(el));
+})();
+
+</script>
+</body>
 </html>
