@@ -182,12 +182,17 @@ h1, h2, h3 { margin: 0; font-family: var(--display); font-weight: var(--display-
   .su-stage .col.ins, .rb, .su-out { grid-column: 1; }
 }
 
-/* principles */
-.pgrid { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid var(--line); }
-.pgrid div { padding: 34px 34px 0 0; }
-.pgrid .mono { color: var(--coral); font-size: 10.5px; }
-.pgrid h3 { font-size: 28px; line-height: 1.15; margin: 22px 0 12px; }
-.pgrid p { margin: 0; color: var(--ink-3); font-size: 15.5px; max-width: 320px; }
+/* proof */
+.proof-head { max-width: 640px; margin-bottom: 56px; }
+.proof-head h2 { font-size: clamp(36px, 4.4vw, 60px); line-height: 1.04; margin-bottom: 22px; }
+.proof-head p { font-size: 17px; color: var(--ink-3); margin: 0; }
+.pfgrid { display: grid; grid-template-columns: repeat(3, 1fr); border: 1px solid var(--line); }
+.pfgrid > div { display: flex; flex-direction: column; min-height: 560px; padding: 40px 44px 44px; border-right: 1px solid var(--line); }
+.pfgrid > div:last-child { border-right: none; }
+.pfgrid .art { height: 270px; display: grid; place-items: center; margin-bottom: 36px; }
+.pfgrid .art svg { width: 100%; max-width: 300px; height: 100%; overflow: visible; }
+.pfgrid h3 { font-size: 30px; line-height: 1.12; letter-spacing: -0.035em; text-wrap: balance; }
+.pfgrid p { margin: auto 0 0; padding-top: 28px; font-size: 15.5px; color: var(--ink-3); max-width: 340px; }
 
 /* trust */
 .trust { background: var(--night); color: #F4F1EC; }
@@ -230,6 +235,7 @@ footer .wrap { display: flex; justify-content: space-between; align-items: cente
   .hero .grid, .sec-head, .trust .inner { grid-template-columns: 1fr; }
   .dia { justify-self: center; }
   .nav .links { display: none; }
+  .pfgrid { grid-template-columns: 1fr; } .pfgrid > div { min-height: 0; border-right: none; border-bottom: 1px solid var(--line); } .pfgrid > div:last-child { border-bottom: none; } .pfgrid .art { height: 220px; }
 }
 @media (max-width: 640px) {
   .wrap { padding: 0 20px; } .panel { margin: 0 8px; border-radius: 20px; }
@@ -237,7 +243,7 @@ footer .wrap { display: flex; justify-content: space-between; align-items: cente
   .hero { height: auto; max-height: none; } .hero .grid { padding: 120px 0 60px; }
   .dia { width: 78%; margin: 20px auto; }
   .chip { font-size: 11px; padding: 6px 10px 6px 6px; } .chip i { width: 18px; height: 18px; }
-  .pgrid { grid-template-columns: 1fr; } .pgrid div { padding: 28px 0; border-bottom: 1px solid var(--line); }
+  .pfgrid > div { padding: 32px 24px; } .pfgrid h3 { font-size: 26px; }
   .sec { padding: 90px 0; } .statement { padding: 90px 20px 20px; }
 }
 </style>
@@ -336,12 +342,16 @@ footer .wrap { display: flex; justify-content: space-between; align-items: cente
 </section>
 
 <!-- PRINCIPLES -->
-<section class="sec" style="padding-top:0">
+<section class="sec" id="proof" style="padding-top:40px">
   <div class="wrap">
-    <div class="pgrid rv">
-      <div><span class="mono">01</span><h3>It shows its work.</h3><p>Every outcome traces back to its source.</p></div>
-      <div><span class="mono">02</span><h3>It never guesses.</h3><p>When it isn't sure, a person decides.</p></div>
-      <div><span class="mono">03</span><h3>It fits what you have.</h3><p>No rules to write, no systems to replace.</p></div>
+    <div class="proof-head rv">
+      <h2>AI outcomes, proven in the enterprise.</h2>
+      <p>Running inside global leaders that operate across 100+ countries.</p>
+    </div>
+    <div class="pfgrid rv">
+      <div><div class="art"><svg viewBox="0 0 340 260" aria-hidden="true"><polygon points="140.6,202.0 170.0,219.0 170.0,185.0 140.6,168.0" fill="#F1ECE4" stroke="#B3AB9E" stroke-width=".8" stroke-linejoin="round"/><polygon points="199.4,202.0 170.0,219.0 170.0,185.0 199.4,168.0" fill="#E7E0D4" stroke="#B3AB9E" stroke-width=".8" stroke-linejoin="round"/><polygon points="170.0,151.0 199.4,168.0 170.0,185.0 140.6,168.0" fill="#FDFBF8" stroke="#B3AB9E" stroke-width=".8" stroke-linejoin="round"/><polygon points="170.0,219.0 199.4,236.0 199.4,202.0 170.0,185.0" fill="#F1ECE4" stroke="#B3AB9E" stroke-width=".8" stroke-linejoin="round"/><polygon points="228.9,219.0 199.4,236.0 199.4,202.0 228.9,185.0" fill="#E7E0D4" stroke="#B3AB9E" stroke-width=".8" stroke-linejoin="round"/><polygon points="199.4,168.0 228.9,185.0 199.4,202.0 170.0,185.0" fill="#FDFBF8" stroke="#B3AB9E" stroke-width=".8" stroke-linejoin="round"/><polygon points="111.1,219.0 140.6,236.0 140.6,202.0 111.1,185.0" fill="#F1ECE4" stroke="#B3AB9E" stroke-width=".8" stroke-linejoin="round"/><polygon points="170.0,219.0 140.6,236.0 140.6,202.0 170.0,185.0" fill="#E7E0D4" stroke="#B3AB9E" stroke-width=".8" stroke-linejoin="round"/><polygon points="140.6,168.0 170.0,185.0 140.6,202.0 111.1,185.0" fill="#FDFBF8" stroke="#B3AB9E" stroke-width=".8" stroke-linejoin="round"/><polygon points="140.6,236.0 170.0,253.0 170.0,219.0 140.6,202.0" fill="#F1ECE4" stroke="#B3AB9E" stroke-width=".8" stroke-linejoin="round"/><polygon points="199.4,236.0 170.0,253.0 170.0,219.0 199.4,202.0" fill="#E7E0D4" stroke="#B3AB9E" stroke-width=".8" stroke-linejoin="round"/><polygon points="170.0,185.0 199.4,202.0 170.0,219.0 140.6,202.0" fill="#FDFBF8" stroke="#B3AB9E" stroke-width=".8" stroke-linejoin="round"/><polygon points="140.6,168.0 170.0,185.0 170.0,151.0 140.6,134.0" fill="#F1ECE4" stroke="#B3AB9E" stroke-width=".8" stroke-linejoin="round"/><polygon points="199.4,168.0 170.0,185.0 170.0,151.0 199.4,134.0" fill="#E7E0D4" stroke="#B3AB9E" stroke-width=".8" stroke-linejoin="round"/><polygon points="170.0,117.0 199.4,134.0 170.0,151.0 140.6,134.0" fill="#FDFBF8" stroke="#B3AB9E" stroke-width=".8" stroke-linejoin="round"/><polygon points="170.0,185.0 199.4,202.0 199.4,168.0 170.0,151.0" fill="#F1ECE4" stroke="#B3AB9E" stroke-width=".8" stroke-linejoin="round"/><polygon points="228.9,185.0 199.4,202.0 199.4,168.0 228.9,151.0" fill="#E7E0D4" stroke="#B3AB9E" stroke-width=".8" stroke-linejoin="round"/><polygon points="199.4,134.0 228.9,151.0 199.4,168.0 170.0,151.0" fill="#FDFBF8" stroke="#B3AB9E" stroke-width=".8" stroke-linejoin="round"/><polygon points="111.1,185.0 140.6,202.0 140.6,168.0 111.1,151.0" fill="#F1ECE4" stroke="#B3AB9E" stroke-width=".8" stroke-linejoin="round"/><polygon points="170.0,185.0 140.6,202.0 140.6,168.0 170.0,151.0" fill="#E7E0D4" stroke="#B3AB9E" stroke-width=".8" stroke-linejoin="round"/><polygon points="140.6,134.0 170.0,151.0 140.6,168.0 111.1,151.0" fill="#FDFBF8" stroke="#B3AB9E" stroke-width=".8" stroke-linejoin="round"/><polygon points="140.6,134.0 170.0,151.0 170.0,117.0 140.6,100.0" fill="#F1ECE4" stroke="#B3AB9E" stroke-width=".8" stroke-linejoin="round"/><polygon points="199.4,134.0 170.0,151.0 170.0,117.0 199.4,100.0" fill="#E7E0D4" stroke="#B3AB9E" stroke-width=".8" stroke-linejoin="round"/><polygon points="170.0,83.0 199.4,100.0 170.0,117.0 140.6,100.0" fill="#FDFBF8" stroke="#B3AB9E" stroke-width=".8" stroke-linejoin="round"/><polygon points="140.6,100.0 170.0,117.0 170.0,83.0 140.6,66.0" fill="#F1ECE4" stroke="#B3AB9E" stroke-width=".8" stroke-linejoin="round"/><polygon points="199.4,100.0 170.0,117.0 170.0,83.0 199.4,66.0" fill="#E7E0D4" stroke="#B3AB9E" stroke-width=".8" stroke-linejoin="round"/><polygon points="170.0,49.0 199.4,66.0 170.0,83.0 140.6,66.0" fill="#FDFBF8" stroke="#B3AB9E" stroke-width=".8" stroke-linejoin="round"/><polygon points="140.6,66.0 170.0,83.0 170.0,18.4" fill="#E94D35" stroke="#C93C26" stroke-width=".8" stroke-linejoin="round"/><polygon points="199.4,66.0 170.0,83.0 170.0,18.4" fill="#C93C26" stroke="#C93C26" stroke-width=".8" stroke-linejoin="round"/></svg></div><h3>Trusted by Fortune 500s</h3><p>Partnering with leaders across insurance, MedTech and travel.</p></div>
+      <div><div class="art"><svg viewBox="0 0 340 260" aria-hidden="true"><line x1="110.2" y1="88.5" x2="170.0" y2="135.0" stroke="#B3AB9E" stroke-width=".9" stroke-dasharray="3 4"/><line x1="229.8" y1="88.5" x2="170.0" y2="135.0" stroke="#B3AB9E" stroke-width=".9" stroke-dasharray="3 4"/><line x1="227.2" y1="171.0" x2="170.0" y2="135.0" stroke="#B3AB9E" stroke-width=".9" stroke-dasharray="3 4"/><line x1="112.8" y1="171.0" x2="170.0" y2="135.0" stroke="#B3AB9E" stroke-width=".9" stroke-dasharray="3 4"/><polygon points="89.5,88.5 110.2,100.5 110.2,76.5 89.5,64.5" fill="#F1ECE4" stroke="#B3AB9E" stroke-width=".8" stroke-linejoin="round"/><polygon points="131.0,88.5 110.2,100.5 110.2,76.5 131.0,64.5" fill="#E7E0D4" stroke="#B3AB9E" stroke-width=".8" stroke-linejoin="round"/><polygon points="110.2,52.5 131.0,64.5 110.2,76.5 89.5,64.5" fill="#FDFBF8" stroke="#B3AB9E" stroke-width=".8" stroke-linejoin="round"/><polygon points="209.0,88.5 229.8,100.5 229.8,76.5 209.0,64.5" fill="#F1ECE4" stroke="#B3AB9E" stroke-width=".8" stroke-linejoin="round"/><polygon points="250.5,88.5 229.8,100.5 229.8,76.5 250.5,64.5" fill="#E7E0D4" stroke="#B3AB9E" stroke-width=".8" stroke-linejoin="round"/><polygon points="229.8,52.5 250.5,64.5 229.8,76.5 209.0,64.5" fill="#FDFBF8" stroke="#B3AB9E" stroke-width=".8" stroke-linejoin="round"/><polygon points="144.0,135.0 170.0,150.0 170.0,111.0 144.0,96.0" fill="#E94D35" stroke="#C93C26" stroke-width=".8" stroke-linejoin="round"/><polygon points="196.0,135.0 170.0,150.0 170.0,111.0 196.0,96.0" fill="#C93C26" stroke="#C93C26" stroke-width=".8" stroke-linejoin="round"/><polygon points="170.0,81.0 196.0,96.0 170.0,111.0 144.0,96.0" fill="#F27A66" stroke="#C93C26" stroke-width=".8" stroke-linejoin="round"/><polygon points="206.4,171.0 227.2,183.0 227.2,159.0 206.4,147.0" fill="#F1ECE4" stroke="#B3AB9E" stroke-width=".8" stroke-linejoin="round"/><polygon points="247.9,171.0 227.2,183.0 227.2,159.0 247.9,147.0" fill="#E7E0D4" stroke="#B3AB9E" stroke-width=".8" stroke-linejoin="round"/><polygon points="227.2,135.0 247.9,147.0 227.2,159.0 206.4,147.0" fill="#FDFBF8" stroke="#B3AB9E" stroke-width=".8" stroke-linejoin="round"/><polygon points="92.1,171.0 112.8,183.0 112.8,159.0 92.1,147.0" fill="#F1ECE4" stroke="#B3AB9E" stroke-width=".8" stroke-linejoin="round"/><polygon points="133.6,171.0 112.8,183.0 112.8,159.0 133.6,147.0" fill="#E7E0D4" stroke="#B3AB9E" stroke-width=".8" stroke-linejoin="round"/><polygon points="112.8,135.0 133.6,147.0 112.8,159.0 92.1,147.0" fill="#FDFBF8" stroke="#B3AB9E" stroke-width=".8" stroke-linejoin="round"/></svg></div><h3>One platform, every complex operation</h3><p>From global pricing to insurance operations to contract compliance.</p></div>
+      <div><div class="art"><svg viewBox="0 0 340 260" aria-hidden="true"><line x1="28.8" y1="110.2" x2="213.1" y2="216.6" stroke="#B3AB9E" stroke-width=".9" stroke-dasharray="3 4"/><polygon points="45.8,134.0 70.0,148.0 70.0,120.0 45.8,106.0" fill="#F1ECE4" stroke="#B3AB9E" stroke-width=".8" stroke-linejoin="round"/><polygon points="94.2,134.0 70.0,148.0 70.0,120.0 94.2,106.0" fill="#E7E0D4" stroke="#B3AB9E" stroke-width=".8" stroke-linejoin="round"/><polygon points="70.0,92.0 94.2,106.0 70.0,120.0 45.8,106.0" fill="#FDFBF8" stroke="#B3AB9E" stroke-width=".8" stroke-linejoin="round"/><polygon points="84.5,156.4 108.8,170.4 108.8,142.4 84.5,128.4" fill="#F1ECE4" stroke="#B3AB9E" stroke-width=".8" stroke-linejoin="round"/><polygon points="133.0,156.4 108.8,170.4 108.8,142.4 133.0,128.4" fill="#E7E0D4" stroke="#B3AB9E" stroke-width=".8" stroke-linejoin="round"/><polygon points="108.8,114.4 133.0,128.4 108.8,142.4 84.5,128.4" fill="#FDFBF8" stroke="#B3AB9E" stroke-width=".8" stroke-linejoin="round"/><polygon points="123.3,178.8 147.6,192.8 147.6,164.8 123.3,150.8" fill="#F1ECE4" stroke="#B3AB9E" stroke-width=".8" stroke-linejoin="round"/><polygon points="171.8,178.8 147.6,192.8 147.6,164.8 171.8,150.8" fill="#E7E0D4" stroke="#B3AB9E" stroke-width=".8" stroke-linejoin="round"/><polygon points="147.6,136.8 171.8,150.8 147.6,164.8 123.3,150.8" fill="#FDFBF8" stroke="#B3AB9E" stroke-width=".8" stroke-linejoin="round"/><polygon points="162.1,201.2 186.4,215.2 186.4,156.4" fill="#E94D35" stroke="#C93C26" stroke-width=".8" stroke-linejoin="round"/><polygon points="210.6,201.2 186.4,215.2 186.4,156.4" fill="#C93C26" stroke="#C93C26" stroke-width=".8" stroke-linejoin="round"/><path d="M209.9,210.4 L217.9,219.4 L206.9,220.4" fill="none" stroke="#B3AB9E" stroke-width=".9"/></svg></div><h3>Measurable outcomes in weeks</h3><p>A first workflow running on your own documents in weeks, not quarters.</p></div>
     </div>
   </div>
 </section>
