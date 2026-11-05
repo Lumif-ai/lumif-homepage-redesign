@@ -1,0 +1,432 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Lumif.ai for Travel | Hotel contracts and rates, live in your booking engine</title>
+<meta name="description" content="Lumif.ai reads the contracts, amendments, promotions and stop sales your hotels send, checks every rate against what is contracted and live, and updates your booking engine. Your team approves the exceptions." />
+<link rel="icon" href="../favicon.ico" sizes="any" />
+<link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32.png" />
+<link rel="icon" type="image/png" sizes="192x192" href="../assets/favicon-192.png" />
+<link rel="apple-touch-icon" href="../assets/apple-touch-icon.png" />
+<meta name="theme-color" content="#0F1117" />
+<link rel="canonical" href="https://lumif-ai.github.io/lumif-homepage-redesign/travel/" />
+<meta property="og:type" content="website" />
+<meta property="og:site_name" content="Lumif.ai" />
+<meta property="og:url" content="https://lumif-ai.github.io/lumif-homepage-redesign/travel/" />
+<meta property="og:title" content="Every supplier update, live in your booking engine." />
+<meta property="og:description" content="AI for hotel contract and rate administration. Your team approves the exceptions." />
+<meta property="og:image" content="https://lumif-ai.github.io/lumif-homepage-redesign/assets/og-image.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<meta name="twitter:title" content="Every supplier update, live in your booking engine." />
+<meta name="twitter:description" content="AI for hotel contract and rate administration. Your team approves the exceptions." />
+<meta name="twitter:image" content="https://lumif-ai.github.io/lumif-homepage-redesign/assets/og-image.png" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="../assets/site.css" />
+<style>
+.kick { display: inline-flex; align-items: center; gap: 10px; color: #9AA0AE; margin-bottom: 26px; }
+.kick::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--coral); }
+.hero h1 { font-size: clamp(42px, 4.6vw, 70px); }
+.pills { display: flex; gap: 8px; flex-wrap: wrap; }
+.pills span { font-size: 13px; color: #C9CCD4; padding: 6px 13px; border-radius: 999px; border: 1px solid var(--night-line); background: var(--night-2); }
+.pills span.yours { border-style: dashed; color: #fff; }
+
+/* terms grid */
+.terms { background: #fff; border: 1px solid var(--line); border-radius: 22px; overflow: hidden; box-shadow: 0 30px 70px -40px rgba(18,18,18,0.25); }
+.terms .bar { display: flex; justify-content: space-between; align-items: center; padding: 16px 22px; border-bottom: 1px solid var(--line); background: var(--panel-warm); }
+.terms .bar b { font-size: 14px; font-weight: 600; }
+.terms .bar .mono { color: var(--ink-4); font-size: 10px; }
+.terms .scroll { overflow-x: auto; }
+.terms table { width: 100%; min-width: 760px; border-collapse: collapse; font-size: 14.5px; }
+.terms th, .terms td { text-align: left; padding: 15px 22px; border-bottom: 1px solid var(--line); }
+.terms tr:last-child td { border-bottom: none; }
+.terms thead th { font: 500 10.5px var(--mono); letter-spacing: .08em; text-transform: uppercase; color: var(--ink-4); background: #fff; }
+.terms tbody th { font-weight: 500; white-space: nowrap; }
+.terms tbody th small { display: block; font: 400 11px var(--sans); color: var(--ink-4); margin-top: 2px; }
+.fmt { display: inline-block; font: 500 9.5px var(--mono); letter-spacing: .06em; text-transform: uppercase; padding: 3px 8px; border-radius: 6px; margin-right: 10px; vertical-align: 1px; }
+.fmt.pdf { background: rgba(233,77,53,0.1); color: #C93C26; } .fmt.xls { background: rgba(22,163,74,0.1); color: #15803D; }
+.fmt.doc { background: rgba(37,99,235,0.1); color: #1D4ED8; } .fmt.mail { background: #F3EFE9; color: var(--ink-3); }
+.terms td { color: var(--ink-2); }
+.terms .note { padding: 12px 22px; font-size: 12px; color: var(--ink-4); border-top: 1px solid var(--line); background: var(--panel-warm); }
+
+/* pain cards */
+.pain { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 16px; }
+.pc { background: #fff; border: 1px solid var(--line); border-radius: 22px; padding: 28px 26px 26px; display: flex; flex-direction: column; }
+.pc .mono { color: var(--coral); margin-bottom: 14px; font-size: 10.5px; }
+.pc h3 { font-size: 23px; line-height: 1.18; letter-spacing: -0.03em; margin-bottom: 10px; }
+.pc p { margin: 0 0 24px; color: var(--ink-3); font-size: 15px; }
+.pc .ui { margin-top: auto; border: 1px solid var(--line); border-radius: 14px; padding: 14px; background: var(--panel-warm); font-size: 13px; }
+.meter { display: flex; justify-content: space-between; margin-bottom: 8px; color: var(--ink-2); }
+.meter b { font-weight: 600; }
+.track { height: 6px; border-radius: 6px; background: #EAE4DA; overflow: hidden; }
+.track span { display: block; height: 100%; width: 16%; background: var(--coral); border-radius: 6px; }
+.cell { font: 500 11px var(--mono); color: var(--ink-4); margin-top: 10px; }
+.cell b { color: var(--ink); background: #fff; border: 1px solid var(--coral); padding: 1px 6px; border-radius: 4px; }
+.wq { display: grid; gap: 8px; }
+.wq div { display: flex; justify-content: space-between; gap: 10px; }
+.wq span { color: var(--ink-2); } .wq em { font-style: normal; color: #B45309; font: 500 11px var(--mono); white-space: nowrap; }
+.cal { display: grid; grid-template-columns: repeat(7, 1fr); gap: 5px; }
+.cal div { text-align: center; padding: 6px 0 5px; border-radius: 7px; background: #fff; border: 1px solid var(--line); font: 500 11px var(--mono); color: var(--ink-3); }
+.cal div small { display: block; font-size: 8.5px; letter-spacing: .04em; color: #15803D; }
+.cal div.bad { border-color: var(--coral); background: var(--coral-light); color: var(--ink); }
+.cal div.bad small { color: var(--coral); }
+.cal + p { margin: 10px 0 0 !important; font-size: 12.5px !important; color: var(--coral) !important; }
+
+/* hinge statement */
+.hinge { padding: 40px 32px 0; }
+.hinge p { font-family: var(--display); letter-spacing: -0.03em; font-size: clamp(28px, 3.2vw, 44px); line-height: 1.2; max-width: 980px; margin: 0; color: var(--ink-4); }
+.hinge p b { font-weight: inherit; color: var(--ink); }
+
+/* agent tag in workflow card */
+.ws { justify-content: flex-start; }
+.ws .ag { margin-left: auto; font: 500 9.5px var(--mono); letter-spacing: .05em; color: var(--ink-4); opacity: 0; transition: opacity .3s; }
+.ws.active .ag, .ws.done .ag { opacity: 1; }
+.wf-stage { grid-template-columns: 210px 1fr 420px 1fr 230px; }
+
+/* exception */
+.ex-grid { display: grid; grid-template-columns: 1.15fr 1fr; gap: 16px; }
+.exc { background: #fff; border: 1px solid var(--line); border-radius: 22px; padding: 26px; box-shadow: 0 30px 70px -40px rgba(18,18,18,0.25); }
+.exc .hd { display: flex; justify-content: space-between; align-items: center; margin-bottom: 18px; }
+.exc .hd .mono { color: var(--ink-4); font-size: 10px; }
+.exc .wait { font: 500 10px var(--mono); letter-spacing: .06em; text-transform: uppercase; color: var(--coral); background: var(--coral-light); padding: 4px 10px; border-radius: 999px; }
+.exc h3 { font-size: 24px; letter-spacing: -0.03em; line-height: 1.2; margin-bottom: 6px; }
+.exc .why { color: var(--ink-3); font-size: 14.5px; margin: 0 0 18px; }
+.src { display: grid; grid-template-columns: 1fr auto 1fr; gap: 10px; align-items: stretch; margin-bottom: 16px; }
+.src > div { border: 1px solid var(--line); border-radius: 12px; padding: 12px 14px; background: var(--panel-warm); }
+.src small { display: block; font: 500 10px var(--mono); letter-spacing: .05em; text-transform: uppercase; color: var(--ink-4); margin-bottom: 4px; }
+.src b { font-weight: 500; font-size: 14px; }
+.src .ne { display: grid; place-items: center; font-size: 22px; color: var(--coral); }
+.exc .aff { font-size: 13px; color: var(--ink-3); padding: 12px 0; border-top: 1px solid var(--line); margin-bottom: 14px; }
+.acts { display: flex; gap: 8px; flex-wrap: wrap; }
+.acts span { font-size: 13px; font-weight: 500; padding: 8px 14px; border-radius: 999px; border: 1px solid var(--line); color: var(--ink-2); }
+.acts span.pick { background: var(--ink); color: #fff; border-color: var(--ink); }
+.chk { background: var(--panel-warm); border: 1px solid var(--line); border-radius: 22px; padding: 26px; }
+.chk .mono { color: var(--ink-4); margin-bottom: 8px; display: block; }
+.chk ul { list-style: none; margin: 0; padding: 0; }
+.chk li { display: flex; align-items: center; gap: 12px; padding: 14px 0; border-bottom: 1px solid var(--line); font-size: 15.5px; }
+.chk li:last-child { border-bottom: none; }
+.chk li i { flex: none; width: 22px; height: 22px; border-radius: 50%; background: rgba(22,163,74,0.1); color: #15803D; display: grid; place-items: center; }
+.chk li i svg { width: 12px; height: 12px; }
+
+/* gets + no disruption */
+.gets { display: grid; grid-template-columns: repeat(3, 1fr); border: 1px solid var(--line); }
+.gets > div { padding: 40px 40px 44px; border-right: 1px solid var(--line); }
+.gets > div:last-child { border-right: none; }
+.gets .n { font: 500 12px var(--mono); color: var(--coral); margin-bottom: 70px; display: block; }
+.gets h3 { font-size: 28px; line-height: 1.12; letter-spacing: -0.035em; margin-bottom: 14px; }
+.gets p { margin: 0; color: var(--ink-3); font-size: 15.5px; max-width: 320px; }
+.easy { display: grid; grid-template-columns: 1fr 2fr; gap: 60px; margin-top: 110px; align-items: start; }
+.easy h2 { font-size: clamp(32px, 3.6vw, 48px); line-height: 1.06; }
+.easy ul { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line); }
+.easy li { display: grid; grid-template-columns: 240px 1fr; gap: 24px; padding: 22px 0; border-bottom: 1px solid var(--line); }
+.easy li b { font-weight: 500; font-size: 17px; letter-spacing: -0.01em; }
+.easy li span { color: var(--ink-3); font-size: 15.5px; }
+
+@media (max-width: 1180px) { .wf-stage { grid-template-columns: 1fr; } }
+@media (max-width: 1080px) {
+  .pain, .ex-grid, .gets, .easy { grid-template-columns: 1fr; }
+  .gets > div { border-right: none; border-bottom: 1px solid var(--line); } .gets > div:last-child { border-bottom: none; }
+  .gets .n { margin-bottom: 24px; } .easy { gap: 28px; margin-top: 80px; }
+}
+@media (max-width: 640px) {
+  .easy li { grid-template-columns: 1fr; gap: 4px; } .gets > div { padding: 30px 24px; }
+  .src { grid-template-columns: 1fr; } .src .ne { transform: rotate(90deg); }
+  .hinge { padding: 30px 20px 0; }
+}
+</style>
+</head>
+<body>
+
+<div class="nav">
+  <a href="../"><img src="../assets/lumifai-logo.png" alt="Lumif.ai" style="height:28px;width:auto" /></a>
+  <div class="right">
+    <div class="links"><a href="#problem">The problem</a><a href="#how">How it works</a><a href="#trust">Security</a></div>
+    <div class="dd" id="dd">
+      <button type="button" aria-expanded="false" aria-controls="ddMenu">Industries <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="m6 9 6 6 6-6"/></svg></button>
+      <div class="menu" id="ddMenu">
+        <a href="../travel/" aria-current="page"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M3 21h18M5 21V8l7-4 7 4v13"/><path d="M9 21v-5h6v5M9 11h.01M12 11h.01M15 11h.01"/></svg></i><b>Travel</b><small>Hotel contracts and rates, live in your booking engine</small></a>
+        <div class="soon"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M12 3 4 6v6c0 4.5 3.4 8.3 8 9 4.6-.7 8-4.5 8-9V6z"/></svg></i><b>Insurance</b><small>Policies, audits and placements</small><span class="tag">Soon</span></div>
+        <div class="soon"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M3 12h4l3-7 4 14 3-7h4"/></svg></i><b>MedTech</b><small>Contracts to pricing rules</small><span class="tag">Soon</span></div>
+      </div>
+    </div>
+    <a class="btn btn-coral" href="https://calendar.app.google/2CdKq8so5uTE4WYVA">Book a call</a>
+  </div>
+</div>
+
+<!-- HERO -->
+<div class="panel hero" id="top">
+  <div class="wrap">
+    <div class="grid">
+      <div>
+        <div class="mono kick">Travel · Hotel contracts and rates</div>
+        <h1>Every supplier update, <span class="accent">live in your booking engine.</span></h1>
+        <p class="sub">Lumif.ai reads the contracts, amendments, promotions and stop sales your hotels send, checks every rate against what's contracted and live, and updates your booking engine. Your team approves the exceptions.</p>
+        <div class="ctas">
+          <a class="btn btn-coral" href="https://calendar.app.google/2CdKq8so5uTE4WYVA">Book a call <span>&rarr;</span></a>
+          <a class="btn btn-line" href="#how">How it works</a>
+        </div>
+      </div>
+      <div class="dia" aria-hidden="true">
+        <div class="ring r1"></div><div class="ring r2"></div><div class="ring r3"></div>
+        <div class="orbit">
+          <span class="chip" style="left:50%;top:0%"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8zM14 3v5h5"/></svg></i>Contracts</span>
+          <span class="chip" style="left:100%;top:50%"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 12 12 20l-8-8V4h8z"/><circle cx="8.5" cy="8.5" r="1.2"/></svg></i>Promotions</span>
+          <span class="chip" style="left:50%;top:100%"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M4 10h16M10 4v16"/></svg></i>Rate sheets</span>
+          <span class="chip" style="left:0%;top:50%"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="8"/><path d="m6.5 6.5 11 11"/></svg></i>Stop sales</span>
+        </div>
+        <div class="orbit rev">
+          <span class="chip" style="left:85%;top:15%"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="6" rx="7" ry="3"/><path d="M5 6v12c0 1.7 3.1 3 7 3s7-1.3 7-3V6"/></svg></i>Booking engine</span>
+          <span class="chip hot" style="left:15%;top:85%"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6"/></svg></i>Your team</span>
+        </div>
+        <div class="core"><img src="../assets/lumifai-icon.png" alt="" /></div>
+      </div>
+    </div>
+    <div class="hero-foot">
+      <span class="mono">Works with your existing tech stack</span>
+      <div class="pills"><span>Juniper</span><span>Technoheaven</span><span>Tourplan</span><span>Lemax</span><span>Travelsoft</span><span class="yours">Your booking engine</span></div>
+    </div>
+  </div>
+</div>
+
+<!-- STATEMENT -->
+<div class="wrap statement rv">
+  <p><b>Thousands of hotels. Updates every day.</b> And every one keyed into your booking engine. Manually.</p>
+</div>
+
+<!-- PROBLEM -->
+<section class="sec" id="problem">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div><div class="label mono">The problem today</div><h2>Every hotel, its own terms. <span class="accent">Every format.</span></h2></div>
+      <p>Contracts arrive as PDFs, rate sheets as Excel, amendments as Word, offers by email. The same term reads differently in each one, and your team reads them all.</p>
+    </div>
+    <div class="terms rv">
+      <div class="bar"><b>Same term, four hotels</b><span class="mono">Illustrative</span></div>
+      <div class="scroll"><table>
+        <thead><tr><th>Hotel</th><th>Children</th><th>Release</th><th>Cancellation</th><th>Meal plan</th></tr></thead>
+        <tbody>
+          <tr><th><span class="fmt pdf">PDF</span>Velmora Suites<small>Hotel agreement</small></th><td>Free to 11</td><td>7 days</td><td>14 days before</td><td>BB</td></tr>
+          <tr><th><span class="fmt xls">Excel</span>Taravine Palms<small>Rate sheet</small></th><td>2 to 12: 50%</td><td>21 days</td><td>Non-refundable</td><td>HB</td></tr>
+          <tr><th><span class="fmt doc">Word</span>Kestwick Lodge<small>Amendment No. 2</small></th><td>Free under 6</td><td>14 days</td><td>30 days, 1 night</td><td>All inclusive</td></tr>
+          <tr><th><span class="fmt mail">Email</span>Almira Sands<small>Winter rates</small></th><td>Free to 11, 1 per room</td><td>7 days</td><td>72 hours</td><td>BB, HB</td></tr>
+        </tbody>
+      </table></div>
+      <div class="note">Hotel names and terms are illustrative.</div>
+    </div>
+    <div class="pain rv">
+      <div class="pc">
+        <span class="mono">01 · Keyed</span>
+        <h3>One cell at a time.</h3>
+        <p>Every rate from the PDF, typed into your booking engine.</p>
+        <div class="ui"><div class="meter"><span>Rates keyed</span><b>24 of 148</b></div><div class="track"><span></span></div><div class="cell">Pool Suite · Season 2 HB · <b>320|</b></div></div>
+      </div>
+      <div class="pc">
+        <span class="mono">02 · Checked</span>
+        <h3>Then checked again. Line by line.</h3>
+        <p>A second person reads it back while the queue grows.</p>
+        <div class="ui"><div class="wq"><div><span>Velmora Suites · Contract 2027</span><em>2 days</em></div><div><span>Taravine Palms · Amendment 3</span><em>4 days</em></div><div><span>Corsello Grand · Winter rates</span><em>1 week</em></div></div></div>
+      </div>
+      <div class="pc">
+        <span class="mono">03 · Waiting</span>
+        <h3>Meanwhile, the offer isn't on sale.</h3>
+        <p>And the stop sale is still open in your booking engine.</p>
+        <div class="ui"><div class="cal"><div>10<small>Open</small></div><div>11<small>Open</small></div><div class="bad">12<small>Open</small></div><div class="bad">13<small>Open</small></div><div class="bad">14<small>Open</small></div><div>15<small>Open</small></div><div>16<small>Open</small></div></div><p>Stop sale 12 to 14 Nov, still on sale</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="wrap hinge rv">
+  <p><b>Oversell a stop sale, the hotel tells you.</b> Stack an offer wrong, nobody does.</p>
+</div>
+
+<!-- HOW IT WORKS -->
+<section class="sec" id="how">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div><div class="label mono">How it works</div><h2>Set up once. <span class="accent">Runs on every update.</span></h2></div>
+      <p>Lumif.ai's agents collect every update as it arrives, read it, match it, check it against the contract and what's live, then load it and read it back. Your team decides the exceptions.</p>
+    </div>
+    <div class="wf rv">
+      <div class="wf-stage" id="stage">
+        <svg id="wires"></svg>
+        <div class="col ins" id="ins"></div>
+        <div class="card" id="card">
+          <div class="top"><img src="../assets/lumifai-icon.png" alt="" />Lumif.ai</div>
+          <div class="wsteps" id="wsteps"></div>
+          <div class="prog"><span id="prog"></span></div>
+        </div>
+        <div class="col outs" id="outs"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXCEPTION -->
+<section class="sec" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head rv">
+      <div><div class="label mono">What your team sees</div><h2>Your team decides. <span class="accent">Always.</span></h2></div>
+      <p>Only real changes load. When a document contradicts itself or the contract, it waits for your team, with the source on screen.</p>
+    </div>
+    <div class="ex-grid rv">
+      <div class="exc">
+        <div class="hd"><span class="mono">Example exception · Kids stay free</span><span class="wait">Waiting for your team</span></div>
+        <h3>Offer stacking rules contradict each other</h3>
+        <p class="why">Why: pages 1 and 2 of the promotion disagree on stacking.</p>
+        <div class="src">
+          <div><small>Promotion PDF · page 1, clause 3</small><b>Combines with Early Booking</b></div>
+          <div class="ne">&ne;</div>
+          <div><small>Promotion PDF · page 2, clause 7</small><b>Not combinable with any offer</b></div>
+        </div>
+        <div class="aff">Affects: 6 hotels · 37 room types · stays 1 Nov to 20 Dec</div>
+        <div class="acts"><span>Load as combinable</span><span class="pick">Not combinable</span><span>Ask the hotel</span></div>
+      </div>
+      <div class="chk">
+        <span class="mono">What it checks</span>
+        <ul>
+          <li><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="m5 12 5 5 9-10"/></svg></i>Rates, seasons and meal plans</li>
+          <li><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="m5 12 5 5 9-10"/></svg></i>Offer stacking and blackouts</li>
+          <li><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="m5 12 5 5 9-10"/></svg></i>Child and cancellation policies</li>
+          <li><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="m5 12 5 5 9-10"/></svg></i>Stop sales by date and room</li>
+          <li><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="m5 12 5 5 9-10"/></svg></i>Allotments and release periods</li>
+          <li><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="m5 12 5 5 9-10"/></svg></i>Amendments against what's live</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- GETS -->
+<section class="sec" style="padding-top:20px">
+  <div class="wrap">
+    <div class="proof-head rv">
+      <h2>Less re-keying. <span class="accent">More selling.</span></h2>
+      <p>Typing rates from hotel PDFs isn't contracting work. Lumif.ai takes it off your team's desks.</p>
+    </div>
+    <div class="gets rv">
+      <div><span class="n">01</span><h3>Rates live faster</h3><p>Stop sales and promotions handled as they arrive. Dates closed and offers on sale the same day.</p></div>
+      <div><span class="n">02</span><h3>Zero re-keying</h3><p>Every rate read from the source document and checked before and after it loads.</p></div>
+      <div><span class="n">03</span><h3>Every rate traced to its clause</h3><p>One click from a live rate back to the page, clause or email it came from.</p></div>
+    </div>
+    <div class="easy rv">
+      <h2>No new system. <span class="accent">No disruption.</span></h2>
+      <ul>
+        <li><b>Sits beside what you run</b><span>Connects to your booking engine via API or a configured integration.</span></li>
+        <li><b>Set up on how you contract</b><span>Your hotel codes, room mappings and rules, configured once.</span></li>
+        <li><b>More hotels, same team</b><span>Take on more suppliers with the team you have.</span></li>
+        <li><b>Start with a pilot</b><span>Five of your own documents, loaded and checked.</span></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- TRUST -->
+<div class="panel trust" id="trust">
+  <div class="wrap inner">
+    <div class="seal rv"><img src="../assets/soc2-official.png" alt="AICPA SOC 2 Type 2" /></div>
+    <div class="rv"><div class="mono kicker">SOC 2 Type 2 audited</div><h2>Built for enterprise <span class="accent">security.</span></h2></div>
+    <ul class="rv">
+      <li>Isolated storage <span class="mono">01</span></li>
+      <li>Fully encrypted <span class="mono">02</span></li>
+      <li>Never trains models <span class="mono">03</span></li>
+      <li>Append-only trail <span class="mono">04</span></li>
+    </ul>
+  </div>
+</div>
+
+<!-- FINAL -->
+<div style="height:16px"></div>
+<div class="panel final">
+  <div class="inner">
+    <h2>Bring one hotel contract.<br /><span class="accent">See it loaded.</span></h2>
+    <a class="btn btn-dark" href="https://calendar.app.google/2CdKq8so5uTE4WYVA">Book a call <span>&rarr;</span></a>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">
+    <a href="../"><img src="../assets/lumifai-logo.png" alt="Lumif.ai" style="height:24px;width:auto" /></a>
+    <span>&copy; 2026 Lumif.ai · <a href="https://lumif.ai/privacy-policy">Privacy Policy</a></span>
+  </div>
+</footer>
+
+<script>
+// workflow loop: supplier update to live rate
+(() => {
+  const I = {
+    doc: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h4"/></svg>',
+    edit: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 16l5-5 2 2-5 5H9z"/></svg>',
+    tag: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M20 12 12 20l-8-8V4h8z"/><circle cx="8.5" cy="8.5" r="1.2"/></svg>',
+    stop: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="8"/><path d="m6.5 6.5 11 11"/></svg>',
+    mail: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m4 7 8 6 8-6"/></svg>',
+    db: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><ellipse cx="12" cy="6" rx="7" ry="3"/><path d="M5 6v12c0 1.7 3.1 3 7 3s7-1.3 7-3V6M5 12c0 1.7 3.1 3 7 3s7-1.3 7-3"/></svg>',
+    user: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="8" r="4"/><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6"/></svg>'
+  };
+  const ins = [['doc','Contracts'], ['edit','Amendments'], ['tag','Promotions'], ['stop','Stop sales'], ['mail','Supplier emails']];
+  const outs = [['user','Your team decides','expert'], ['db','Your booking engine']];
+  // [label, inputs lit, outputs lit, flag, done label, agent]
+  const steps = [
+    ['Update collected', [0,1,2,3,4], [], null, null, 'IntakeAgent'],
+    ['Read and extracted', [2], [], null, null, 'ExtractionAgent'],
+    ['Matched to hotel and room code', [], [], null, null, 'MatchingAgent'],
+    ['Checked against contract and live', [0], [], null, null, 'CheckAgent'],
+    ['Exception for your team', [], [0], 'human', 'Decided by your team', ''],
+    ['Loaded and read back', [], [1], null, null, 'LoadAgent']
+  ];
+  const $ = id => document.getElementById(id);
+  const stage = $('stage'), svg = $('wires'), insEl = $('ins'), outsEl = $('outs'), card = $('card');
+  const item = x => `<div class="it ${x[2]||''}"><div class="ico">${I[x[0]]}</div><b>${x[1]}</b></div>`;
+  insEl.innerHTML = ins.map(item).join(''); outsEl.innerHTML = outs.map(item).join('');
+  $('wsteps').innerHTML = steps.map(s => `<div class="ws"><span class="dot"></span><b>${s[0]}</b><span class="ag">${s[5]}</span></div>`).join('');
+  let si = -1;
+  function wires() {
+    if (getComputedStyle(svg).display === 'none') return;
+    const R = stage.getBoundingClientRect(), C = card.getBoundingClientRect(); let html = '';
+    svg.setAttribute('viewBox', `0 0 ${R.width} ${R.height}`);
+    [...insEl.children].forEach((el, k, a) => { const t = el.querySelector('b').getBoundingClientRect(), r = el.querySelector('.ico').getBoundingClientRect();
+      const x1 = t.right - R.left + 16, y1 = r.top + r.height/2 - R.top, x2 = C.left - R.left, y2 = C.top - R.top + C.height*(0.3 + 0.4*k/(a.length-1)), mx = (x1+x2)/2;
+      html += `<path class="ln" id="li${k}" d="M${x1} ${y1} C ${mx} ${y1}, ${mx} ${y2}, ${x2} ${y2}"/>`; });
+    [...outsEl.children].forEach((el, k, a) => { const r = el.querySelector('.ico').getBoundingClientRect();
+      const x1 = C.right - R.left, y1 = C.top - R.top + C.height*(0.4 + 0.2*k/(a.length-1)), x2 = r.left - R.left - 12, y2 = r.top + r.height/2 - R.top, mx = (x1+x2)/2;
+      html += `<path class="ln" id="lo${k}" d="M${x1} ${y1} C ${mx} ${y1}, ${mx} ${y2}, ${x2} ${y2}"/>`; });
+    svg.innerHTML = html; light();
+  }
+  function light() {
+    const st = steps[si];
+    [...insEl.children].forEach((el, k) => { const on = !!(st && st[1].includes(k)); el.classList.toggle('on', on); $('li'+k) && $('li'+k).classList.toggle('live', on); });
+    [...outsEl.children].forEach((el, k) => { const on = !!(st && st[2].includes(k)); el.classList.toggle('on', on); $('lo'+k) && $('lo'+k).classList.toggle('live', on); });
+  }
+  function tick() {
+    const rows = [...document.querySelectorAll('#wsteps .ws')];
+    if (si >= 0) { rows[si].classList.remove('active'); rows[si].classList.add('done'); if (steps[si][4]) rows[si].querySelector('b').textContent = steps[si][4]; }
+    si++;
+    if (si < steps.length) { rows[si].classList.add('active'); if (steps[si][3] === 'human') rows[si].classList.add('human'); $('prog').style.width = ((si + 1) / steps.length * 100) + '%'; light(); setTimeout(tick, steps[si][3] ? 2600 : 1400); }
+    else { si = -1; light(); setTimeout(() => { rows.forEach((r, k) => { r.className = 'ws'; r.querySelector('b').textContent = steps[k][0]; }); $('prog').style.width = '0'; tick(); }, 2600); }
+  }
+  addEventListener('resize', wires); document.fonts && document.fonts.ready.then(wires);
+  requestAnimationFrame(wires); setTimeout(tick, 800);
+})();
+
+// industries dropdown: hover on desktop, click or keyboard anywhere
+(() => {
+  const dd = document.getElementById('dd'); if (!dd) return;
+  const btn = dd.querySelector('button');
+  const set = on => { dd.classList.toggle('open', on); btn.setAttribute('aria-expanded', on); };
+  const hover = matchMedia('(hover: hover)').matches; let t;
+  btn.addEventListener('click', e => set(hover && e.detail > 0 ? true : !dd.classList.contains('open')));
+  if (hover) { dd.addEventListener('mouseenter', () => { clearTimeout(t); set(true); }); dd.addEventListener('mouseleave', () => { t = setTimeout(() => set(false), 150); }); }
+  document.addEventListener('click', e => { if (!dd.contains(e.target)) set(false); });
+  document.addEventListener('keydown', e => { if (e.key === 'Escape' && dd.classList.contains('open')) { set(false); btn.focus(); } });
+  dd.addEventListener('focusout', e => { if (!dd.contains(e.relatedTarget)) set(false); });
+})();
+
+// reveal on scroll
+(() => {
+  const io = new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { threshold: 0.12 });
+  document.querySelectorAll('.rv').forEach(el => io.observe(el));
+})();
+</script>
+</body>
+</html>
