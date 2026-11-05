@@ -161,14 +161,6 @@
 .checks li i { flex: none; width: 22px; height: 22px; border-radius: 50%; background: rgba(22,163,74,0.1); color: #15803D; display: grid; place-items: center; margin-top: 1px; }
 .checks li i svg { width: 12px; height: 12px; }
 
-/* start */
-.start { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; border: 1px solid var(--line); border-radius: 20px; background: #fff; overflow: hidden; }
-.start > div { padding: 30px; border-right: 1px solid var(--line); }
-.start > div:last-child { border-right: none; }
-.start .n { font: 500 12px var(--mono); color: var(--ink-3); display: block; margin-bottom: 40px; }
-.start h3 { font-size: 21px; letter-spacing: -0.025em; margin-bottom: 8px; }
-.start p { margin: 0; color: var(--ink-2); font-size: 15px; }
-
 /* faq */
 .faq { display: grid; grid-template-columns: 1fr 1.6fr; gap: 60px; }
 .faq h2 { font-size: clamp(30px, 3.2vw, 44px); line-height: 1.08; }
@@ -191,7 +183,6 @@
 @media (max-width: 1080px) {
   .shero .g, .today, .wk, .checks, .faq, .shead, .band .wrap { grid-template-columns: 1fr; }
   .checks { gap: 24px; }
-  .start { grid-template-columns: 1fr; } .start > div { border-right: none; border-bottom: 1px solid var(--line); } .start > div:last-child { border-bottom: none; } .start .n { margin-bottom: 14px; }
   .wk-steps { grid-template-columns: repeat(3, 1fr); } .shead { gap: 18px; } .faq { gap: 24px; }
 }
 @media (max-width: 640px) {
@@ -413,21 +404,6 @@
         <li><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="m5 12 5 5 9-10"/></svg></i><span>Allotments and release periods</span></li>
         <li><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="m5 12 5 5 9-10"/></svg></i><span>Amendments against what's live</span></li>
       </ul>
-    </div>
-  </div>
-</section>
-
-<!-- START -->
-<section class="sub-sec" id="start">
-  <div class="wrap">
-    <div class="shead rv">
-      <div><span class="eyebrow">Getting started</span><h2>Start with five of your own documents.</h2></div>
-      <p>No migration, and no change to how your hotels send updates.</p>
-    </div>
-    <div class="start rv">
-      <div><span class="n">01 · Pilot</span><h3>Send five real updates</h3><p>See them read, checked and ready to load.</p></div>
-      <div><span class="n">02 · Configure</span><h3>Your codes and rules</h3><p>Hotel codes and room mappings, set up once with your team.</p></div>
-      <div><span class="n">03 · Run</span><h3>Every update, as it arrives</h3><p>Updates load as they land; your team works the exceptions.</p></div>
     </div>
   </div>
 </section>
