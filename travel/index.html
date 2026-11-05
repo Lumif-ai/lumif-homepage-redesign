@@ -3,136 +3,218 @@
 <head>
 <meta charset="utf-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Lumif.ai for Travel | Hotel contracts and rates, live in your booking engine</title>
+<title>Lumif.ai for Travel | Hotel contract and rate administration</title>
 <meta name="description" content="Lumif.ai reads the contracts, amendments, promotions and stop sales your hotels send, checks every rate against what is contracted and live, and updates your booking engine. Your team approves the exceptions." />
 <link rel="icon" href="../favicon.ico" sizes="any" />
 <link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32.png" />
 <link rel="icon" type="image/png" sizes="192x192" href="../assets/favicon-192.png" />
 <link rel="apple-touch-icon" href="../assets/apple-touch-icon.png" />
-<meta name="theme-color" content="#0F1117" />
+<meta name="theme-color" content="#F6F3EE" />
 <link rel="canonical" href="https://lumif-ai.github.io/lumif-homepage-redesign/travel/" />
 <meta property="og:type" content="website" />
 <meta property="og:site_name" content="Lumif.ai" />
 <meta property="og:url" content="https://lumif-ai.github.io/lumif-homepage-redesign/travel/" />
-<meta property="og:title" content="Every supplier update, live in your booking engine." />
+<meta property="og:title" content="Lumif.ai for Travel: every supplier update, live in your booking engine." />
 <meta property="og:description" content="AI for hotel contract and rate administration. Your team approves the exceptions." />
 <meta property="og:image" content="https://lumif-ai.github.io/lumif-homepage-redesign/assets/og-image.png" />
 <meta name="twitter:card" content="summary_large_image" />
-<meta name="twitter:title" content="Every supplier update, live in your booking engine." />
-<meta name="twitter:description" content="AI for hotel contract and rate administration. Your team approves the exceptions." />
-<meta name="twitter:image" content="https://lumif-ai.github.io/lumif-homepage-redesign/assets/og-image.png" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="../assets/site.css" />
 <style>
-.kick { display: inline-flex; align-items: center; gap: 10px; color: #9AA0AE; margin-bottom: 26px; }
-.kick::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--coral); }
-.hero h1 { font-size: clamp(42px, 4.6vw, 70px); }
-.pills { display: flex; gap: 8px; flex-wrap: wrap; }
-.pills span { font-size: 13px; color: #C9CCD4; padding: 6px 13px; border-radius: 999px; border: 1px solid var(--night-line); background: var(--night-2); }
-.pills span.yours { border-style: dashed; color: #fff; }
+/* sub-page scale: lighter than the homepage, denser in detail */
+.sub-sec { padding: 110px 0; }
+.sub-sec + .sub-sec { padding-top: 20px; }
+.shead { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: end; margin-bottom: 44px; }
+.shead h2 { font-size: clamp(30px, 3.2vw, 44px); line-height: 1.08; }
+.shead p { margin: 0; font-size: 16px; color: var(--ink-3); max-width: 460px; }
+.eyebrow { font: 500 11.5px var(--mono); letter-spacing: .08em; text-transform: uppercase; color: var(--coral); margin-bottom: 16px; display: block; }
+.tag { display: inline-block; font: 500 9.5px var(--mono); letter-spacing: .06em; text-transform: uppercase; padding: 3px 8px; border-radius: 999px; white-space: nowrap; }
+.t-ok { background: rgba(22,163,74,0.1); color: #15803D; } .t-rev { background: var(--coral-light); color: var(--coral); } .t-mut { background: #F3EFE9; color: var(--ink-4); }
+.ill { font: 500 10px var(--mono); letter-spacing: .06em; text-transform: uppercase; color: var(--ink-4); }
 
-/* terms grid */
-.terms { background: #fff; border: 1px solid var(--line); border-radius: 22px; overflow: hidden; box-shadow: 0 30px 70px -40px rgba(18,18,18,0.25); }
-.terms .bar { display: flex; justify-content: space-between; align-items: center; padding: 16px 22px; border-bottom: 1px solid var(--line); background: var(--panel-warm); }
-.terms .bar b { font-size: 14px; font-weight: 600; }
-.terms .bar .mono { color: var(--ink-4); font-size: 10px; }
-.terms .scroll { overflow-x: auto; }
-.terms table { width: 100%; min-width: 760px; border-collapse: collapse; font-size: 14.5px; }
-.terms th, .terms td { text-align: left; padding: 15px 22px; border-bottom: 1px solid var(--line); }
-.terms tr:last-child td { border-bottom: none; }
-.terms thead th { font: 500 10.5px var(--mono); letter-spacing: .08em; text-transform: uppercase; color: var(--ink-4); background: #fff; }
-.terms tbody th { font-weight: 500; white-space: nowrap; }
-.terms tbody th small { display: block; font: 400 11px var(--sans); color: var(--ink-4); margin-top: 2px; }
-.fmt { display: inline-block; font: 500 9.5px var(--mono); letter-spacing: .06em; text-transform: uppercase; padding: 3px 8px; border-radius: 6px; margin-right: 10px; vertical-align: 1px; }
-.fmt.pdf { background: rgba(233,77,53,0.1); color: #C93C26; } .fmt.xls { background: rgba(22,163,74,0.1); color: #15803D; }
-.fmt.doc { background: rgba(37,99,235,0.1); color: #1D4ED8; } .fmt.mail { background: #F3EFE9; color: var(--ink-3); }
-.terms td { color: var(--ink-2); }
-.terms .note { padding: 12px 22px; font-size: 12px; color: var(--ink-4); border-top: 1px solid var(--line); background: var(--panel-warm); }
+/* hero */
+.shero { padding: 150px 0 70px; }
+.crumb { font-size: 13px; color: var(--ink-3); margin-bottom: 30px; display: flex; gap: 8px; align-items: center; }
+.crumb a:hover { color: var(--ink); } .crumb b { font-weight: 500; color: var(--ink); }
+.shero .g { display: grid; grid-template-columns: 1fr 1.05fr; gap: 64px; align-items: center; }
+.shero h1 { font-size: clamp(40px, 4.4vw, 62px); line-height: 1.03; text-wrap: balance; }
+.shero p.lead { font-size: 18px; color: var(--ink-2); margin: 24px 0 32px; max-width: 520px; }
+.shero .ctas { display: flex; gap: 12px; flex-wrap: wrap; }
+.btn-ghost { border: 1px solid var(--line); color: var(--ink); background: #fff; }
+.btn-ghost:hover { border-color: var(--ink-4); }
+.stack { margin-top: 70px; padding-top: 26px; border-top: 1px solid var(--line); display: flex; justify-content: space-between; align-items: center; gap: 20px; flex-wrap: wrap; }
+.stack .mono { color: var(--ink-4); }
+.stack .pl { display: flex; gap: 8px; flex-wrap: wrap; }
+.stack .pl span { font-size: 13.5px; color: var(--ink-2); padding: 6px 14px; border-radius: 999px; border: 1px solid var(--line); background: #fff; }
+.stack .pl span.y { border-style: dashed; }
 
-/* pain cards */
-.pain { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 16px; }
-.pc { background: #fff; border: 1px solid var(--line); border-radius: 22px; padding: 28px 26px 26px; display: flex; flex-direction: column; }
-.pc .mono { color: var(--coral); margin-bottom: 14px; font-size: 10.5px; }
-.pc h3 { font-size: 23px; line-height: 1.18; letter-spacing: -0.03em; margin-bottom: 10px; }
-.pc p { margin: 0 0 24px; color: var(--ink-3); font-size: 15px; }
-.pc .ui { margin-top: auto; border: 1px solid var(--line); border-radius: 14px; padding: 14px; background: var(--panel-warm); font-size: 13px; }
-.meter { display: flex; justify-content: space-between; margin-bottom: 8px; color: var(--ink-2); }
-.meter b { font-weight: 600; }
-.track { height: 6px; border-radius: 6px; background: #EAE4DA; overflow: hidden; }
-.track span { display: block; height: 100%; width: 16%; background: var(--coral); border-radius: 6px; }
-.cell { font: 500 11px var(--mono); color: var(--ink-4); margin-top: 10px; }
-.cell b { color: var(--ink); background: #fff; border: 1px solid var(--coral); padding: 1px 6px; border-radius: 4px; }
-.wq { display: grid; gap: 8px; }
-.wq div { display: flex; justify-content: space-between; gap: 10px; }
-.wq span { color: var(--ink-2); } .wq em { font-style: normal; color: #B45309; font: 500 11px var(--mono); white-space: nowrap; }
-.cal { display: grid; grid-template-columns: repeat(7, 1fr); gap: 5px; }
-.cal div { text-align: center; padding: 6px 0 5px; border-radius: 7px; background: #fff; border: 1px solid var(--line); font: 500 11px var(--mono); color: var(--ink-3); }
-.cal div small { display: block; font-size: 8.5px; letter-spacing: .04em; color: #15803D; }
-.cal div.bad { border-color: var(--coral); background: var(--coral-light); color: var(--ink); }
-.cal div.bad small { color: var(--coral); }
-.cal + p { margin: 10px 0 0 !important; font-size: 12.5px !important; color: var(--coral) !important; }
+/* workbench mock */
+.wb { background: #fff; border: 1px solid var(--line); border-radius: 20px; box-shadow: 0 40px 80px -40px rgba(18,18,18,0.35); overflow: hidden; font-size: 14px; }
+.wb .wbh { display: flex; justify-content: space-between; align-items: center; padding: 14px 20px; border-bottom: 1px solid var(--line); background: var(--panel-warm); }
+.wb .wbh .b { display: flex; align-items: center; gap: 8px; font-weight: 600; font-size: 13px; }
+.wb .wbh img { height: 18px; }
+.wb .wbb { padding: 20px; }
+.wb h4 { margin: 0 0 4px; font-size: 18px; font-weight: 500; letter-spacing: -0.02em; }
+.wb .meta { color: var(--ink-3); font-size: 13px; margin-bottom: 16px; }
+.wb .read { display: flex; gap: 18px; padding: 10px 14px; border-radius: 10px; background: var(--panel-warm); border: 1px solid var(--line); font-size: 13px; color: var(--ink-2); margin-bottom: 16px; flex-wrap: wrap; }
+.wb .read b { font-weight: 600; color: var(--ink); }
+.cs { display: grid; }
+.cs > div { display: flex; justify-content: space-between; align-items: center; gap: 12px; padding: 11px 2px; border-bottom: 1px solid var(--line); }
+.cs > div:last-child { border-bottom: none; }
+.cs span small { display: block; color: var(--ink-4); font-size: 11.5px; }
+.cs .flag { background: var(--coral-light); margin: 0 -10px; padding: 11px 12px; border-radius: 10px; border-bottom-color: transparent; }
+.wb .wbf { display: flex; justify-content: space-between; align-items: center; padding: 13px 20px; border-top: 1px solid var(--line); font-size: 13px; color: var(--ink-3); }
+.wb .wbf b { color: var(--ink); font-weight: 500; }
 
-/* hinge statement */
-.hinge { padding: 40px 32px 0; }
-.hinge p { font-family: var(--display); letter-spacing: -0.03em; font-size: clamp(28px, 3.2vw, 44px); line-height: 1.2; max-width: 980px; margin: 0; color: var(--ink-4); }
-.hinge p b { font-weight: inherit; color: var(--ink); }
+/* terms today */
+.today { display: grid; grid-template-columns: 340px 1fr; gap: 50px; align-items: start; }
+.today h2 { font-size: clamp(30px, 3.2vw, 44px); line-height: 1.08; margin-bottom: 18px; }
+.today p { color: var(--ink-3); margin: 0 0 14px; }
+.today ol { margin: 22px 0 0; padding: 0; list-style: none; counter-reset: s; }
+.today li { counter-increment: s; display: grid; grid-template-columns: 30px 1fr; padding: 12px 0; border-top: 1px solid var(--line); font-size: 15px; }
+.today li::before { content: "0" counter(s); font: 500 11px var(--mono); color: var(--coral); padding-top: 4px; }
+.tbl { background: #fff; border: 1px solid var(--line); border-radius: 18px; overflow: hidden; }
+.tbl .bar { display: flex; justify-content: space-between; align-items: center; padding: 14px 20px; border-bottom: 1px solid var(--line); background: var(--panel-warm); font-size: 14px; font-weight: 600; }
+.tbl .sc { overflow-x: auto; }
+.tbl table { width: 100%; min-width: 640px; border-collapse: collapse; font-size: 14px; }
+.tbl th, .tbl td { text-align: left; padding: 14px 20px; border-bottom: 1px solid var(--line); }
+.tbl tr:last-child td, .tbl tr:last-child th { border-bottom: none; }
+.tbl thead th { font: 500 10px var(--mono); letter-spacing: .08em; text-transform: uppercase; color: var(--ink-4); }
+.tbl tbody th { font-weight: 500; white-space: nowrap; } .tbl tbody th small { display: block; font-weight: 400; font-size: 11.5px; color: var(--ink-4); }
+.tbl td { color: var(--ink-2); }
+.fmt { display: inline-block; min-width: 46px; white-space: nowrap; text-align: center; font: 500 9px var(--mono); letter-spacing: .05em; text-transform: uppercase; padding: 3px 6px; border-radius: 5px; margin-right: 10px; vertical-align: 1px; }
+.fmt.pdf { background: rgba(233,77,53,0.1); color: #C93C26; } .fmt.xls { background: rgba(22,163,74,0.1); color: #15803D; } .fmt.doc { background: rgba(37,99,235,0.1); color: #1D4ED8; } .fmt.mail { background: #F3EFE9; color: var(--ink-3); }
+.tbl .hint { display: none; padding: 10px 20px; font-size: 12px; color: var(--ink-4); border-top: 1px solid var(--line); }
 
-/* agent tag in workflow card */
-.ws { justify-content: flex-start; }
-.ws .ag { margin-left: auto; font: 500 9.5px var(--mono); letter-spacing: .05em; color: var(--ink-4); opacity: 0; transition: opacity .3s; }
-.ws.active .ag, .ws.done .ag { opacity: 1; }
-.wf-stage { grid-template-columns: 210px 1fr 420px 1fr 230px; }
+/* what it reads */
+.reads { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+.rd { background: #fff; border: 1px solid var(--line); border-radius: 16px; padding: 22px 20px; }
+.rd i { width: 38px; height: 38px; border-radius: 50%; display: grid; place-items: center; background: var(--coral-light); color: var(--coral); margin-bottom: 16px; }
+.rd i svg { width: 18px; height: 18px; }
+.rd b { display: block; font-weight: 500; font-size: 16px; margin-bottom: 6px; letter-spacing: -0.01em; }
+.rd p { margin: 0; font-size: 14px; color: var(--ink-3); line-height: 1.5; }
+.rd.fmts { background: var(--panel-warm); }
+.rd.fmts .f { display: flex; gap: 6px; flex-wrap: wrap; margin-top: 12px; }
 
-/* exception */
-.ex-grid { display: grid; grid-template-columns: 1.15fr 1fr; gap: 16px; }
-.exc { background: #fff; border: 1px solid var(--line); border-radius: 22px; padding: 26px; box-shadow: 0 30px 70px -40px rgba(18,18,18,0.25); }
-.exc .hd { display: flex; justify-content: space-between; align-items: center; margin-bottom: 18px; }
-.exc .hd .mono { color: var(--ink-4); font-size: 10px; }
-.exc .wait { font: 500 10px var(--mono); letter-spacing: .06em; text-transform: uppercase; color: var(--coral); background: var(--coral-light); padding: 4px 10px; border-radius: 999px; }
-.exc h3 { font-size: 24px; letter-spacing: -0.03em; line-height: 1.2; margin-bottom: 6px; }
-.exc .why { color: var(--ink-3); font-size: 14.5px; margin: 0 0 18px; }
-.src { display: grid; grid-template-columns: 1fr auto 1fr; gap: 10px; align-items: stretch; margin-bottom: 16px; }
+/* walkthrough */
+.walk { background: var(--night); color: #F4F1EC; }
+.walk .wrap { padding-top: 100px; padding-bottom: 100px; }
+.walk .shead p { color: #9AA0AE; }
+.walk .eyebrow { color: var(--coral-soft); }
+.wk { display: grid; grid-template-columns: 330px 1fr; gap: 28px; align-items: stretch; }
+.wk-steps { display: grid; gap: 6px; align-content: start; }
+.wk-steps button { all: unset; cursor: pointer; display: grid; grid-template-columns: 30px 1fr; gap: 2px 10px; padding: 14px 16px; border-radius: 14px; border: 1px solid transparent; transition: background .25s, border-color .25s; position: relative; overflow: hidden; }
+.wk-steps button:hover { background: var(--night-2); }
+.wk-steps button:focus-visible { border-color: var(--coral); }
+.wk-steps button[aria-selected="true"] { background: var(--night-2); border-color: var(--night-line); }
+.wk-steps .n { grid-row: 1 / span 2; font: 500 11px var(--mono); color: #6B7080; padding-top: 3px; }
+.wk-steps [aria-selected="true"] .n { color: var(--coral); }
+.wk-steps b { font-weight: 500; font-size: 15px; color: #C9CCD4; }
+.wk-steps [aria-selected="true"] b { color: #fff; }
+.wk-steps small { font: 400 10.5px var(--mono); letter-spacing: .04em; color: #6B7080; }
+.wk-steps .bar { position: absolute; left: 0; bottom: 0; height: 2px; width: 0; background: var(--coral); }
+.wk-steps [aria-selected="true"] .bar { animation: fill 6s linear forwards; }
+.wk.paused .wk-steps .bar { animation: none; width: 0; }
+@keyframes fill { to { width: 100%; } }
+.wk-view { background: #fff; color: var(--ink); border-radius: 20px; min-height: 470px; display: flex; flex-direction: column; overflow: hidden; }
+.wk-view .vh { display: flex; justify-content: space-between; align-items: center; padding: 14px 22px; border-bottom: 1px solid var(--line); background: var(--panel-warm); font-size: 13px; }
+.wk-view .vh b { font-weight: 600; } .wk-view .vh .ag { font: 500 10.5px var(--mono); color: var(--coral); letter-spacing: .04em; }
+.wk-view .vb { padding: 22px; flex: 1; font-size: 14px; }
+.wk-view .vf { padding: 14px 22px; border-top: 1px solid var(--line); font-size: 13.5px; color: var(--ink-2); display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; }
+.wk-view .vf b { font-weight: 600; color: var(--ink); }
+.pane { display: none; } .pane.on { display: flex; flex-direction: column; flex: 1; animation: fadein .35s ease; }
+@keyframes fadein { from { opacity: 0; transform: translateY(6px); } }
+.emc { border: 1px solid var(--line); border-radius: 12px; padding: 16px 18px; margin-bottom: 14px; }
+.emc .from { display: flex; justify-content: space-between; font-size: 13px; color: var(--ink-3); margin-bottom: 6px; }
+.emc h5 { margin: 0 0 8px; font-size: 16px; font-weight: 500; }
+.emc p { margin: 0; color: var(--ink-2); }
+.att { display: inline-flex; gap: 8px; align-items: center; margin-top: 12px; padding: 6px 12px; border-radius: 8px; background: var(--panel-warm); border: 1px solid var(--line); font-size: 13px; }
+.links2 { display: grid; gap: 8px; }
+.links2 div { display: flex; justify-content: space-between; align-items: center; padding: 10px 14px; border-radius: 10px; background: var(--panel-warm); }
+.links2 small { color: var(--ink-4); margin-left: 8px; }
+.kv { display: grid; gap: 0; }
+.kv div { display: grid; grid-template-columns: 1fr auto; gap: 16px; padding: 10px 0; border-bottom: 1px solid var(--line); }
+.kv div:last-child { border-bottom: none; }
+.kv em { font-style: normal; font: 500 10.5px var(--mono); color: var(--ink-4); }
+.kv mark { background: rgba(233,77,53,0.12); color: inherit; padding: 0 3px; border-radius: 3px; }
+.map { display: grid; grid-template-columns: 1fr 40px 1fr; gap: 6px 0; align-items: center; }
+.map .h { font: 500 10px var(--mono); letter-spacing: .07em; text-transform: uppercase; color: var(--ink-4); padding-bottom: 6px; }
+.map .a, .map .c { padding: 9px 12px; border-radius: 9px; border: 1px solid var(--line); }
+.map .c { font-family: var(--mono); font-size: 13px; background: var(--panel-warm); }
+.map .ar { text-align: center; color: var(--coral); }
+.ct { width: 100%; border-collapse: collapse; font-size: 13.5px; }
+.ct th { text-align: left; font: 500 10px var(--mono); letter-spacing: .07em; text-transform: uppercase; color: var(--ink-4); padding: 0 8px 8px; }
+.ct td { padding: 9px 8px; border-top: 1px solid var(--line); }
+.ct td:nth-child(2) { color: var(--ink-4); }
+.ct tr.x td { background: var(--coral-light); }
+.ex h5 { margin: 0 0 4px; font-size: 18px; font-weight: 500; letter-spacing: -0.02em; }
+.ex .why { color: var(--ink-3); margin: 0 0 16px; }
+.src { display: grid; grid-template-columns: 1fr 34px 1fr; gap: 0; align-items: stretch; margin-bottom: 14px; }
 .src > div { border: 1px solid var(--line); border-radius: 12px; padding: 12px 14px; background: var(--panel-warm); }
 .src small { display: block; font: 500 10px var(--mono); letter-spacing: .05em; text-transform: uppercase; color: var(--ink-4); margin-bottom: 4px; }
-.src b { font-weight: 500; font-size: 14px; }
-.src .ne { display: grid; place-items: center; font-size: 22px; color: var(--coral); }
-.exc .aff { font-size: 13px; color: var(--ink-3); padding: 12px 0; border-top: 1px solid var(--line); margin-bottom: 14px; }
+.src .ne { border: none; background: none; display: grid; place-items: center; font-size: 20px; color: var(--coral); padding: 0; }
+.ex .aff { font-size: 13px; color: var(--ink-3); padding: 12px 0; border-top: 1px solid var(--line); margin-bottom: 12px; }
 .acts { display: flex; gap: 8px; flex-wrap: wrap; }
 .acts span { font-size: 13px; font-weight: 500; padding: 8px 14px; border-radius: 999px; border: 1px solid var(--line); color: var(--ink-2); }
 .acts span.pick { background: var(--ink); color: #fff; border-color: var(--ink); }
-.chk { background: var(--panel-warm); border: 1px solid var(--line); border-radius: 22px; padding: 26px; }
-.chk .mono { color: var(--ink-4); margin-bottom: 8px; display: block; }
-.chk ul { list-style: none; margin: 0; padding: 0; }
-.chk li { display: flex; align-items: center; gap: 12px; padding: 14px 0; border-bottom: 1px solid var(--line); font-size: 15.5px; }
-.chk li:last-child { border-bottom: none; }
-.chk li i { flex: none; width: 22px; height: 22px; border-radius: 50%; background: rgba(22,163,74,0.1); color: #15803D; display: grid; place-items: center; }
-.chk li i svg { width: 12px; height: 12px; }
+.ld > div { display: flex; justify-content: space-between; align-items: center; padding: 10px 0; border-bottom: 1px solid var(--line); }
+.ld > div:last-child { border-bottom: none; }
+.ld small { color: var(--ink-4); margin-left: 8px; }
 
-/* gets + no disruption */
-.gets { display: grid; grid-template-columns: repeat(3, 1fr); border: 1px solid var(--line); }
-.gets > div { padding: 40px 40px 44px; border-right: 1px solid var(--line); }
-.gets > div:last-child { border-right: none; }
-.gets .n { font: 500 12px var(--mono); color: var(--coral); margin-bottom: 70px; display: block; }
-.gets h3 { font-size: 28px; line-height: 1.12; letter-spacing: -0.035em; margin-bottom: 14px; }
-.gets p { margin: 0; color: var(--ink-3); font-size: 15.5px; max-width: 320px; }
-.easy { display: grid; grid-template-columns: 1fr 2fr; gap: 60px; margin-top: 110px; align-items: start; }
-.easy h2 { font-size: clamp(32px, 3.6vw, 48px); line-height: 1.06; }
-.easy ul { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line); }
-.easy li { display: grid; grid-template-columns: 240px 1fr; gap: 24px; padding: 22px 0; border-bottom: 1px solid var(--line); }
-.easy li b { font-weight: 500; font-size: 17px; letter-spacing: -0.01em; }
-.easy li span { color: var(--ink-3); font-size: 15.5px; }
+/* checks + fit */
+.duo { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+.box { background: #fff; border: 1px solid var(--line); border-radius: 20px; padding: 30px; }
+.box h3 { font-size: 24px; letter-spacing: -0.03em; line-height: 1.15; margin-bottom: 8px; }
+.box > p { margin: 0 0 18px; color: var(--ink-3); font-size: 15px; }
+.box ul { list-style: none; margin: 0; padding: 0; }
+.box li { display: flex; gap: 12px; padding: 13px 0; border-top: 1px solid var(--line); font-size: 15px; }
+.box li i { flex: none; width: 22px; height: 22px; border-radius: 50%; background: rgba(22,163,74,0.1); color: #15803D; display: grid; place-items: center; margin-top: 1px; }
+.box li i svg { width: 12px; height: 12px; }
+.box li span small { display: block; color: var(--ink-3); font-size: 13.5px; }
 
-@media (max-width: 1180px) { .wf-stage { grid-template-columns: 1fr; } }
+/* start */
+.start { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; border: 1px solid var(--line); border-radius: 20px; background: #fff; overflow: hidden; }
+.start > div { padding: 30px; border-right: 1px solid var(--line); }
+.start > div:last-child { border-right: none; }
+.start .n { font: 500 11px var(--mono); color: var(--coral); display: block; margin-bottom: 40px; }
+.start h3 { font-size: 21px; letter-spacing: -0.025em; margin-bottom: 8px; }
+.start p { margin: 0; color: var(--ink-3); font-size: 14.5px; }
+
+/* faq */
+.faq { display: grid; grid-template-columns: 1fr 1.6fr; gap: 60px; }
+.faq h2 { font-size: clamp(30px, 3.2vw, 44px); line-height: 1.08; }
+.faq details { border-top: 1px solid var(--line); }
+.faq details:last-child { border-bottom: 1px solid var(--line); }
+.faq summary { list-style: none; cursor: pointer; display: flex; justify-content: space-between; gap: 20px; padding: 20px 0; font-size: 17px; font-weight: 500; letter-spacing: -0.01em; }
+.faq summary::-webkit-details-marker { display: none; }
+.faq summary::after { content: "+"; font-weight: 300; font-size: 22px; line-height: 1; color: var(--ink-3); transition: transform .2s; }
+.faq details[open] summary::after { transform: rotate(45deg); }
+.faq details p { margin: -6px 0 20px; color: var(--ink-3); max-width: 620px; }
+
+/* closing band */
+.band { background: var(--night); color: #F4F1EC; }
+.band .wrap { display: grid; grid-template-columns: 1fr auto; gap: 40px; align-items: center; padding-top: 70px; padding-bottom: 70px; }
+.band h2 { font-size: clamp(30px, 3.2vw, 46px); line-height: 1.08; }
+.band p { margin: 14px 0 0; color: #9AA0AE; font-size: 15px; display: flex; gap: 14px; align-items: center; flex-wrap: wrap; }
+.band p img { height: 34px; width: auto; }
+.band p a { text-decoration: underline; text-underline-offset: 3px; }
+
 @media (max-width: 1080px) {
-  .pain, .ex-grid, .gets, .easy { grid-template-columns: 1fr; }
-  .gets > div { border-right: none; border-bottom: 1px solid var(--line); } .gets > div:last-child { border-bottom: none; }
-  .gets .n { margin-bottom: 24px; } .easy { gap: 28px; margin-top: 80px; }
+  .shero .g, .today, .wk, .duo, .faq, .shead, .band .wrap { grid-template-columns: 1fr; }
+  .reads { grid-template-columns: repeat(2, 1fr); }
+  .start { grid-template-columns: 1fr; } .start > div { border-right: none; border-bottom: 1px solid var(--line); } .start > div:last-child { border-bottom: none; } .start .n { margin-bottom: 14px; }
+  .wk-steps { grid-template-columns: repeat(3, 1fr); } .shead { gap: 18px; } .faq { gap: 24px; }
 }
 @media (max-width: 640px) {
-  .easy li { grid-template-columns: 1fr; gap: 4px; } .gets > div { padding: 30px 24px; }
-  .src { grid-template-columns: 1fr; } .src .ne { transform: rotate(90deg); }
-  .hinge { padding: 30px 20px 0; }
+  .shero { padding: 110px 0 50px; } .sub-sec { padding: 70px 0; }
+  .reads { grid-template-columns: 1fr; }
+  .wk-steps { grid-template-columns: 1fr 1fr; } .wk-steps button { padding: 10px 12px; } .wk-steps small { display: none; }
+  .wk-view .vb { padding: 16px; } .wk-view { min-height: 0; }
+  .src { grid-template-columns: 1fr; } .src .ne { transform: rotate(90deg); padding: 4px 0; }
+  .tbl .hint { display: block; }
+  .ct th:nth-child(2), .ct td:nth-child(2) { display: none; }
+  .walk .wrap { padding-top: 70px; padding-bottom: 70px; }
 }
 </style>
 </head>
@@ -141,7 +223,7 @@
 <div class="nav">
   <a href="../"><img src="../assets/lumifai-logo.png" alt="Lumif.ai" style="height:28px;width:auto" /></a>
   <div class="right">
-    <div class="links"><a href="#problem">The problem</a><a href="#how">How it works</a><a href="#trust">Security</a></div>
+    <div class="links"><a href="../#setup">Setup</a><a href="../#how">How it works</a><a href="../#trust">Security</a></div>
     <div class="dd" id="dd">
       <button type="button" aria-expanded="false" aria-controls="ddMenu">Industries <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="m6 9 6 6 6-6"/></svg></button>
       <div class="menu" id="ddMenu">
@@ -150,198 +232,274 @@
         <div class="soon"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M3 12h4l3-7 4 14 3-7h4"/></svg></i><b>MedTech</b><small>Contracts to pricing rules</small><span class="tag">Soon</span></div>
       </div>
     </div>
+
     <a class="btn btn-coral" href="https://calendar.app.google/2CdKq8so5uTE4WYVA">Book a call</a>
   </div>
 </div>
 
 <!-- HERO -->
-<div class="panel hero" id="top">
+<header class="shero">
   <div class="wrap">
-    <div class="grid">
+    <nav class="crumb" aria-label="Breadcrumb"><a href="../">Lumif.ai</a><span>/</span><span>Industries</span><span>/</span><b>Travel</b></nav>
+    <div class="g">
       <div>
-        <div class="mono kick">Travel · Hotel contracts and rates</div>
+        <span class="eyebrow">For hotel contracting teams</span>
         <h1>Every supplier update, <span class="accent">live in your booking engine.</span></h1>
-        <p class="sub">Lumif.ai reads the contracts, amendments, promotions and stop sales your hotels send, checks every rate against what's contracted and live, and updates your booking engine. Your team approves the exceptions.</p>
+        <p class="lead">Lumif.ai reads the contracts, amendments, promotions and stop sales your hotels send, checks every rate against what's contracted and live, and updates your booking engine. Your team approves the exceptions.</p>
         <div class="ctas">
           <a class="btn btn-coral" href="https://calendar.app.google/2CdKq8so5uTE4WYVA">Book a call <span>&rarr;</span></a>
-          <a class="btn btn-line" href="#how">How it works</a>
+          <a class="btn btn-ghost" href="#walk">See one update, start to finish</a>
         </div>
       </div>
-      <div class="dia" aria-hidden="true">
-        <div class="ring r1"></div><div class="ring r2"></div><div class="ring r3"></div>
-        <div class="orbit">
-          <span class="chip" style="left:50%;top:0%"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8zM14 3v5h5"/></svg></i>Contracts</span>
-          <span class="chip" style="left:100%;top:50%"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 12 12 20l-8-8V4h8z"/><circle cx="8.5" cy="8.5" r="1.2"/></svg></i>Promotions</span>
-          <span class="chip" style="left:50%;top:100%"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M4 10h16M10 4v16"/></svg></i>Rate sheets</span>
-          <span class="chip" style="left:0%;top:50%"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="8"/><path d="m6.5 6.5 11 11"/></svg></i>Stop sales</span>
+      <div class="wb" aria-label="Contract Workbench, illustrative">
+        <div class="wbh"><span class="b"><img src="../assets/lumifai-icon.png" alt="" />Contract Workbench</span><span class="ill">Illustrative</span></div>
+        <div class="wbb">
+          <h4>Orvelle Bay Resorts · Early booking promotion</h4>
+          <div class="meta">Arrived by email, Nov 2 · Promotion.pdf</div>
+          <div class="read"><span>Read <b>4 pages</b></span><span><b>148</b> rates</span><span><b>7</b> changes</span></div>
+          <div class="cs">
+            <div><span>Early booking -15%<small>Book 14 days ahead</small></span><span class="tag t-ok">Ready</span></div>
+            <div><span>Half board supplement -20%</span><span class="tag t-ok">Ready</span></div>
+            <div><span>Stay dates · 1 Nov to 20 Dec</span><span class="tag t-ok">Ready</span></div>
+            <div class="flag"><span>Kids stay free · stacking rule<small>Pages 1 and 2 disagree</small></span><span class="tag t-rev">Your team</span></div>
+            <div><span>Gala night excluded from offer</span><span class="tag t-ok">Ready</span></div>
+            <div><span>Release period · 7 days to 24 hours</span><span class="tag t-ok">Ready</span></div>
+            <div><span>Minimum stay · 2 to 3 nights</span><span class="tag t-ok">Ready</span></div>
+          </div>
         </div>
-        <div class="orbit rev">
-          <span class="chip" style="left:85%;top:15%"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><ellipse cx="12" cy="6" rx="7" ry="3"/><path d="M5 6v12c0 1.7 3.1 3 7 3s7-1.3 7-3V6"/></svg></i>Booking engine</span>
-          <span class="chip hot" style="left:15%;top:85%"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6"/></svg></i>Your team</span>
-        </div>
-        <div class="core"><img src="../assets/lumifai-icon.png" alt="" /></div>
+        <div class="wbf"><span>Loads into <b>your booking engine</b></span><span><b>6 of 7</b> ready to load</span></div>
       </div>
     </div>
-    <div class="hero-foot">
+    <div class="stack">
       <span class="mono">Works with your existing tech stack</span>
-      <div class="pills"><span>Juniper</span><span>Technoheaven</span><span>Tourplan</span><span>Lemax</span><span>Travelsoft</span><span class="yours">Your booking engine</span></div>
+      <div class="pl"><span>Juniper</span><span>Technoheaven</span><span>Tourplan</span><span>Lemax</span><span>Travelsoft</span><span class="y">Your booking engine</span></div>
     </div>
   </div>
-</div>
+</header>
 
-<!-- STATEMENT -->
-<div class="wrap statement rv">
-  <p><b>Thousands of hotels. Updates every day.</b> And every one keyed into your booking engine. Manually.</p>
-</div>
-
-<!-- PROBLEM -->
-<section class="sec" id="problem">
-  <div class="wrap">
-    <div class="sec-head rv">
-      <div><div class="label mono">The problem today</div><h2>Every hotel, its own terms. <span class="accent">Every format.</span></h2></div>
-      <p>Contracts arrive as PDFs, rate sheets as Excel, amendments as Word, offers by email. The same term reads differently in each one, and your team reads them all.</p>
+<!-- TODAY -->
+<section class="sub-sec" id="today" style="padding-top:40px">
+  <div class="wrap today">
+    <div class="rv">
+      <span class="eyebrow">How it runs today</span>
+      <h2>Every hotel writes its terms its own way.</h2>
+      <p>The same term arrives in a PDF, a spreadsheet, a Word amendment and an email body, worded four ways. Your team reads each one and keys it in.</p>
+      <ol>
+        <li>Rates keyed into the booking engine, one cell at a time</li>
+        <li>A second person checks them, line by line</li>
+        <li>Meanwhile, the offer isn't on sale and the stop sale is still open</li>
+      </ol>
     </div>
-    <div class="terms rv">
-      <div class="bar"><b>Same term, four hotels</b><span class="mono">Illustrative</span></div>
-      <div class="scroll"><table>
-        <thead><tr><th>Hotel</th><th>Children</th><th>Release</th><th>Cancellation</th><th>Meal plan</th></tr></thead>
+    <div class="tbl rv">
+      <div class="bar"><span>Same term, four hotels</span><span class="ill">Illustrative</span></div>
+      <div class="sc"><table>
+        <thead><tr><th>Hotel · source</th><th>Children</th><th>Release</th><th>Cancellation</th><th>Meal plan</th></tr></thead>
         <tbody>
-          <tr><th><span class="fmt pdf">PDF</span>Velmora Suites<small>Hotel agreement</small></th><td>Free to 11</td><td>7 days</td><td>14 days before</td><td>BB</td></tr>
+          <tr><th><span class="fmt pdf">PDF</span>Velmora Suites<small>Hotel agreement, schedule B</small></th><td>Free to 11</td><td>7 days</td><td>14 days before</td><td>BB</td></tr>
           <tr><th><span class="fmt xls">Excel</span>Taravine Palms<small>Rate sheet</small></th><td>2 to 12: 50%</td><td>21 days</td><td>Non-refundable</td><td>HB</td></tr>
           <tr><th><span class="fmt doc">Word</span>Kestwick Lodge<small>Amendment No. 2</small></th><td>Free under 6</td><td>14 days</td><td>30 days, 1 night</td><td>All inclusive</td></tr>
-          <tr><th><span class="fmt mail">Email</span>Almira Sands<small>Winter rates</small></th><td>Free to 11, 1 per room</td><td>7 days</td><td>72 hours</td><td>BB, HB</td></tr>
+          <tr><th><span class="fmt mail">Email</span>Almira Sands<small>Winter rates, in the body</small></th><td>Free to 11, 1 per room</td><td>7 days</td><td>72 hours</td><td>BB, HB</td></tr>
         </tbody>
       </table></div>
-      <div class="note">Hotel names and terms are illustrative.</div>
-    </div>
-    <div class="pain rv">
-      <div class="pc">
-        <span class="mono">01 · Keyed</span>
-        <h3>One cell at a time.</h3>
-        <p>Every rate from the PDF, typed into your booking engine.</p>
-        <div class="ui"><div class="meter"><span>Rates keyed</span><b>24 of 148</b></div><div class="track"><span></span></div><div class="cell">Pool Suite · Season 2 HB · <b>320|</b></div></div>
-      </div>
-      <div class="pc">
-        <span class="mono">02 · Checked</span>
-        <h3>Then checked again. Line by line.</h3>
-        <p>A second person reads it back while the queue grows.</p>
-        <div class="ui"><div class="wq"><div><span>Velmora Suites · Contract 2027</span><em>2 days</em></div><div><span>Taravine Palms · Amendment 3</span><em>4 days</em></div><div><span>Corsello Grand · Winter rates</span><em>1 week</em></div></div></div>
-      </div>
-      <div class="pc">
-        <span class="mono">03 · Waiting</span>
-        <h3>Meanwhile, the offer isn't on sale.</h3>
-        <p>And the stop sale is still open in your booking engine.</p>
-        <div class="ui"><div class="cal"><div>10<small>Open</small></div><div>11<small>Open</small></div><div class="bad">12<small>Open</small></div><div class="bad">13<small>Open</small></div><div class="bad">14<small>Open</small></div><div>15<small>Open</small></div><div>16<small>Open</small></div></div><p>Stop sale 12 to 14 Nov, still on sale</p></div>
-      </div>
+      <div class="hint">Scroll the table sideways for all four terms.</div>
     </div>
   </div>
 </section>
 
-<div class="wrap hinge rv">
-  <p><b>Oversell a stop sale, the hotel tells you.</b> Stack an offer wrong, nobody does.</p>
-</div>
-
-<!-- HOW IT WORKS -->
-<section class="sec" id="how">
+<!-- READS -->
+<section class="sub-sec" id="reads">
   <div class="wrap">
-    <div class="sec-head rv">
-      <div><div class="label mono">How it works</div><h2>Set up once. <span class="accent">Runs on every update.</span></h2></div>
-      <p>Lumif.ai's agents collect every update as it arrives, read it, match it, check it against the contract and what's live, then load it and read it back. Your team decides the exceptions.</p>
+    <div class="shead rv">
+      <div><span class="eyebrow">What it reads</span><h2>Everything your hotels send, <span class="accent">in any format.</span></h2></div>
+      <p>Each update is read in full, attachment and email body, and every value is cited to the page it came from.</p>
     </div>
-    <div class="wf rv">
-      <div class="wf-stage" id="stage">
-        <svg id="wires"></svg>
-        <div class="col ins" id="ins"></div>
-        <div class="card" id="card">
-          <div class="top"><img src="../assets/lumifai-icon.png" alt="" />Lumif.ai</div>
-          <div class="wsteps" id="wsteps"></div>
-          <div class="prog"><span id="prog"></span></div>
+    <div class="reads rv">
+      <div class="rd"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h4"/></svg></i><b>Contracts</b><p>Seasons, room types, rates, meal plans, child and cancellation policies, release periods.</p></div>
+      <div class="rd"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 16l5-5 2 2-5 5H9z"/></svg></i><b>Amendments</b><p>What changed, compared with what's live. Only real changes load.</p></div>
+      <div class="rd"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M20 12 12 20l-8-8V4h8z"/><circle cx="8.5" cy="8.5" r="1.2"/></svg></i><b>Promotions</b><p>Discount, booking window, stay dates, stacking rules and exclusions.</p></div>
+      <div class="rd"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="12" r="8"/><path d="m6.5 6.5 11 11"/></svg></i><b>Stop sales</b><p>Hotel, rooms and dates to close, acted on as they arrive.</p></div>
+      <div class="rd"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="4" y="4" width="16" height="16" rx="2"/><path d="M4 10h16M4 15h16M10 4v16"/></svg></i><b>Rate sheets</b><p>Rates by room, board and season, whatever the layout.</p></div>
+      <div class="rd"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="5" width="18" height="15" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg></i><b>Allotment updates</b><p>Allocations and release periods by room and date.</p></div>
+      <div class="rd"><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m4 7 8 6 8-6"/></svg></i><b>Supplier emails</b><p>Terms written in the body of an email, not only the attachments.</p></div>
+      <div class="rd fmts"><b>Formats</b><p>From your inbox and shared folders.</p><div class="f"><span class="fmt pdf">PDF</span><span class="fmt doc">Word</span><span class="fmt xls">Excel</span><span class="fmt mail">Email</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- WALKTHROUGH -->
+<section class="panel walk" id="walk">
+  <div class="wrap">
+    <div class="shead rv">
+      <div><span class="eyebrow">One update, start to finish</span><h2>A promotion email, <span class="accent">live the same day.</span></h2></div>
+      <p>Follow one promotion from Orvelle Bay Resorts through the six steps. Each step is run by an agent; the one judgment call goes to your team.</p>
+    </div>
+    <div class="wk rv" id="wk">
+      <div class="wk-steps" role="tablist" aria-label="Steps">
+        <button role="tab" aria-selected="true" aria-controls="p0"><span class="n">01</span><b>Collected</b><small>IntakeAgent</small><span class="bar"></span></button>
+        <button role="tab" aria-selected="false" aria-controls="p1"><span class="n">02</span><b>Read and extracted</b><small>ExtractionAgent</small><span class="bar"></span></button>
+        <button role="tab" aria-selected="false" aria-controls="p2"><span class="n">03</span><b>Matched</b><small>MatchingAgent</small><span class="bar"></span></button>
+        <button role="tab" aria-selected="false" aria-controls="p3"><span class="n">04</span><b>Checked</b><small>CheckAgent</small><span class="bar"></span></button>
+        <button role="tab" aria-selected="false" aria-controls="p4"><span class="n">05</span><b>Your team decides</b><small>Your contracting team</small><span class="bar"></span></button>
+        <button role="tab" aria-selected="false" aria-controls="p5"><span class="n">06</span><b>Loaded and verified</b><small>LoadAgent</small><span class="bar"></span></button>
+      </div>
+      <div class="wk-view">
+
+        <div class="pane on" id="p0" role="tabpanel">
+          <div class="vh"><b>Every update collected, as it arrives</b><span class="ag">IntakeAgent</span></div>
+          <div class="vb">
+            <div class="emc"><div class="from"><span>From Orvelle Bay Resorts reservations</span><span>Nov 2</span></div><h5>Early booking -15%</h5><p>New offer for November and December. Rates and conditions attached.</p><span class="att"><span class="fmt pdf">PDF</span>Promotion.pdf · 4 pages</span></div>
+            <div class="links2">
+              <div><span>Contract 2026 <small>Your agreement with the group</small></span><span class="tag t-ok">Linked</span></div>
+              <div><span>Your live rates <small>What is on sale today</small></span><span class="tag t-ok">Linked</span></div>
+            </div>
+          </div>
+          <div class="vf"><span>Read on arrival, from your inbox and shared folders</span></div>
         </div>
-        <div class="col outs" id="outs"></div>
-      </div>
-    </div>
-  </div>
-</section>
 
-<!-- EXCEPTION -->
-<section class="sec" style="padding-top:0">
-  <div class="wrap">
-    <div class="sec-head rv">
-      <div><div class="label mono">What your team sees</div><h2>Your team decides. <span class="accent">Always.</span></h2></div>
-      <p>Only real changes load. When a document contradicts itself or the contract, it waits for your team, with the source on screen.</p>
-    </div>
-    <div class="ex-grid rv">
-      <div class="exc">
-        <div class="hd"><span class="mono">Example exception · Kids stay free</span><span class="wait">Waiting for your team</span></div>
-        <h3>Offer stacking rules contradict each other</h3>
-        <p class="why">Why: pages 1 and 2 of the promotion disagree on stacking.</p>
-        <div class="src">
-          <div><small>Promotion PDF · page 1, clause 3</small><b>Combines with Early Booking</b></div>
-          <div class="ne">&ne;</div>
-          <div><small>Promotion PDF · page 2, clause 7</small><b>Not combinable with any offer</b></div>
+        <div class="pane" id="p1" role="tabpanel">
+          <div class="vh"><b>Rates, seasons, rooms, meal plans, offers</b><span class="ag">ExtractionAgent</span></div>
+          <div class="vb"><div class="kv">
+            <div><span>Season 1: <mark>1 Nov to 20 Dec</mark></span><em>p. 2</em></div>
+            <div><span>Garden Room · BB <mark>210</mark> · HB <mark>245</mark></span><em>p. 2</em></div>
+            <div><span>Half board supplement <mark>-20%</mark></span><em>p. 2</em></div>
+            <div><span>Early booking <mark>-15%</mark>, book 14 days ahead</span><em>p. 1</em></div>
+            <div><span>Kids stay free with two adults</span><em>p. 1</em></div>
+            <div><span>Release period <mark>24 hours</mark></span><em>p. 2</em></div>
+          </div></div>
+          <div class="vf"><span><b>4 pages. 148 rates.</b> 2 seasons · 6 room types · BB, HB</span><span>Every value cited to its page</span></div>
         </div>
-        <div class="aff">Affects: 6 hotels · 37 room types · stays 1 Nov to 20 Dec</div>
-        <div class="acts"><span>Load as combinable</span><span class="pick">Not combinable</span><span>Ask the hotel</span></div>
-      </div>
-      <div class="chk">
-        <span class="mono">What it checks</span>
-        <ul>
-          <li><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="m5 12 5 5 9-10"/></svg></i>Rates, seasons and meal plans</li>
-          <li><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="m5 12 5 5 9-10"/></svg></i>Offer stacking and blackouts</li>
-          <li><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="m5 12 5 5 9-10"/></svg></i>Child and cancellation policies</li>
-          <li><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="m5 12 5 5 9-10"/></svg></i>Stop sales by date and room</li>
-          <li><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="m5 12 5 5 9-10"/></svg></i>Allotments and release periods</li>
-          <li><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="m5 12 5 5 9-10"/></svg></i>Amendments against what's live</li>
-        </ul>
+
+        <div class="pane" id="p2" role="tabpanel">
+          <div class="vh"><b>Matched to the right hotel and room code</b><span class="ag">MatchingAgent</span></div>
+          <div class="vb"><div class="map">
+            <span class="h">From the promotion</span><span></span><span class="h">Your booking engine · ORV-01</span>
+            <span class="a">Garden Room</span><span class="ar">&rarr;</span><span class="c">ORV-GDN</span>
+            <span class="a">Pool Suite</span><span class="ar">&rarr;</span><span class="c">ORV-PLS</span>
+            <span class="a">Family Room</span><span class="ar">&rarr;</span><span class="c">ORV-FAM</span>
+            <span class="a">Ocean Suite</span><span class="ar">&rarr;</span><span class="c">ORV-OCS</span>
+            <span class="a">Junior Suite</span><span class="ar">&rarr;</span><span class="c">ORV-JRS</span>
+            <span class="a">Villa</span><span class="ar">&rarr;</span><span class="c">ORV-VIL</span>
+          </div></div>
+          <div class="vf"><span>Your hotel codes and room mappings, configured once</span></div>
+        </div>
+
+        <div class="pane" id="p3" role="tabpanel">
+          <div class="vh"><b>Against the contract, and what's live</b><span class="ag">CheckAgent</span></div>
+          <div class="vb"><table class="ct">
+            <thead><tr><th>Term</th><th>Live now</th><th>In the promotion</th><th>Result</th></tr></thead>
+            <tbody>
+              <tr><td>Room types</td><td>6 types</td><td>6 types</td><td><span class="tag t-mut">No change</span></td></tr>
+              <tr><td>Early booking</td><td>none</td><td>-15%, 14 days ahead</td><td><span class="tag t-ok">Ready</span></td></tr>
+              <tr><td>Half board supplement</td><td>none</td><td>-20%</td><td><span class="tag t-ok">Ready</span></td></tr>
+              <tr><td>Stay dates</td><td>none</td><td>1 Nov to 20 Dec</td><td><span class="tag t-ok">Ready</span></td></tr>
+              <tr class="x"><td>Kids stay free</td><td>none</td><td>Free, stacking unclear</td><td><span class="tag t-rev">Your team</span></td></tr>
+              <tr><td>Gala night</td><td>included</td><td>excluded from offer</td><td><span class="tag t-ok">Ready</span></td></tr>
+              <tr><td>Release period</td><td>7 days</td><td>24 hours</td><td><span class="tag t-ok">Ready</span></td></tr>
+              <tr><td>Minimum stay</td><td>2 nights</td><td>3 nights</td><td><span class="tag t-ok">Ready</span></td></tr>
+            </tbody>
+          </table></div>
+          <div class="vf"><span><b>7 changes.</b> 6 ready to load, 1 for your team.</span></div>
+        </div>
+
+        <div class="pane" id="p4" role="tabpanel">
+          <div class="vh"><b>Waiting for your team</b><span class="ag" style="color:var(--ink-3)">Your contracting team</span></div>
+          <div class="vb ex">
+            <h5>Offer stacking rules contradict each other</h5>
+            <p class="why">Why: pages 1 and 2 of the promotion disagree on stacking.</p>
+            <div class="src"><div><small>Promotion.pdf · page 1, clause 3</small>Combines with Early Booking</div><div class="ne">&ne;</div><div><small>Promotion.pdf · page 2, clause 7</small>Not combinable with any offer</div></div>
+            <div class="aff">Affects: 6 hotels · 37 room types · stays 1 Nov to 20 Dec</div>
+            <div class="acts"><span>Load as combinable</span><span class="pick">Not combinable</span><span>Ask the hotel</span></div>
+          </div>
+          <div class="vf"><span>Approve, reject or add a note. Nothing contested loads until your team decides.</span></div>
+        </div>
+
+        <div class="pane" id="p5" role="tabpanel">
+          <div class="vh"><b>Loaded into your booking engine, then read back</b><span class="ag">LoadAgent</span></div>
+          <div class="vb ld">
+            <div><span>Early booking <small>-15%, book 14 days ahead</small></span><span class="tag t-ok">Live, read back</span></div>
+            <div><span>Half board supplement <small>-20%</small></span><span class="tag t-ok">Live, read back</span></div>
+            <div><span>Stay dates <small>1 Nov to 20 Dec</small></span><span class="tag t-ok">Live, read back</span></div>
+            <div><span>Kids stay free <small>Not combinable, as decided</small></span><span class="tag t-ok">Live, read back</span></div>
+            <div><span>Gala night <small>Excluded from offer</small></span><span class="tag t-ok">Live, read back</span></div>
+            <div><span>Release period <small>24 hours</small></span><span class="tag t-ok">Live, read back</span></div>
+            <div><span>Minimum stay <small>3 nights</small></span><span class="tag t-ok">Live, read back</span></div>
+          </div>
+          <div class="vf"><span><b>Live the same day.</b> Every rate traced to its clause.</span></div>
+        </div>
+
       </div>
     </div>
   </div>
 </section>
 
-<!-- GETS -->
-<section class="sec" style="padding-top:20px">
-  <div class="wrap">
-    <div class="proof-head rv">
-      <h2>Less re-keying. <span class="accent">More selling.</span></h2>
-      <p>Typing rates from hotel PDFs isn't contracting work. Lumif.ai takes it off your team's desks.</p>
-    </div>
-    <div class="gets rv">
-      <div><span class="n">01</span><h3>Rates live faster</h3><p>Stop sales and promotions handled as they arrive. Dates closed and offers on sale the same day.</p></div>
-      <div><span class="n">02</span><h3>Zero re-keying</h3><p>Every rate read from the source document and checked before and after it loads.</p></div>
-      <div><span class="n">03</span><h3>Every rate traced to its clause</h3><p>One click from a live rate back to the page, clause or email it came from.</p></div>
-    </div>
-    <div class="easy rv">
-      <h2>No new system. <span class="accent">No disruption.</span></h2>
+<!-- CHECKS + FIT -->
+<section class="sub-sec" id="fit">
+  <div class="wrap duo">
+    <div class="box rv">
+      <span class="eyebrow">What it checks</span>
+      <h3>The terms that cost margin when they're keyed wrong.</h3>
+      <p>Oversell a stop sale, the hotel tells you. Stack an offer wrong, nobody does.</p>
       <ul>
-        <li><b>Sits beside what you run</b><span>Connects to your booking engine via API or a configured integration.</span></li>
-        <li><b>Set up on how you contract</b><span>Your hotel codes, room mappings and rules, configured once.</span></li>
-        <li><b>More hotels, same team</b><span>Take on more suppliers with the team you have.</span></li>
-        <li><b>Start with a pilot</b><span>Five of your own documents, loaded and checked.</span></li>
+        <li><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="m5 12 5 5 9-10"/></svg></i><span>Rates, seasons and meal plans</span></li>
+        <li><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="m5 12 5 5 9-10"/></svg></i><span>Offer stacking and blackouts</span></li>
+        <li><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="m5 12 5 5 9-10"/></svg></i><span>Child and cancellation policies</span></li>
+        <li><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="m5 12 5 5 9-10"/></svg></i><span>Stop sales by date and room</span></li>
+        <li><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="m5 12 5 5 9-10"/></svg></i><span>Allotments and release periods</span></li>
+        <li><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="m5 12 5 5 9-10"/></svg></i><span>Amendments against what's live</span></li>
+      </ul>
+    </div>
+    <div class="box rv">
+      <span class="eyebrow">How it fits</span>
+      <h3>No new system. No disruption.</h3>
+      <p>Your booking engine stays where your rates live. Lumif.ai works beside it.</p>
+      <ul>
+        <li><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="m5 12 5 5 9-10"/></svg></i><span>Sits beside what you run<small>Juniper, Technoheaven, Tourplan, Lemax, Travelsoft or your own booking engine, via API or a configured integration.</small></span></li>
+        <li><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="m5 12 5 5 9-10"/></svg></i><span>Set up on how you contract<small>Your hotel codes, room mappings and rules, configured once.</small></span></li>
+        <li><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="m5 12 5 5 9-10"/></svg></i><span>Your team keeps the decisions<small>Exceptions wait for approval, with the source clause on screen.</small></span></li>
+        <li><i><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><path d="m5 12 5 5 9-10"/></svg></i><span>More hotels, same team<small>Take on more suppliers with the team you have.</small></span></li>
       </ul>
     </div>
   </div>
 </section>
 
-<!-- TRUST -->
-<div class="panel trust" id="trust">
-  <div class="wrap inner">
-    <div class="seal rv"><img src="../assets/soc2-official.png" alt="AICPA SOC 2 Type 2" /></div>
-    <div class="rv"><div class="mono kicker">SOC 2 Type 2 audited</div><h2>Built for enterprise <span class="accent">security.</span></h2></div>
-    <ul class="rv">
-      <li>Isolated storage <span class="mono">01</span></li>
-      <li>Fully encrypted <span class="mono">02</span></li>
-      <li>Never trains models <span class="mono">03</span></li>
-      <li>Append-only trail <span class="mono">04</span></li>
-    </ul>
+<!-- START -->
+<section class="sub-sec" id="start">
+  <div class="wrap">
+    <div class="shead rv">
+      <div><span class="eyebrow">Getting started</span><h2>Start with your own documents.</h2></div>
+      <p>No migration and no change to how your hotels send updates.</p>
+    </div>
+    <div class="start rv">
+      <div><span class="n">01 · Pilot</span><h3>Five of your documents</h3><p>Send five real updates: a contract, an amendment, a promotion, a stop sale, a rate sheet. See them read, checked and ready to load.</p></div>
+      <div><span class="n">02 · Configure</span><h3>Your codes and rules</h3><p>Hotel codes, room mappings and how you contract, set up once with your team.</p></div>
+      <div><span class="n">03 · Run</span><h3>Every update, as it arrives</h3><p>Updates load as they land. Your team works the exceptions.</p></div>
+    </div>
   </div>
-</div>
+</section>
 
-<!-- FINAL -->
-<div style="height:16px"></div>
-<div class="panel final">
-  <div class="inner">
-    <h2>Bring one hotel contract.<br /><span class="accent">See it loaded.</span></h2>
-    <a class="btn btn-dark" href="https://calendar.app.google/2CdKq8so5uTE4WYVA">Book a call <span>&rarr;</span></a>
+<!-- FAQ -->
+<section class="sub-sec" id="faq">
+  <div class="wrap faq">
+    <div class="rv"><span class="eyebrow">Questions</span><h2>What contracting teams ask us.</h2></div>
+    <div class="rv">
+      <details><summary>Do we have to replace our booking engine?</summary><p>No. Lumif.ai sits beside the booking engine you run today and loads into it via API or a configured integration. Your booking engine stays the system of record.</p></details>
+      <details><summary>Which formats can it read?</summary><p>PDF, Word and Excel attachments, and terms written in the body of an email. Contracts, amendments, promotions, stop sales, rate sheets and allotment updates.</p></details>
+      <details><summary>What happens when a document is unclear or contradicts itself?</summary><p>It doesn't guess. The update waits for your team with both sources shown, and nothing contested loads until someone decides.</p></details>
+      <details><summary>How do we know what loaded is right?</summary><p>Every rate is checked against the contract and what's live before it loads, then read back from your booking engine after. Every live rate links back to the clause it came from.</p></details>
+      <details><summary>Is our data used to train models?</summary><p>No. Storage is isolated and encrypted, every action is kept on an append-only trail, and Lumif.ai is SOC 2 Type 2 audited.</p></details>
+      <details><summary>How do we start?</summary><p>With a pilot on five of your own documents. Book a call and bring a contract.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- CLOSING BAND -->
+<div class="panel band">
+  <div class="wrap">
+    <div>
+      <h2>See your own contract <span class="accent">loaded.</span></h2>
+      <p><img src="../assets/soc2-official.png" alt="AICPA SOC 2 Type 2" />SOC 2 Type 2 audited. <a href="../#trust">How we handle your data</a></p>
+    </div>
+    <a class="btn btn-coral" href="https://calendar.app.google/2CdKq8so5uTE4WYVA">Book a call <span>&rarr;</span></a>
   </div>
 </div>
 
@@ -353,60 +511,18 @@
 </footer>
 
 <script>
-// workflow loop: supplier update to live rate
+// walkthrough: auto-advances every 6s while on screen; a click takes over and stops the timer
 (() => {
-  const I = {
-    doc: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h4"/></svg>',
-    edit: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 16l5-5 2 2-5 5H9z"/></svg>',
-    tag: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M20 12 12 20l-8-8V4h8z"/><circle cx="8.5" cy="8.5" r="1.2"/></svg>',
-    stop: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="8"/><path d="m6.5 6.5 11 11"/></svg>',
-    mail: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m4 7 8 6 8-6"/></svg>',
-    db: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><ellipse cx="12" cy="6" rx="7" ry="3"/><path d="M5 6v12c0 1.7 3.1 3 7 3s7-1.3 7-3V6M5 12c0 1.7 3.1 3 7 3s7-1.3 7-3"/></svg>',
-    user: '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="8" r="4"/><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6"/></svg>'
-  };
-  const ins = [['doc','Contracts'], ['edit','Amendments'], ['tag','Promotions'], ['stop','Stop sales'], ['mail','Supplier emails']];
-  const outs = [['user','Your team decides','expert'], ['db','Your booking engine']];
-  // [label, inputs lit, outputs lit, flag, done label, agent]
-  const steps = [
-    ['Update collected', [0,1,2,3,4], [], null, null, 'IntakeAgent'],
-    ['Read and extracted', [2], [], null, null, 'ExtractionAgent'],
-    ['Matched to hotel and room code', [], [], null, null, 'MatchingAgent'],
-    ['Checked against contract and live', [0], [], null, null, 'CheckAgent'],
-    ['Exception for your team', [], [0], 'human', 'Decided by your team', ''],
-    ['Loaded and read back', [], [1], null, null, 'LoadAgent']
-  ];
-  const $ = id => document.getElementById(id);
-  const stage = $('stage'), svg = $('wires'), insEl = $('ins'), outsEl = $('outs'), card = $('card');
-  const item = x => `<div class="it ${x[2]||''}"><div class="ico">${I[x[0]]}</div><b>${x[1]}</b></div>`;
-  insEl.innerHTML = ins.map(item).join(''); outsEl.innerHTML = outs.map(item).join('');
-  $('wsteps').innerHTML = steps.map(s => `<div class="ws"><span class="dot"></span><b>${s[0]}</b><span class="ag">${s[5]}</span></div>`).join('');
-  let si = -1;
-  function wires() {
-    if (getComputedStyle(svg).display === 'none') return;
-    const R = stage.getBoundingClientRect(), C = card.getBoundingClientRect(); let html = '';
-    svg.setAttribute('viewBox', `0 0 ${R.width} ${R.height}`);
-    [...insEl.children].forEach((el, k, a) => { const t = el.querySelector('b').getBoundingClientRect(), r = el.querySelector('.ico').getBoundingClientRect();
-      const x1 = t.right - R.left + 16, y1 = r.top + r.height/2 - R.top, x2 = C.left - R.left, y2 = C.top - R.top + C.height*(0.3 + 0.4*k/(a.length-1)), mx = (x1+x2)/2;
-      html += `<path class="ln" id="li${k}" d="M${x1} ${y1} C ${mx} ${y1}, ${mx} ${y2}, ${x2} ${y2}"/>`; });
-    [...outsEl.children].forEach((el, k, a) => { const r = el.querySelector('.ico').getBoundingClientRect();
-      const x1 = C.right - R.left, y1 = C.top - R.top + C.height*(0.4 + 0.2*k/(a.length-1)), x2 = r.left - R.left - 12, y2 = r.top + r.height/2 - R.top, mx = (x1+x2)/2;
-      html += `<path class="ln" id="lo${k}" d="M${x1} ${y1} C ${mx} ${y1}, ${mx} ${y2}, ${x2} ${y2}"/>`; });
-    svg.innerHTML = html; light();
-  }
-  function light() {
-    const st = steps[si];
-    [...insEl.children].forEach((el, k) => { const on = !!(st && st[1].includes(k)); el.classList.toggle('on', on); $('li'+k) && $('li'+k).classList.toggle('live', on); });
-    [...outsEl.children].forEach((el, k) => { const on = !!(st && st[2].includes(k)); el.classList.toggle('on', on); $('lo'+k) && $('lo'+k).classList.toggle('live', on); });
-  }
-  function tick() {
-    const rows = [...document.querySelectorAll('#wsteps .ws')];
-    if (si >= 0) { rows[si].classList.remove('active'); rows[si].classList.add('done'); if (steps[si][4]) rows[si].querySelector('b').textContent = steps[si][4]; }
-    si++;
-    if (si < steps.length) { rows[si].classList.add('active'); if (steps[si][3] === 'human') rows[si].classList.add('human'); $('prog').style.width = ((si + 1) / steps.length * 100) + '%'; light(); setTimeout(tick, steps[si][3] ? 2600 : 1400); }
-    else { si = -1; light(); setTimeout(() => { rows.forEach((r, k) => { r.className = 'ws'; r.querySelector('b').textContent = steps[k][0]; }); $('prog').style.width = '0'; tick(); }, 2600); }
-  }
-  addEventListener('resize', wires); document.fonts && document.fonts.ready.then(wires);
-  requestAnimationFrame(wires); setTimeout(tick, 800);
+  const wk = document.getElementById('wk'); const tabs = [...wk.querySelectorAll('[role=tab]')]; const panes = [...wk.querySelectorAll('.pane')];
+  let i = 0, t = null, manual = false, seen = false;
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const show = k => { i = k; tabs.forEach((b, j) => { b.setAttribute('aria-selected', j === k); b.tabIndex = j === k ? 0 : -1; const bar = b.querySelector('.bar'); bar.style.animation = 'none'; void bar.offsetWidth; bar.style.animation = ''; }); panes.forEach((p, j) => p.classList.toggle('on', j === k)); };
+  const loop = () => { clearTimeout(t); if (manual || reduce || !seen) return; t = setTimeout(() => { show((i + 1) % tabs.length); loop(); }, 6000); };
+  tabs.forEach((b, k) => { b.addEventListener('click', () => { manual = true; wk.classList.add('paused'); clearTimeout(t); show(k); });
+    b.addEventListener('keydown', e => { const d = e.key === 'ArrowDown' || e.key === 'ArrowRight' ? 1 : e.key === 'ArrowUp' || e.key === 'ArrowLeft' ? -1 : 0; if (d) { e.preventDefault(); const n = (i + d + tabs.length) % tabs.length; tabs[n].focus(); tabs[n].click(); } }); });
+  if (reduce) wk.classList.add('paused');
+  new IntersectionObserver(es => es.forEach(e => { seen = e.isIntersecting; if (seen) { show(i); loop(); } else clearTimeout(t); }), { threshold: 0.3 }).observe(wk);
+  show(0);
 })();
 
 // industries dropdown: hover on desktop, click or keyboard anywhere
@@ -421,6 +537,7 @@
   document.addEventListener('keydown', e => { if (e.key === 'Escape' && dd.classList.contains('open')) { set(false); btn.focus(); } });
   dd.addEventListener('focusout', e => { if (!dd.contains(e.relatedTarget)) set(false); });
 })();
+
 
 // reveal on scroll
 (() => {
