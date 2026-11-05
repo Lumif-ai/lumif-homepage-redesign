@@ -45,7 +45,10 @@
 .btn-ghost:hover { border-color: var(--ink-4); }
 .stack { margin-top: 70px; padding-top: 26px; border-top: 1px solid var(--line); display: flex; justify-content: space-between; align-items: center; gap: 20px; flex-wrap: wrap; }
 .stack .mono { color: var(--ink-3); }
-.stack .pl { display: flex; gap: 8px; flex-wrap: wrap; }
+.stack .pl { display: flex; gap: 34px; flex-wrap: wrap; align-items: center; }
+.stack .pl img { height: 24px; width: auto; filter: brightness(0); opacity: .5; transition: filter .2s, opacity .2s; }
+.stack .pl img:hover { filter: none; opacity: 1; }
+.stack .pl img.ts { height: 20px; }
 .stack .pl span { font-size: 13.5px; color: var(--ink-2); padding: 6px 14px; border-radius: 999px; border: 1px solid var(--line); background: #fff; }
 .stack .pl span.y { border-style: dashed; }
 
@@ -231,6 +234,7 @@
   .shead { gap: 18px; } .faq { gap: 24px; }
 }
 @media (max-width: 640px) {
+  .stack .pl { gap: 18px 24px; } .stack .pl img { height: 19px; } .stack .pl img.ts { height: 16px; }
   #walk .panes { height: 430px; } #walk .xcore { padding: 16px; } #walk .pn h5 { font-size: 15px; }
   #walk .rd { grid-template-columns: 1fr; } #walk .page { display: none; }
   #walk .ck div small, #walk .lk small { display: block; } #walk .lk small { margin-left: 0; }
@@ -295,7 +299,7 @@
     </div>
     <div class="stack">
       <span class="mono">Loads into</span>
-      <div class="pl"><span>Juniper</span><span>Technoheaven</span><span>Tourplan</span><span>Lemax</span><span>Travelsoft</span><span class="y">Your booking engine</span></div>
+      <div class="pl"><img src="../assets/engines/juniper.svg" alt="Juniper" /><img src="../assets/engines/technoheaven.svg" alt="Technoheaven" /><img src="../assets/engines/tourplan.png" alt="Tourplan" /><img src="../assets/engines/lemax.svg" alt="Lemax" /><img class="ts" src="../assets/engines/travelsoft.svg" alt="Travelsoft" /><span class="y">Your booking engine</span></div>
     </div>
   </div>
 </header>
